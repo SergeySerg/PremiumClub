@@ -26,6 +26,8 @@ class CreateArticlesTable extends Migration {
 			$table->text('meta_description');
 			$table->text('meta_keywords');
 			$table->boolean('active')->default(false);
+			$table->timestamp('created_at');
+			$table->timestamp('updated_at');
 		});
 	}
 
