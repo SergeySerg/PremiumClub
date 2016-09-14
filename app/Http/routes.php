@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
@@ -19,3 +19,6 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+ get('/',['as'=>'posts','uses'=>'PostController@index']);
+get('unpublished', ['as' => 'posts.unpublished', 'uses' => 'PostController@unpublished']);
+//get('unpublished',['as' =>'post.unpublished','uses'=>'PostController@unpublished']);
