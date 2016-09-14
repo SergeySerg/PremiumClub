@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration {
 			$table->integer('category_id');
 			$table->text('title');
 			$table->text('description');
-			$table->double('price', 5, 2)->default(0);
+			$table->double('price', 8, 2)->default(0);
 			$table->integer('quantity');
 			$table->string('img');
 			$table->timestamp('date');
@@ -26,7 +26,9 @@ class CreateArticlesTable extends Migration {
 			$table->text('meta_description');
 			$table->text('meta_keywords');
 			$table->boolean('active')->default(false);
-		});
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
+        });
 	}
 
 	/**
