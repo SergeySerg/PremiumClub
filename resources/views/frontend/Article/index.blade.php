@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-    <h1>{{ $articles_name }}</h1>
     @foreach($articles as $article)
         <article>
             <h1>{{ $article->category->name }}</h1>
