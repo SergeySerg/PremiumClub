@@ -18,9 +18,14 @@ class ArticleController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($lang, $type)
+	public function index($lang, $type)//$lang, $type)
 	{
-        echo $lang.' === '.$type;
+        $articles = Category::where('link', $type)
+            ->first()
+            ->articles;
+
+        return view('frontend.article.index', ['articles' => $articles]);
+        /*echo $lang.' === '.$type;
         
         $articles = Category::where('link', $type)
             ->get()
@@ -31,7 +36,7 @@ class ArticleController extends Controller {
       //  exit();
         foreach ($articles as $article) {
             echo '<br>'.$article->title . ' :: ' . $article->category->name;
-        }
+        }*/
 		//echo $request->input('lang').' = '.$request->input('type');
 
 	}
