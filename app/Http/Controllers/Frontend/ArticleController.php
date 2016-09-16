@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers\Frontend;
 
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Frontend;
@@ -18,27 +19,18 @@ class ArticleController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($lang, $type)//$lang, $type)
+	public function index($lang, $type = 'hotel')//$lang, $type)
 	{
-        $articles = Category::where('link', $type)
-            ->first()
-            ->articles;
-
-        return view('frontend.article.index', ['articles' => $articles]);
-        /*echo $lang.' === '.$type;
+        App::setLocale($lang);
         
-        $articles = Category::where('link', $type)
-            ->get()
-            ->first()
-            ->articles;
+        $category = Category::where('link', $type)
+            ->first();
+        $articles = $category->articles;
 
-        //print_r($articles);
-      //  exit();
-        foreach ($articles as $article) {
-            echo '<br>'.$article->title . ' :: ' . $article->category->name;
-        }*/
-		//echo $request->input('lang').' = '.$request->input('type');
+      // dd( $articles->first()->getTranslate('title'));
 
+		return view('frontend.'.$type, ['articles' => $articles, 'category' => $category]);
+        
 	}
 
 	/**

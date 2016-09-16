@@ -20,4 +20,4 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('/{lang}/{type}', 'Frontend\ArticleController@index');
+Route::get('/{lang}/{type?}', 'Frontend\ArticleController@index');

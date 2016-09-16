@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Lang extends Model {
+class Lang extends Translate {
 
 	//
 
