@@ -3,13 +3,15 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Frontend;
-
+//use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
 
 use App\Models\Article;
 use App\Models\Category;
-
+use App\Models\Lang;
+use App;
+use Illuminate\Support\Facades\Response;
 
 class ArticleController extends Controller {
 
@@ -18,27 +20,21 @@ class ArticleController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($lang, $type)//$lang, $type)
+	public function index($lang, $type = 'hotel')//$lang, $type)
 	{
-        $articles = Category::where('link', $type)
-            ->first()
-            ->articles;
+		$currentLang = Lang::where('lang',"=", $lang)->first();
+		//dd($currentLang);
+		if (!$currentLang){
+			abort('404');//страница 404 в файлі .ENV ставим false и робим шаблон 404 стор
+		}
+		 App::setLocale($lang);
 
-        return view('frontend.article.index', ['articles' => $articles]);
-        /*echo $lang.' === '.$type;
-        
-        $articles = Category::where('link', $type)
-            ->get()
-            ->first()
-            ->articles;
-
-        //print_r($articles);
-      //  exit();
-        foreach ($articles as $article) {
-            echo '<br>'.$article->title . ' :: ' . $article->category->name;
-        }*/
-		//echo $request->input('lang').' = '.$request->input('type');
-
+		//dd ($currentLang->id);
+    App::setLocale($lang);
+        $categories = Category::where('link','=', $type)
+            ->first();
+		$articles = $categories->articles;
+		return view('frontend.'.$type, ['articles' => $articles,'categories'=>$categories]);
 	}
 
 	/**
