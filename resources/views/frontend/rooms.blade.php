@@ -1,12 +1,12 @@
 @extends('app')
 
 @section('content')
-    <h1>{{$category->name}}</h1>
+    <h1>{{$category->getTranslate('name')}}</h1>
     @foreach($articles as $article)
         <article>
             <h2>{{ $article->getTranslate('title') }}</h2>
             <p>
-                {{ $article->description }}
+                {{ $article->getTranslate('description') }}
             </p>
         </article>
     @endforeach

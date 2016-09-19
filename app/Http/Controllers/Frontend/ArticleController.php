@@ -1,6 +1,5 @@
 <?php namespace App\Http\Controllers\Frontend;
 
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Frontend;
@@ -10,7 +9,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Article;
 use App\Models\Category;
-
+use App;
+use App\Models\Lang;
 
 class ArticleController extends Controller {
 
@@ -21,11 +21,19 @@ class ArticleController extends Controller {
 	 */
 	public function index($lang, $type = 'hotel')//$lang, $type)
 	{
+		$currentLang = Lang::where('lang', $lang)->first();
+        //dd($currentLang);
+        if (!$currentLang){
+            abort(404);
+        }
         App::setLocale($lang);
-        
+        //App::langId = $currentLang->id;
+
         $category = Category::where('link', $type)
             ->first();
-        $articles = $category->articles;
+        //dd($category->getTranslate('name'));
+		$articles = $category->articles;
+
 
       // dd( $articles->first()->getTranslate('title'));
 
