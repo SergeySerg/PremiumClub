@@ -8,11 +8,11 @@ class Translate extends Model {
            $pieces = explode("|", $this->$field);
           if(count($pieces)<3)
               return $this->$field;
-           if (App::getLocale() == 'ru')
-               $field = $pieces[0];
-           if (App::getLocale() == 'en')
-               $field = $pieces[1];
            if (App::getLocale() == 'ua')
+               $field = $pieces[0];
+           if (App::getLocale() == 'ru')
+               $field = $pieces[1];
+           if (App::getLocale() == 'en')
                $field = $pieces[2];
            return $field;
        }

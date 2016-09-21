@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers\Frontend;
+<?php namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Frontend;
+use App\Http\Controllers\BackEnd;
 //use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
@@ -13,28 +13,20 @@ use App\Models\Lang;
 use App;
 use Illuminate\Support\Facades\Response;
 
-class ArticleController extends Controller {
+
+class AdminArticlesController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index($lang, $type = 'hotel')//$lang, $type)
+	public function index($type = "hotel")
 	{
-		$currentLang = Lang::where('lang',"=", $lang)->first();
-		//dd($currentLang);
-		if (!$currentLang){
-			abort('404');//страница 404 в файлі .ENV ставим false и робим шаблон 404 стор
-		}
-		 App::setLocale($lang);
-
-		//dd ($currentLang->id);
-    App::setLocale($lang);
-        $categories = Category::where('link','=', $type)
-		->first();
-		$articles = $categories->articles;
-		return view('frontend.'.$type, ['articles' => $articles,'categories'=>$categories]);
+		App::setLocale('ua');
+		$admin_categories = Category::where("link","=","$type")->first();
+		$admin_articles = $admin_categories->articles;
+		return view('backend.articles.list', ['admin_categories'=>$admin_categories,'admin_articles'=>$admin_articles,'type'=>$type]);
 	}
 
 	/**
@@ -65,7 +57,7 @@ class ArticleController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		return view('backend.articles.item');
 	}
 
 	/**

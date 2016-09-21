@@ -1,0 +1,28 @@
+.admin-header{
+    border:2px solid grey;
+    text-align: center;
+    font-size:36px;
+    min-height: 100px;
+    padding-top: 30px;
+    background-color: #f8f8f8;
+}
+.categoty-admin{
+    float:left;
+    min-width: 250px;
+    border:2px solid grey;
+    font-size:36px;
+    min-height: 480px;
+    padding:15px;
+}
+.admin-content{
+    margin-left: 320px;
+    font-size:30px;
+    min-height: 480px;
+    text-align:center;
+}
+.admin-items{
+    font-size: 24px;
+}
+table.list{
+    width:85%;
+}

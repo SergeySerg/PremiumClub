@@ -19,6 +19,13 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-
+Route::group(['prefix'=>'admin30x5'], function()
+{
+	Route::get('/articles/{type}','BackEnd\AdminArticlesController@index');
+	Route::get('/articles/{type}/{id}','BackEnd\AdminArticlesController@show');
+});
+//Route::get('/admin30x5/{type?}','WelcomeController@index');
 Route::get('/{lang}/{type?}', 'Frontend\ArticleController@index');
-//Route::get('/{lang}', 'Frontend\ArticleController@index');
+
+
+

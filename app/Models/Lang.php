@@ -4,6 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lang extends Translate {
 
-	
+
 
 }
