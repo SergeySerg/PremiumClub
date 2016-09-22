@@ -1,7 +1,6 @@
 @extends('adminpanel')
 
 @section('content')
-{{$type}}
 <h2>{{$admin_categories->name}}</h2><h5><a href="">Додати {{$admin_categories->name}}</a></h5>
 <table class="list">
     <tr>

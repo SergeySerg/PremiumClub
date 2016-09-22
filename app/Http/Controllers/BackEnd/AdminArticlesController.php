@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Lang;
+use App\Models\Translate;
 use App;
 use Illuminate\Support\Facades\Response;
 
@@ -46,7 +47,7 @@ class AdminArticlesController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		//dd("store");
 	}
 
 	/**
@@ -57,7 +58,7 @@ class AdminArticlesController extends Controller {
 	 */
 	public function show($id)
 	{
-		return view('backend.articles.item');
+		//
 	}
 
 	/**
@@ -66,9 +67,11 @@ class AdminArticlesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($type, $id)
 	{
-		//
+		$langs = Lang::all();
+		$admin_article = Article::where("id","=","$id")->first();
+		return view('backend.articles.edit',['admin_article'=>$admin_article,'langs'=>$langs]);
 	}
 
 	/**
@@ -77,9 +80,20 @@ class AdminArticlesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request, $type, $id)
 	{
-		//
+		$article = Article::where('id','=',$id)->first();
+		$all = $request->all();
+
+		$langs = Lang::all();
+
+		$all['title'] = $all['title_ua'].'|'.$all['title_ru'].'|'.$all['title_en'];
+		$all['description'] = $all['description_ua'].'|'.$all['description_ru'].'|'.$all['description_en'];
+		$all['meta_title'] = $all['meta_title_ua'].'|'.$all['meta_title_ru'].'|'.$all['meta_title_en'];
+		$all['meta_description'] = $all['meta_description_ua'].'|'.$all['meta_description_ru'].'|'.$all['meta_description_en'];
+		$all['meta_keywords'] = $all['meta_keywords_ua'].'|'.$all['meta_keywords_ru'].'|'.$all['meta_keywords_en'];
+		$article->update($all);
+		return back()->with('message', 'Статья изменена');
 	}
 
 	/**

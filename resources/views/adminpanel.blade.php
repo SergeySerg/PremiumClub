@@ -7,6 +7,8 @@
     <title>Laravel</title>
 
     <link href="{{ asset('/css/backend.css') }}" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript" ></script>
+    <script src="{{ asset('/js/articles.js') }}"type="text/javascript"></script>
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
