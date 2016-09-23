@@ -82,20 +82,34 @@ class AdminArticlesController extends Controller {
 	 */
 	public function update(Request $request, $type, $id)
 	{
-		$article = Article::where('id','=',$id)->first();
+		$article = Article::where('id', '=', $id)->first();
 		$all = $request->all();
-
 		$langs = Lang::all();
-
-		$all['title'] = $all['title_ua'].'|'.$all['title_ru'].'|'.$all['title_en'];
-		$all['description'] = $all['description_ua'].'|'.$all['description_ru'].'|'.$all['description_en'];
-		$all['meta_title'] = $all['meta_title_ua'].'|'.$all['meta_title_ru'].'|'.$all['meta_title_en'];
-		$all['meta_description'] = $all['meta_description_ua'].'|'.$all['meta_description_ru'].'|'.$all['meta_description_en'];
-		$all['meta_keywords'] = $all['meta_keywords_ua'].'|'.$all['meta_keywords_ru'].'|'.$all['meta_keywords_en'];
+		$all['title'] = '';
+		$all['description'] = '';
+		$all['meta_title'] = '';
+		$all['meta_description'] = '';
+		$all['meta_keywords'] ='';
+			foreach($langs as $lang){
+				$all['title'] .= $all["title_{$lang['lang']}"].'|';
+				$all['description'] .= $all["description_{$lang['lang']}"].'|';
+				$all['meta_title'] .= $all["meta_title_{$lang['lang']}"].'|';
+				$all['meta_description'] .= $all["meta_description_{$lang['lang']}"].'|';
+				$all['meta_keywords'] .= $all["meta_keywords_{$lang['lang']}"].'|';
+			}
+				foreach($langs as $lang) {
+					unset($all["title_{$lang['lang']}"]);
+					unset($all["description_{$lang['lang']}"]);
+					unset($all["meta_title_{$lang['lang']}"]);
+					unset($all["meta_description_{$lang['lang']}"]);
+					unset($all["meta_keywords_{$lang['lang']}"]);
+				}
 		$article->update($all);
 		return back()->with('message', 'Статья изменена');
 	}
-
+private function myValue($type){
+//
+}
 	/**
 	 * Remove the specified resource from storage.
 	 *

@@ -34,9 +34,14 @@
                 <input type="text" name="meta_keywords_{{$lang->lang}}" value="{{ $admin_article->getTranslate('meta_keywords',$lang->lang) }}"/>
             </div><br>
             @endforeach
-            <div class="list-items"> Активувати
-                <input type="checkbox" name="active" @if ($admin_article->active)checked="checked" @endif>
+            <div class="list-items">Активувати?
+                <input name='active' type='hidden' value='0'>
+                <input name='active'type='checkbox' value=1 @if ($admin_article->active) checked="checked" @endif  />
+
             </div><br>
+
+
+
             <input type="hidden" name="_method" value="put"/>
             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
             <input type="submit" value="Сохранить">
