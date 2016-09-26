@@ -1,7 +1,7 @@
 @extends('adminpanel')
 
 @section('content')
-<h2>{{$admin_categories->name}}</h2><h5><a href="">Додати {{$admin_categories->name}}</a></h5>
+<h2>{{$admin_categories->name}}</h2><h5><a href="/admin30x5/articles/{{$type}}/create">Додати {{$admin_categories->name}}</a></h5>
 <table class="list">
     <tr>
         <th>ID</th>
@@ -18,8 +18,10 @@
         <td>{{ $admin_article->created_at }} </td>
         <td>{{ $admin_article->updated_at }}</td>
         <td><a href = "/admin30x5/articles/{{$type}}/{{$admin_article->id}}">Редагувати</a></td>
-        <td>Видалити</td>
+        <td><a href='/admin30x5/articles/{{$type}}/{{$admin_article->id}}' data-id='{admin_article->id}' class='article-delete'>Удалить</a></td>
     </tr>
     @endforeach
 </table>
+<div id="token" style="display: none">{{csrf_token()}}</div>
+
 @stop

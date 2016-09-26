@@ -27,14 +27,17 @@ class ArticleController extends Controller {
 		if (!$currentLang){
 			abort('404');//страница 404 в файлі .ENV ставим false и робим шаблон 404 стор
 		}
-		 App::setLocale($lang);
+		App::setLocale($lang);
 
 		//dd ($currentLang->id);
-    App::setLocale($lang);
+    	App::setLocale($lang);
         $categories = Category::where('link','=', $type)
-		->first();
+			->first();
 		$articles = $categories->articles;
-		return view('frontend.'.$type, ['articles' => $articles,'categories'=>$categories]);
+		return view('frontend.'.$type, [
+			'articles' => $articles,
+			'categories' => $categories
+		]);
 	}
 
 	/**
