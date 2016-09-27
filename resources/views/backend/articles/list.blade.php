@@ -1,7 +1,11 @@
 @extends('adminpanel')
 
 @section('content')
-<h2>{{$admin_categories->name}}</h2><h5><a href="/admin30x5/articles/{{$type}}/create">Додати {{$admin_categories->name}}</a></h5>
+<h2>{{$admin_categories->name}}</h2>
+<h5><a href="/admin30x5/articles/{{$type}}/create">Додати {{$admin_categories->name}}</a></h5>
+@if(Session::has('message'))
+{{Session::get('message')}}
+@endif
 <table class="list">
     <tr>
         <th>ID</th>

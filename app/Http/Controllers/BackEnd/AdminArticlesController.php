@@ -58,10 +58,16 @@ class AdminArticlesController extends Controller {
 	 */
 	public function store(Request $request, $type)
 	{
-		$cat = Category::where('link','=',$type)->first();
-		dd($cat);
-		Category::create($request->all());
-		return back()->with('message','Категория добавлена');
+		$all = $request->all();
+		// Get current category ID
+		$category = Category::where('link','=',$type)->first();
+		$all['category_id'] = $category->id;
+		$all = $this->prepareArticleData($all);
+		Article::create($all);
+		return back()->with('message', 'Успішно змінено');
+
+
+
 	}
 
 	/**
@@ -104,6 +110,13 @@ class AdminArticlesController extends Controller {
 	{
 		$article = Article::where('id', '=', $id)->first();
 		$all = $request->all();
+		$all = $this->prepareArticleData($all);
+		$article->update($all);
+		$article->save();
+		return back()->with('message', 'Успішно змінено');
+	}
+	//Функция формирования массива типа (ua|ru|en)
+	private function prepareArticleData($all){
 		$langs = Lang::all();
 		$all['title'] = '';
 		$all['description'] = '';
@@ -124,14 +137,8 @@ class AdminArticlesController extends Controller {
 			unset($all["meta_description_{$lang['lang']}"]);
 			unset($all["meta_keywords_{$lang['lang']}"]);
 		}
-		//dd($article);
-		$article->update($all);
-		$article->save();
-		return back()->with('message', 'Успішно змінено');
-	}
 
-	private function myValue($type){
-	//
+		return $all;
 	}
 	/**
 	 * Remove the specified resource from storage.

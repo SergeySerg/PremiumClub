@@ -19,19 +19,13 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-Route::group(['prefix'=>'admin30x5'], function()
-{
-
-
-	Route::get('/articles/{type}','BackEnd\AdminArticlesController@index');
-	Route::get('/articles/{type}/create','BackEnd\AdminArticlesController@create');
-	Route::post('/articles/{type}/create','BackEnd\AdminArticlesController@store');
-	Route::get('/articles/{type}/{id}','BackEnd\AdminArticlesController@edit');
-	Route::put('/articles/{type}/{id}','BackEnd\AdminArticlesController@update');
-	Route::delete('/articles/{type}/{id}','BackEnd\AdminArticlesController@destroy');
-
-
-
+Route::group(['prefix'=>'admin30x5'], function(){
+	Route::get('/articles/{type}','BackEnd\AdminArticlesController@index');//Вывод списка элементов
+	Route::get('/articles/{type}/create','BackEnd\AdminArticlesController@create');//Вывод формы создания элемента
+	Route::post('/articles/{type}/create','BackEnd\AdminArticlesController@store');//Сохранение элемента
+	Route::get('/articles/{type}/{id}','BackEnd\AdminArticlesController@edit');//Вывод формы редакторирование элемента
+	Route::put('/articles/{type}/{id}','BackEnd\AdminArticlesController@update');//Сохранение элемента после редактирования
+	Route::delete('/articles/{type}/{id}','BackEnd\AdminArticlesController@destroy');//Удаление элемента
 });
 //Route::get('/admin30x5/{type?}','WelcomeController@index');
 Route::get('/{lang}/{type?}', 'Frontend\ArticleController@index');

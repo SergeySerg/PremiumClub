@@ -4,7 +4,7 @@
 
     <h2>Редагування</h2>
     @if(Session::has('message'))
-    {{Session::get('message')}}
+    <h1>{{Session::get('message')}}</h1>
     @endif
     <div class="edit">
             <form method="POST" action="">
@@ -43,8 +43,8 @@
                 </div><br>
                 <input type="hidden" name="_method" value='{{$action_method}}'/>
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                <input type="submit" value="Сохранить">
+                <input type="submit" class='article-save' value="Сохранить">
             </form>
     </div>
-
+<div id="token" style="display: none">{{csrf_token()}}</div>
 @stop
