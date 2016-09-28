@@ -6,13 +6,14 @@ use App\Http\Controllers\BackEnd;
 //use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
-
+use Illuminate\Support\Facades\URL;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Lang;
 use App\Models\Translate;
 use App;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\MessageBag;
 
 
 class AdminArticlesController extends Controller {
@@ -58,16 +59,25 @@ class AdminArticlesController extends Controller {
 	 */
 	public function store(Request $request, $type)
 	{
+		$langs = Lang::all();
+		foreach($langs as $lang){
+			$this->validate($request, [
+				'title_'.$lang['lang'] => 'required|max:255',
+				'description_'.$lang['lang'] => 'required',
+			]);
+		}
 		$all = $request->all();
 		// Get current category ID
 		$category = Category::where('link','=',$type)->first();
 		$all['category_id'] = $category->id;
 		$all = $this->prepareArticleData($all);
 		Article::create($all);
-		return back()->with('message', 'Успішно змінено');
-
-
-
+		return response()->json([
+			"status" => 'success',
+			"message" => 'Успішно збережено',
+			"redirect" => URL::to('/admin30x5/articles/'.$type)
+		]);
+		//return back()->with('message', 'Успішно змінено');
 	}
 
 	/**
@@ -108,12 +118,23 @@ class AdminArticlesController extends Controller {
 	//Action - сохранения после редактирования элемента сущности
 	public function update(Request $request, $type, $id)
 	{
+		$langs = Lang::all();
+		foreach($langs as $lang){
+			$this->validate($request, [
+				'title_'.$lang['lang'] => 'required|max:255',
+				'description_'.$lang['lang'] => 'required',
+			]);
+		}
 		$article = Article::where('id', '=', $id)->first();
 		$all = $request->all();
 		$all = $this->prepareArticleData($all);
 		$article->update($all);
 		$article->save();
-		return back()->with('message', 'Успішно змінено');
+		return response()->json([
+			"status" => 'success',
+			"message" => 'Успішно збережено',
+			"redirect" => URL::to('/admin30x5/articles/'.$type)
+		]);
 	}
 	//Функция формирования массива типа (ua|ru|en)
 	private function prepareArticleData($all){

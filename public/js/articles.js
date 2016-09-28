@@ -5,7 +5,7 @@ $(function(){
             var $thisEl = $(this);
             $.ajax({
                 url: $thisEl.attr('href'),
-                type: "POST",
+                method: "POST",
                 data: {
                     '_method': 'Delete',
                     '_token' : $('#token').text()
@@ -22,6 +22,45 @@ $(function(){
         event.preventDefault();
 
     });
+    $('.article-save').on('click', function(event){
+        //alert('tut');
+        var data = $('form#article-form').serialize();
+       // var $thisEl = $(this);
+        $.ajax({
+            url: '',
+            method: "POST",
+            data: data,
+            success: function(data){
+                console.info('Server response: ', data);
+                if(data.status == 'success'){
+                    alert(data.message);
+                }else{
+                    alert('Помилка: ' + data.message)
+                }
 
+                if(data.redirect){
+                    document.location = data.redirect;
+                }
+                if(data.status == 'fail'){
+                    alert(data.message);
+                }
+            },
+            error: function(data, type, details){
+                console.info('Server error: ', arguments);
 
+                var message = 'Помилка збереження:\n';
+                if(data.responseJSON){
+                    for(var key in data.responseJSON){
+                        message += data.responseJSON[key] + '\n';
+                    }
+                }else{
+                    message += details;
+                }
+
+                alert(message);
+            }
+        });
+        event.preventDefault();
+
+    });
 });

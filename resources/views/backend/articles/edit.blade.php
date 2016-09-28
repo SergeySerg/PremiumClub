@@ -7,7 +7,7 @@
     <h1>{{Session::get('message')}}</h1>
     @endif
     <div class="edit">
-            <form method="POST" action="">
+            <form id="article-form" method="POST" action="">
                 <div class="list-items"> Ціна
                     <input type="number" name="price" @if(isset($admin_article)) value='{{$admin_article->price}}'@endif/>
                 </div><br>
@@ -43,8 +43,15 @@
                 </div><br>
                 <input type="hidden" name="_method" value='{{$action_method}}'/>
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                <input type="submit" class='article-save' value="Сохранить">
+                <input type="button" class='article-save' value="Сохранить">
             </form>
+        @if (count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        @endif
     </div>
 <div id="token" style="display: none">{{csrf_token()}}</div>
 @stop

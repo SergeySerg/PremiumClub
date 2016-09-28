@@ -6,6 +6,7 @@
 @if(Session::has('message'))
 {{Session::get('message')}}
 @endif
+
 <table class="list">
     <tr>
         <th>ID</th>
