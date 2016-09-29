@@ -34,7 +34,7 @@ class AuthController extends Controller {
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
-	//Переопределение метода для возможности регистрации одного пользователя
+	//РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РјРµС‚РѕРґР° РґР»СЏ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё СЂРµРіРёСЃС‚СЂР°С†РёРё РѕРґРЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
     public function getRegister(){
 		return redirect('auth/login');
 	}
