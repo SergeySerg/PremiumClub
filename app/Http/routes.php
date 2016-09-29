@@ -19,7 +19,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-Route::group(['prefix'=>'admin30x5'], function(){
+Route::group(['prefix'=>'admin30x5','middleware' => 'auth'], function(){
 	Route::get('/articles/{type}','BackEnd\AdminArticlesController@index');//Вывод списка элементов
 	Route::get('/articles/{type}/create','BackEnd\AdminArticlesController@create');//Вывод формы создания элемента
 	Route::post('/articles/{type}/create','BackEnd\AdminArticlesController@store');//Сохранение элемента
