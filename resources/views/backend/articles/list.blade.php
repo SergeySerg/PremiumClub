@@ -90,7 +90,7 @@
                             <td class="hidden-480">{{ $admin_article->updated_at }}</td>
                             <td class="hidden-phone">{{ $admin_article->price }}</td>
 
-                            <td class="hidden-480">
+                            <td class="hidden-480"><--Активно чи неактивно-->
                                 @if($admin_article->active)
                                     <span class="label label-success">Активно</span>
                                 @else
