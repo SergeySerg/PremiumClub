@@ -104,6 +104,7 @@ class AdminArticlesController extends Controller {
 		$admin_article = Article::where("id","=","$id")->first();
 		return view('backend.articles.edit',[
 			'admin_article'=>$admin_article,
+			'type'=>$type,
 			'langs'=>$langs,
 			'action_method' => 'put'
 		]);

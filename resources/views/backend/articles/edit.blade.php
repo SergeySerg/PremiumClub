@@ -1,11 +1,33 @@
 @extends('adminpanel')
 
+@section('breadcrumbs')
+    <li>
+        <i class="icon-home home-icon"></i>
+        <a href="#">Головна</a>
+        <span class="divider">
+            <i class="icon-angle-right arrow-icon"></i>
+        </span>
+    </li>
+    @if(isset($type))
+    <li>
+        <a href="#">{{$type}}</a>
+
+        <span class="divider">
+            <i class="icon-angle-right arrow-icon"></i>
+        </span>
+    </li>
+    @endif
+
+    @if(isset($admin_article))
+        <li class="active">{{$admin_article->id}}</li>
+    @else
+        <li class="active">Додати нову</li>
+    @endif
+@stop
+
 @section('content')
 
     <h2>Редагування</h2>
-    @if(Session::has('message'))
-    <h1>{{Session::get('message')}}</h1>
-    @endif
     <div class="edit">
             <form id="article-form" method="POST" action="">
                 <div class="list-items"> Ціна
@@ -45,13 +67,6 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <input type="button" class='article-save' value="Сохранить">
             </form>
-        @if (count($errors) > 0)
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-        @endif
     </div>
 <div id="token" style="display: none">{{csrf_token()}}</div>
 @stop
