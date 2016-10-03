@@ -33,3 +33,15 @@ table.list{
     width:50%;
     height: 100px;
 }
+button.btn.btn-warning{
+    float: right;
+    max-height: 31px;
+    padding-top: 0px;
+    margin-top: 3px;
+    margin-bottom: 2px;
+    margin-right: 3px;
+    border: 0px solid;
+}
+div.datapicker.datapicker-dropdown.dropdown-menu{
+    z-index: 12;
+}
