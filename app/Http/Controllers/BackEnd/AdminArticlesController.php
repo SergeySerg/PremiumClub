@@ -14,6 +14,7 @@ use App\Models\Translate;
 use App;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\MessageBag;
+use Storage;
 
 
 class AdminArticlesController extends Controller {
@@ -102,6 +103,13 @@ class AdminArticlesController extends Controller {
 	//Action - редактирование элемента сущности
 	public function edit($type, $id)
 	{
+		$path = public_path().'/upload/articles/' . $id;
+
+		//$directories = Storage::directories('/public/upload/articles/');
+		//dd($directories);
+		//Создание папки соответсвующие id
+		 Storage::makeDirectory('upload/articles/' . $id, '0777', true, true);
+
 		$langs = Lang::all();
 		$admin_article = Article::where("id","=","$id")->first();
 		$admin_category = Category::where("link","=","$type")->first();

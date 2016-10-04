@@ -152,6 +152,29 @@
                                     </div>
                                 @endforeach
 
+                                @if(isset($admin_article))
+                                <h4 class="header green clearfix">
+                                    Gallery
+                                </h4>
+                                <iframe
+                                    frameborder="0"
+                                    src="/js/backend/kcfinder/browse.php?type=images&langCode=ru&homedir=/{{$admin_article->id}}/&config=articles"
+                                    style="width: 100%; height: 400px"
+                                    title="Визуальный файловый браузерр"
+                                    tabindex="0"
+                                    allowtransparency="true"></iframe>
+                                @else
+                                <div class="alert alert-warning">
+                                    <button type="button" class="close" data-dismiss="alert">
+                                        <i class="icon-remove"></i>
+                                    </button>
+                                    <strong>Увага!</strong>
+
+                                    Форма завантаження файлів до галереї буде доступною після створення даного запису (при наступному редагуванні)
+                                    <br>
+                                </div>
+                                @endif
+
                             </div>
 
                     </div>
