@@ -15,8 +15,8 @@
 @stop
 
 @section('content')
-<!--<h2>{{$admin_categories->name}}</h2>
-<h5><a href="/admin30x5/articles/{{$type}}/create">Додати {{$admin_categories->name}}</a></h5>
+<!--<h2>{{$admin_category->name}}</h2>
+<h5><a href="/admin30x5/articles/{{$type}}/create">Додати {{$admin_category->name}}</a></h5>
 
 <table class="list">
     <tr>
@@ -43,14 +43,14 @@
         <div class="span12">
             <!--PAGE CONTENT BEGINS-->
             <div class="row-fluid">
-                <h3 class="header smaller lighter blue">{{$admin_categories->name}}</h3>
+                <h3 class="header smaller lighter blue">{{$admin_category->name}}</h3>
 
                 <div class="table-header">
-                    Список в категорії {{$admin_categories->name}}
+                    Список в категорії {{$admin_category->name}}
                     <a href="/admin30x5/articles/{{$type}}/create">
                         <button class="btn btn-warning">
-                            <i class="icon-ok bigger-150"></i>
-                                Додати елемент в категорію {{$admin_categories->name}}
+                            <i class="icon-plus"></i>
+                                Додати елемент в категорію {{$admin_category->name}}
                         </button>
                     </a>
                 </div>

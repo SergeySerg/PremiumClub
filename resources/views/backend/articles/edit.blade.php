@@ -43,6 +43,7 @@
             <!--PAGE CONTENT BEGINS-->
 
             <form class="form-horizontal" id="article-form" method="POST" action="" />
+            @if($admin_category->hasField('price'))
                 <div class="control-group">
                     <label class="control-label" for="form-field-1">Ціна</label>
 
@@ -50,6 +51,8 @@
                         <input type="number" id="form-field-1" name="price" @if(isset($admin_article)) value='{{$admin_article->price}}'@endif  />
                     </div>
                 </div>
+            @endif
+            @if($admin_category->hasField('quantity'))
                 <div class="control-group">
                     <label class="control-label" for="form-field-2">Кількість</label>
 
@@ -57,6 +60,7 @@
                         <input type="number" id="form-field-2" name="quantity" @if(isset($admin_article)) value='{{$admin_article->quantity}}' @endif  />
                     </div>
                 </div>
+            @endif
                 <div class="control-group">
                     <label class="control-label">Статус</label>
                     <div class="controls">
@@ -131,7 +135,7 @@
                                                         <label class="control-label" for="form-field-tags">META Keywords</label>
 
                                                         <div class="controls">
-                                                            <input type="text" name="meta_keywords_{{$lang->lang}}" id="form-field-tags" value="@if(isset($admin_article)){{ $admin_article->getTranslate('meta_keywords',$lang->lang)}} @endif" placeholder="Enter tags ..." />
+                                                            <input type="text" name="meta_keywords_{{$lang->lang}}" class="form-field-tags" value="@if(isset($admin_article)){{ $admin_article->getTranslate('meta_keywords',$lang->lang)}} @endif" placeholder="Введіть ключові слова ..." />
                                                         </div>
                                                     </div>
 
@@ -159,12 +163,12 @@
                 <input type="hidden" name="_method" value='{{$action_method}}'/>
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <div class="form-actions">
-                    <!--<button class="btn btn-info article-save" type="button">
+                    <button class="btn btn-info article-save" type="button">
                         <i class="icon-ok bigger-110"></i>
                         Сохранить
-                    </button>-->
+                    </button>
 
-                </div><input type="button" class='article-save' value="Сохранить">
+                </div><!--<input type="button" class='article-save' value="Сохранить">-->
             </form>
             <!--PAGE CONTENT ENDS-->
         </div><!--/.span-->

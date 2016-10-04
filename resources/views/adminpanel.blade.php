@@ -143,6 +143,14 @@
         </div><!--#sidebar-shortcuts-->
 
         <ul class="nav nav-list">
+
+            <li @if(Request::is('admin30x5/articles/hotels'))class="active"@endif>
+            <a href="/admin30x5/articles/hotel">
+                <i class="icon-wrench"></i>
+                <span class="menu-text"> Готель інфо </span>
+            </a>
+            </li>
+
             <li @if(Request::is('admin30x5/articles/rooms'))class="active"@endif>
                 <a href="/admin30x5/articles/rooms">
                     <i class="icon-home"></i>
@@ -174,19 +182,6 @@
                 <a href="typography.html">
                     <i class="icon-wrench"></i>
                     <span class="menu-text"> Контакти </span>
-                </a>
-            </li>
-
-            <li>
-                <a href="calendar.html">
-                    <i class="icon-calendar"></i>
-
-							<span class="menu-text">
-								Calendar
-								<span class="badge badge-transparent tooltip-error" title="2&nbsp;Important&nbsp;Events">
-									<i class="icon-warning-sign red bigger-130"></i>
-								</span>
-							</span>
                 </a>
             </li>
 
@@ -750,7 +745,7 @@
 
 
         //we could just set the data-provide="tag" of the element inside HTML, but IE8 fails!
-        var tag_input = $('#form-field-tags');
+        var tag_input = $('.form-field-tags');
         if(! ( /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase())) )
             tag_input.tag({placeholder:tag_input.attr('placeholder')});
         else {

@@ -27,10 +27,11 @@ class AdminArticlesController extends Controller {
 	public function index($type = "hotel")
 	{
 		App::setLocale('ua');
-		$admin_categories = Category::where("link","=","$type")->first();
-		$admin_articles = $admin_categories->articles;
+		$admin_category = Category::where("link","=","$type")->first();
+		$admin_articles = $admin_category->articles;
+
 		return view('backend.articles.list', [
-			'admin_categories'=>$admin_categories,
+			'admin_category'=>$admin_category,
 			'admin_articles'=>$admin_articles,
 			'type'=>$type
 		]);
@@ -63,7 +64,7 @@ class AdminArticlesController extends Controller {
 		foreach($langs as $lang){
 			$this->validate($request, [
 				'title_'.$lang['lang'] => 'required|max:255',
-				'description_'.$lang['lang'] => 'required',
+				//'description_'.$lang['lang'] => 'required',
 			]);
 		}
 		$all = $request->all();
@@ -102,8 +103,10 @@ class AdminArticlesController extends Controller {
 	{
 		$langs = Lang::all();
 		$admin_article = Article::where("id","=","$id")->first();
+		$admin_category = Category::where("link","=","$type")->first();
 		return view('backend.articles.edit',[
 			'admin_article'=>$admin_article,
+			'admin_category' => $admin_category,
 			'type'=>$type,
 			'langs'=>$langs,
 			'action_method' => 'put'
@@ -145,6 +148,10 @@ class AdminArticlesController extends Controller {
 		$all['meta_title'] = '';
 		$all['meta_description'] = '';
 		$all['meta_keywords'] ='';
+		//Удаление пробелов в начале и в конце каждого поля
+		foreach($all as $key => $value){
+			$all[$key] = trim($value);
+		}
 		//Формирование массива типа (ua|ru|en)
 		foreach($langs as $lang){
 			$all['title'] .= $all["title_{$lang['lang']}"].'|';
