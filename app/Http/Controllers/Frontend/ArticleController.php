@@ -27,16 +27,52 @@ class ArticleController extends Controller {
 		if (!$currentLang){
 			abort('404');//страница 404 в файлі .ENV ставим false и робим шаблон 404 стор
 		}
+
 		App::setLocale($lang);
 
-		//dd ($currentLang->id);
-    	App::setLocale($lang);
-        $categories = Category::where('link','=', $type)
+		$category_hotel = Category::where('link','=', 'hotel')
 			->first();
-		$articles = $categories->articles;
+		$hotel = $category_hotel->articles->first();
+
+		$rooms = null;
+		$services = null;
+		$events = null;
+		$contacts = null;
+
+		switch($type){
+            case 'hotel':
+                $services = Category::where('link','=', 'services')
+                    ->first()
+                    ->articles;
+                break;
+			case 'rooms':
+				$rooms = Category::where('link','=', 'rooms')
+					->first()
+                    ->articles;
+				break;
+			case 'services':
+                $services = Category::where('link','=', 'services')
+                    ->first()
+                    ->articles;
+				break;
+			case 'events':
+                $events = Category::where('link','=', 'events')
+                    ->first()
+                    ->articles;
+				break;
+			case 'contacts':
+                $contacts = Category::where('link','=', 'contacts')
+                    ->first()
+                    ->articles;
+				break;
+		}
+
 		return view('frontend.'.$type, [
-			'articles' => $articles,
-			'categories' => $categories
+			'hotel' => $hotel,
+			'services' => $services,
+			'events' => $events,
+			'rooms' => $rooms,
+			'contacts' => $contacts,
 		]);
 	}
 
