@@ -6,6 +6,10 @@
 @foreach($articles as $article)
 
 <article>
+
+    
+
+
     <h1>{{ $article->name }}</h1>
     <h2>{{ $article->getTranslate('title') }}</h2>
     <p>

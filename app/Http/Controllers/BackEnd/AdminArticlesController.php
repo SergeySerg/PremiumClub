@@ -74,6 +74,7 @@ class AdminArticlesController extends Controller {
 		$category = Category::where('link','=',$type)->first();
 		$all['category_id'] = $category->id;
 		$all = $this->prepareArticleData($all);
+
 		Article::create($all);
 		return response()->json([
 			"status" => 'success',
@@ -143,6 +144,10 @@ class AdminArticlesController extends Controller {
 		}
 		$article = Article::where('id', '=', $id)->first();
 		$all = $request->all();
+		//Вытягивание картиноr с папки и представление в формате jsone
+		$files = Storage::Files('upload/articles/'.$id.'/images/');
+		$all['imgs'] = json_encode($files);
+		//Очистка масссива от title_ua,ru,en и т д
 		$all = $this->prepareArticleData($all);
 		$article->update($all);
 		$article->save();
