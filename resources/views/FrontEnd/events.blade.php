@@ -6,7 +6,7 @@
 
         <div class="content-title">
 
-            <span class="category-name">События</span>
+            <span class="category-name">{{ trans('base.eventscontenttitle') }}</span>
 
             <div class="content-title-line"><div class="flower-right"></div></div>
 
@@ -32,9 +32,12 @@
 
                 <div id="events-photo-id-{{$event -> id}}" class="webstudio-gallery" style="display:none;">
 
-                    <img alt="Предусматриваем текст слайда c заголовком"
-                         src="img/slide-2.jpg"
-                         data-image="img/slide-2.jpg" >
+                    @foreach($event -> getImages() as $imgSrc)
+
+                        <img alt="Image 2 Title" src="/{{ $imgSrc }}"
+                             data-image="/{{ $imgSrc }}">
+
+                    @endforeach
 
                 </div>
 

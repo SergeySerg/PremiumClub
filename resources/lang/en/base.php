@@ -42,6 +42,9 @@ return [
 	'servicescontenttitle' => 'Services',
 	'visit' => 'Visit',
 /* End Services Page */
+/* Events Page */
+	'eventscontenttitle' => 'Events',
+/* End Events Page */
 /* Footer*/
 	'hotelphoto' => 'Hotels photo ',
 	'callback' => 'Write us',

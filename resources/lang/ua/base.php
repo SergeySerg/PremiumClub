@@ -43,6 +43,9 @@ return [
 	'servicescontenttitle' => 'Послуги',
 	'visit' => 'Відвідування',
 	/* End Services Page */
+	/* Events Page */
+	'eventscontenttitle' => 'Події',
+	/* End Events Page */
 	/* Footer*/
 	'hotelphoto' => 'Фото готелю',
 	'callback' => 'Напишіть нам',
