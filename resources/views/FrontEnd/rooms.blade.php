@@ -6,7 +6,7 @@
 
         <div class="content-title">
 
-            <span class="category-name">Номера</span>
+            <span class="category-name">{{ trans('base.roomscontenttitle') }}</span>
 
             <div class="content-title-line"><div class="flower-right"></div></div>
 
@@ -36,26 +36,11 @@
 
                         <h1>{{ $room -> getTranslate('title') }}</h1>
 
-                        <span>Номеров:<span class="qnty">{{ $room -> quantity }}</span></span>
+                        <span>{{ trans('base.quantity') }}:<span class="qnty">{{ $room -> quantity }}</span></span>
 
                         <div class="describe-room">
 
-                            Просторные номера ”Супериор” позволят гостям ощутить исключительный комфорт в элегантной атмосфере роскоши. В каждом номере имеются большие удобные кровати, современная техника, отделанная мрамором ванная комната с отдельным душем и отапливаемым полом.
-
-                            <table>
-                                <tr>
-                                    <td class="option-name">Кровать</td>
-                                    <td>Кинг / Две отдельные кровати</td>
-                                </tr>
-                                <tr>
-                                    <td class="option-name">Вместительность</td>
-                                    <td>2 чел</td>
-                                </tr>
-                                <tr>
-                                    <td class="option-name">Размер</td>
-                                    <td>42-48 м2</td>
-                                </tr>
-                            </table>
+                            {{ $room -> getTranslate('description') }}
 
                         </div>
 
@@ -63,9 +48,9 @@
 
                     <div class="price-block">
 
-                        <span>Стоимость:<span class="price">{{ $room -> price }} грн</span></span>
+                        <span>{{ trans('base.cost') }}:<span class="price">{{ $room -> price }} {{ trans('base.currency') }}</span></span>
 
-                        <a class="booking-btn-in-rooms" href="#">Бронировать</a>
+                        <a class="booking-btn-in-rooms" href="#">{{ trans('base.booking') }}</a>
 
                     </div>
 
@@ -73,7 +58,7 @@
 
                 <div class="r-tab conveniences-line">
 
-                    <span>Удобства</span>
+                    <span>{{ trans('base.conveniences') }}</span>
 
                     <div class="arrow-conveniences"></div>
 

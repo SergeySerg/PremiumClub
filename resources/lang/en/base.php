@@ -31,6 +31,13 @@ return [
 /* Hotel Page */
 	'hotelcontenttitle' => 'At us you will find',
 /* End Hotel Page */
+/* Rooms Page */
+	'roomscontenttitle' => 'Rooms',
+	'quantity' => 'Quantity',
+	'currency' => 'uah',
+    'cost' => 'Cost',
+    'conveniences' => 'Сonveniences',
+    /* End Rooms Page */
 /* Footer*/
 	'hotelphoto' => 'Hotels photo ',
 	'callback' => 'Write us',

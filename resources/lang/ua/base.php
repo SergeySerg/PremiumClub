@@ -32,6 +32,14 @@ return [
 	/* Hotel Page */
 	'hotelcontenttitle' => 'У нас ви знайдете',
 	/* End Hotel Page */
+	/* Rooms Page */
+	'roomscontenttitle' => 'Номери',
+	'quantity' => 'Кількість',
+    'currency' => 'грн',
+    'cost' => 'Вартість',
+    'conveniences' => 'Зручності',
+    /* End Rooms Page */
+
 	/* Footer*/
 	'hotelphoto' => 'Фото готелю',
 	'callback' => 'Напишіть нам',
