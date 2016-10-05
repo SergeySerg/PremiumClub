@@ -8,13 +8,13 @@ class Article extends Translate {
     public function category(){
         return $this->belongsTo('App\Models\Category');
     }
-    public function hasImgs(){
+    public function getImages(){
         if (isset($this->imgs)){
             $imgs = json_decode($this->imgs);
-            return $imgs;
+            return $imgs ?: [];
         }
         else{
-            return false;
+            return [];
         }
     }
 }

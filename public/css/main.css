@@ -178,6 +178,8 @@ h2 {
     font-size: 1.25em; }
     .top-line .phones li {
       line-height: 23px; }
+      .top-line .phones li:first-child{
+        margin-top: 13px;      }
       .top-line .phones li .phone-part {
         color: #f4bc71; }
       .top-line .phones li .phone-desc {
@@ -345,8 +347,8 @@ h2 {
     font-family: "GeorgiaBoldItalic", sans-serif;
     line-height: 49px; }
   .content-main li {
-    width: 30.2%;
-    float: left;
+    width: 30%;
+    display: inline-block;
     margin-top: 50px;
     margin-right: 4.7%; }
     .content-main li:nth-child(3n) {
@@ -376,13 +378,12 @@ h2 {
         font-family: "GeorgiaBoldItalic", sans-serif;
         line-height: 1.625em; }
         .content-main li .describe-block a .arrow-right {
+          display: inline-block;
+          margin-left: 5px;
           background-image: url(../img/sprites/sprite.png);
           background-position: -157px -75px;
           width: 7px;
-          height: 13px;
-          position: absolute;
-          bottom: 3px;
-          left: 115px; }
+          height: 13px;  }
         .content-main li .describe-block a:hover {
           text-decoration: underline; }
   .content-main .hotel-describe {
@@ -430,7 +431,7 @@ h2 {
         line-height: 1.6875em; }
         .content-rooms .rooms-block .describe-block .describe-room table {
           margin-top: 48px; }
-          .content-rooms .rooms-block .describe-block .describe-room table .option-name {
+          .content-rooms .rooms-block .describe-block .describe-room table td:first-child {
             padding-right: 60px;
             font-family: "RobotoBold", sans-serif;
             font-size: 1em;
@@ -439,13 +440,15 @@ h2 {
       float: right;
       width: 22%;
       margin-right: -6px;
-      padding-top: 14.8%; }
+      padding-top: 14.8%;
+      text-align: right; }
       .content-rooms .rooms-block .price-block span {
         font-family: "RobotoBlack", sans-serif;
         font-size: 1.25em;
         line-height: 3.1875em; }
         .content-rooms .rooms-block .price-block span .price {
           margin-left: 10px;
+          margin-right: 35px;
           color: #e6b359; }
       .content-rooms .rooms-block .price-block .booking-btn-in-rooms {
         display: block;

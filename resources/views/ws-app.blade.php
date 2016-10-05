@@ -40,7 +40,7 @@
 
 				<div class="top-line_booking"></div>
 
-				<a href="#">Бронировать номер</a>
+				<a href="#">{{ trans('base.booking') }}</a>
 
 			</div>
 
@@ -48,9 +48,7 @@
 
 				<div class="top-line_address"></div>
 
-				<div class="address">04060 <br>
-					г.Яремче ул.Телиги
-				</div>
+				<div class="address">78500, м.Яремче, вул Довбуша, 50, <br> Івано-Франківська обл.</div>
 
 			</div>
 
@@ -60,8 +58,7 @@
 
 				<ul class="phones">
 
-					<li><span class="phone-part">+38050</span> 3444896 <span class="phone-desc">( Бронирование )</span></li>
-					<li><span class="phone-part">+38066</span> 7877998 <span class="phone-desc">( Администрация )</span></li>
+					<li><span class="phone-part">+38067</span> 3433400 <span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
 
 				</ul>
 
@@ -84,12 +81,12 @@
 
 			<nav>
 
-				<a href="/hotel">{{ trans('trans.hotel') }}</a>
-				<a href="/rooms">Номера</a>
-				<a href="/services">Услуги</a>
-				<a href="/events">События</a>
-				<a href="/gallery">Галерея</a>
-				<a href="/contact">Контакти</a>
+				<a href="/{{ App::getLocale() }}/hotel">{{ trans('base.hotel') }}</a>
+				<a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a>
+				<a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a>
+				<a href="/{{ App::getLocale() }}/events">{{ trans('base.events') }}</a>
+				<a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a>
+				<a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a>
 
 			</nav>
 
@@ -117,7 +114,7 @@
 
 				<div class="photo"></div>
 
-				<h1>Фото отеля</h1>
+				<h1>{{ trans('base.hotelphoto') }}</h1>
 
 				<div id="webstudio-bottom-gallery" style="display:none;">
 
@@ -152,18 +149,18 @@
 			<div class="callback-form">
 
 				<div class="letter"></div>
-				<h1>Напишите нам</h1>
+				<h1>{{ trans('base.callback') }}</h1>
 
 				<form id="contactform">
 
-					<input id="name" name="name" placeholder="Ваше имя" required type="text">
+					<input id="name" name="name" placeholder="{{ trans('base.name') }}" required type="text">
 
-					<textarea name="comment" id="comment" placeholder="Текст сообщения"></textarea> <br>
+					<textarea name="comment" id="comment" placeholder="{{ trans('base.message') }}"></textarea> <br>
 
 
-					<input id="email" name="email" placeholder="Ваша почта" required type="email"> <br>
+					<input id="email" name="email" placeholder="{{ trans('base.email') }}" required type="email"> <br>
 
-					<input name="submit" id="submit" tabindex="5" value="Отправить" type="submit">
+					<input name="submit" id="submit" tabindex="5" value="{{ trans('base.send') }}" type="submit">
 
 				</form>
 
@@ -183,18 +180,18 @@
 				</div>
 
 				<ul>
-					<li><a href="#">Главная</a></li>
+					<li><a href="/{{ App::getLocale() }}/hotel">{{ trans('base.hotel') }}</a></li>
 				</ul>
 
 				<ul>
-					<li><a href="#">Номера</a></li>
+					<li><a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a></li>
 					<li><a href="#">Эконом</a></li>
 					<li><a href="#">Люкс</a></li>
 					<li><a href="#">Апартаменты</a></li>
 				</ul>
 
 				<ul>
-					<li><a href="#">Услуги</a></li>
+					<li><a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a></li>
 					<li><a href="#">Ресторан</a></li>
 					<li><a href="#">Сауны</a></li>
 					<li><a href="#">Для бизнеса</a></li>
@@ -202,18 +199,15 @@
 				</ul>
 
 				<ul>
-					<li><a href="#">События</a></li>
-					<li><a href="#">Фото отчеты</a></li>
-					<li><a href="#">Мероприятия</a></li>
-					<li><a href="#">Гости отеля</a></li>
+					<li><a href="/{{ App::getLocale() }}/events">{{ trans('base.events') }}</a></li>
 				</ul>
 
 				<ul>
-					<li><a href="#">Галерея</a></li>
+					<li><a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a></li>
 				</ul>
 
 				<ul>
-					<li><a href="#">Контакты</a></li>
+					<li><a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a></li>
 				</ul>
 
 			</div>
@@ -230,8 +224,7 @@
 
 				<ul class="phones">
 
-					<li><span class="phone-part">+38050</span> 3444896 <span class="phone-desc">( Бронирование )</span></li>
-					<li><span class="phone-part">+38066</span> 7877998 <span class="phone-desc">( Администрация )</span></li>
+                    <li><span class="phone-part">+38067</span> 3433400 <span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
 
 				</ul>
 
@@ -241,9 +234,7 @@
 
 				<div class="top-line_address"></div>
 
-				<div class="address">04060 <br>
-					г.Яремче ул.Телиги
-				</div>
+                <div class="address">78500, м.Яремче, вул Довбуша, 50, <br> Івано-Франківська обл.</div>
 
 			</div>
 
@@ -251,7 +242,7 @@
 
 				<div class="top-line_booking"></div>
 
-				<a href="#">Бронировать номер</a>
+				<a href="#">{{ trans('base.booking') }}</a>
 
 			</div>
 

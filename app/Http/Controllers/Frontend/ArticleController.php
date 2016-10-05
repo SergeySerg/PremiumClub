@@ -13,6 +13,8 @@ use App\Models\Lang;
 use App;
 use Illuminate\Support\Facades\Response;
 
+//use Illuminate\Contracts\View\View;
+
 class ArticleController extends Controller {
 
 	/**
@@ -32,7 +34,10 @@ class ArticleController extends Controller {
 
 		$category_hotel = Category::where('link','=', 'hotel')
 			->first();
+
 		$hotel = $category_hotel->articles->first();
+
+        view()->share('hotel', $hotel);
 
 		$langs = Lang::all();
 		$rooms = null;

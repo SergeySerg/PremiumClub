@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2>{{$categories->name}}</h2>
+<h2>{{$category->name}}</h2>
 @foreach($articles as $article)
 <article>
     <h1>{{ $article->category->name }}</h1>
