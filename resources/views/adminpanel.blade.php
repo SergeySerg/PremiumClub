@@ -5,7 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ADMINPANEL</title>
+    <title>PremiumClub | Панель керування</title>
+
+    <link rel="shortcut icon" href="{{ asset('/img/favicon/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('/img/favicon/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/favicon/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('/img/favicon/apple-touch-icon-114x114.png') }}">
 
     <!--basic styles-->
     <link href="{{ asset('/css/backend/bootstrap.min.css') }}" rel="stylesheet">
@@ -71,9 +76,11 @@
     <div class="navbar-inner">
         <div class="container-fluid">
             <a href="#" class="brand">
-                <small>
-                    <i class="icon-leaf"></i>
-                    Logo сайта
+                <img style="display: block;
+    position: absolute;
+    margin-top: -3px;" width="30px" src="{{ asset('/img/backend/logo-header.png') }}" alt="PremiumClub" />
+                <small style="margin-left: 40px;">
+                    PremiumClub
                 </small>
             </a><!--/.brand-->
 
