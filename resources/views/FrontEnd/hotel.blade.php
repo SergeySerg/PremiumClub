@@ -61,13 +61,13 @@
 
                 <li>
 
-                    <div class="img-block" style="background: url('img/service-1.jpg') no-repeat center;"></div>
+                    <div class="img-block" style="background: url('/{{ $service -> getImages()[0] }}') no-repeat center; background-size: cover"></div>
 
                     <div class="describe-block">
 
-                        <h1>{{ str_limit($service -> getTranslate('title'),20,'...') }}</h1>
+                        <h1>{{ str_limit($service -> getTranslate('title'),16,'...') }}</h1>
 
-                        <section>{{ $service -> getTranslate('description') }}</section>
+                        <section>{{ str_limit($service -> getTranslate('description'),140,'...') }}</section>
 
                         <a href="/services">{{ trans('base.more') }}<div class="arrow-right"></div></a>
 

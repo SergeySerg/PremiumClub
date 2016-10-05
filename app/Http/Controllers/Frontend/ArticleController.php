@@ -37,13 +37,20 @@ class ArticleController extends Controller {
 
 		$hotel = $category_hotel->articles->first();
 
-        view()->share('hotel', $hotel);
-
 		$langs = Lang::all();
-		$rooms = null;
-		$services = null;
+		$rooms = Category::where('link','=', 'rooms')
+			->first()
+			->articles;
+		$services = Category::where('link','=', 'services')
+			->first()
+			->articles;
 		$events = null;
 		$contacts = null;
+
+		view()->share('hotel', $hotel);
+		view()->share('room', $rooms);
+		view()->share('services', $services);
+
 
 		switch($type){
             case 'hotel':

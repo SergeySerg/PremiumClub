@@ -359,11 +359,10 @@ h2 {
       height: 205px; }
     .content-main li .describe-block {
       margin-top: 5px;
-      padding: 35px 30px 40px;
+      padding: 25px 25px 30px;
       border: 1px solid #e5af51; }
       .content-main li .describe-block h1 {
-        max-height: 29px;
-        overflow: hidden; }
+        max-height: 29px; }
       .content-main li .describe-block section {
         height: 100px;
         margin-top: 20px;
@@ -748,7 +747,8 @@ footer .top-line_sub-block {
     text-transform: uppercase; }
   .footer-mnu-block ul {
     float: left;
-    margin-right: 60px; }
+    margin-right: 50px;
+      margin-top: -20px;}
     .footer-mnu-block ul li a {
       color: #bf9258;
       line-height: 2em; }

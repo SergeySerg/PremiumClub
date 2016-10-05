@@ -118,29 +118,12 @@
 
 				<div id="webstudio-bottom-gallery" style="display:none;">
 
-					<img alt="Предусматриваем текст слайда c заголовком" src="{{ asset('/img/slide-2.jpg') }}"
-						 data-image="{{ asset('/img/slide-2.jpg') }}"
-						 data-description="С кратким описанием и кнопкой подробнее">
+					@foreach($hotel -> getImages() as $imgSrc)
 
-					<img alt="Image 1 Title" src="{{ asset('img/slide-1.jpg') }}img/slide-1.jpg"
-						 data-image="img/slide-1.jpg"
-						 data-description="Image 1 Description">
+						<img alt="Image 2 Title" src="/{{ $imgSrc }}"
+							 data-image="/{{ $imgSrc }}">
 
-					<img alt="Предусматриваем текст слайда c заголовком" src="{{ asset('/img/slide-2.jpg') }}"
-						 data-image="{{ asset('/img/slide-2.jpg') }}"
-						 data-description="С кратким описанием и кнопкой подробнее">
-
-					<img alt="Image 1 Title" src="{{ asset('img/slide-1.jpg') }}img/slide-1.jpg"
-						 data-image="img/slide-1.jpg"
-						 data-description="Image 1 Description">
-
-					<img alt="Предусматриваем текст слайда c заголовком" src="{{ asset('/img/slide-2.jpg') }}"
-						 data-image="{{ asset('/img/slide-2.jpg') }}"
-						 data-description="С кратким описанием и кнопкой подробнее">
-
-					<img alt="Image 1 Title" src="{{ asset('img/slide-1.jpg') }}img/slide-1.jpg"
-						 data-image="img/slide-1.jpg"
-						 data-description="Image 1 Description">
+					@endforeach
 
 				</div>
 
@@ -185,18 +168,25 @@
 
 				<ul>
 					<li><a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a></li>
-					<li><a href="#">Эконом</a></li>
-					<li><a href="#">Люкс</a></li>
-					<li><a href="#">Апартаменты</a></li>
+
+                    @foreach($rooms as $room)
+
+                        <li><a href="/{{ App::getLocale() }}/rooms">{{ $room -> getTranslate('title') }}</a></li>
+
+                    @endforeach
+
 				</ul>
 
 				<ul>
 					<li><a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a></li>
-					<li><a href="#">Ресторан</a></li>
-					<li><a href="#">Сауны</a></li>
-					<li><a href="#">Для бизнеса</a></li>
-					<li><a href="#">Спорт</a></li>
-				</ul>
+
+                    @foreach($services as $service)
+
+                        <li><a href="/{{ App::getLocale() }}/services">{{ $service -> getTranslate('title') }}</a></li>
+
+                    @endforeach
+
+                </ul>
 
 				<ul>
 					<li><a href="/{{ App::getLocale() }}/events">{{ trans('base.events') }}</a></li>
