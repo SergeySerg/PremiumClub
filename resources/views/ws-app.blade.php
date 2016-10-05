@@ -48,7 +48,7 @@
 
 				<div class="top-line_address"></div>
 
-				<div class="address">78500, м.Яремче, вул Довбуша, 50, <br> Івано-Франківська обл.</div>
+				<div class="address">{{ trans('base.address') }}</div>
 
 			</div>
 
@@ -234,7 +234,7 @@
 
 				<div class="top-line_address"></div>
 
-                <div class="address">78500, м.Яремче, вул Довбуша, 50, <br> Івано-Франківська обл.</div>
+                <div class="address">{{ trans('base.address') }}</div>
 
 			</div>
 
