@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', 'HotelController@index');
-
-Route::get('home', 'HomeController@index');
+Route::get('/', 'Frontend\HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -28,7 +26,7 @@ Route::group(['prefix'=>'admin30x5', 'middleware' => 'auth'], function(){
 	Route::put('/articles/{type}/{id}','Backend\AdminArticlesController@update');//Сохранение элемента после редактирования
 	Route::delete('/articles/{type}/{id}','Backend\AdminArticlesController@destroy');//Удаление элемента
 });
-//Route::get('/admin30x5/{type?}','WelcomeController@index');
+
 Route::get('/{lang}/{type?}', 'Frontend\ArticleController@index');
 
 
