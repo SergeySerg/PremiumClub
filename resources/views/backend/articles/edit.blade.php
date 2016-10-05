@@ -3,7 +3,7 @@
 @section('breadcrumbs')
     <li>
         <i class="icon-home home-icon"></i>
-        <a href="#">Головна</a>
+        <a href="/admin30x5/">Головна</a>
         <span class="divider">
             <i class="icon-angle-right arrow-icon"></i>
         </span>

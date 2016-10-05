@@ -20,6 +20,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 Route::group(['prefix'=>'admin30x5', 'middleware' => 'auth'], function(){
+	Route::get('/','Backend\AdminDashboardController@index');//Вывод списка элементов
 	Route::get('/articles/{type}','Backend\AdminArticlesController@index');//Вывод списка элементов
 	Route::get('/articles/{type}/create','Backend\AdminArticlesController@create');//Вывод формы создания элемента
 	Route::post('/articles/{type}/create','Backend\AdminArticlesController@store');//Сохранение элемента
