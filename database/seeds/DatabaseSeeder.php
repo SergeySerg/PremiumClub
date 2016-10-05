@@ -32,7 +32,7 @@ class ArticlesSeeder extends Seeder {
 	public function run()
 	{
 		//DB::table('Articles')->delete();
-
+        
 		Article::create([
 		    'category_id' => 2,
             'title' => 'Двухкімнатній|Двухкомнатный|two-room',

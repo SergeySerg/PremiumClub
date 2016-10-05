@@ -34,6 +34,7 @@ class ArticleController extends Controller {
 			->first();
 		$hotel = $category_hotel->articles->first();
 
+		$langs = Lang::all();
 		$rooms = null;
 		$services = null;
 		$events = null;
@@ -73,6 +74,7 @@ class ArticleController extends Controller {
 			'events' => $events,
 			'rooms' => $rooms,
 			'contacts' => $contacts,
+            'langs' => $langs,
 		]);
 	}
 

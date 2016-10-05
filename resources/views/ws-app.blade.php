@@ -69,12 +69,11 @@
 
 			<div class="top-line_sub-block sub-block-lang">
 
+
 				<ul class="lang clearfix">
-
-					<li><a href="#">ua</a></li>
-					<li><a href="#">ru</a></li>
-					<li><a href="#">eng</a></li>
-
+				@foreach($langs as $lang)
+					<li><a href="/{{$lang -> lang}}">{{$lang -> lang}}</a></li>
+				@endforeach
 				</ul>
 
 			</div>
@@ -85,12 +84,12 @@
 
 			<nav>
 
-				<a href="#">Главная</a>
-				<a href="#">Номера</a>
-				<a href="#">Услуги</a>
-				<a href="#">События</a>
-				<a href="#">Галерея</a>
-				<a href="#">Контакты</a>
+				<a href="/hotel">{{ trans('trans.hotel') }}</a>
+				<a href="/rooms">Номера</a>
+				<a href="/services">Услуги</a>
+				<a href="/events">События</a>
+				<a href="/gallery">Галерея</a>
+				<a href="/contact">Контакти</a>
 
 			</nav>
 
