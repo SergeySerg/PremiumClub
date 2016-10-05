@@ -12,51 +12,35 @@
 
         </div>
 
-        <div class="events-block">
+        @foreach($events as $event)
 
-            <h2>Новый год в Яремче</h2>
+            <div class="events-block">
 
-            <div class="date-wrap">
+                <h2>{{$event -> getTranslate('title')}}</h2>
 
-                <div class="calendar"></div>
+                <div class="date-wrap">
 
-                <span class="date">1 января 2016</span>
+                    <div class="calendar"></div>
 
-            </div>
+                    <span class="date">{{$event -> date }}</span>
 
-            <div class="events-description">
-                Просторные номера ”Супериор” позволят гостям ощутить исключительный комфорт в элегантной атмосфере роскоши. В каждом номере имеются большие удобные кровати, современная техника, отделанная мрамором ванная комната с отдельным душем и отапливаемым полом.
-            </div>
+                </div>
 
-            <div id="events-photo-id-1" class="webstudio-gallery" style="display:none;">
+                <div class="events-description">
+                    {{$event -> getTranslate('description')}}
+                </div>
 
-                <img alt="Предусматриваем текст слайда c заголовком" src="img/slide-2.jpg"
-                     data-image="img/slide-2.jpg"
-                     data-description="С кратким описанием и кнопкой подробнее">
+                <div id="events-photo-id-{{$event -> id}}" class="webstudio-gallery" style="display:none;">
 
-                <img alt="Image 1 Title" src="img/slide-1.jpg"
-                     data-image="img/slide-1.jpg"
-                     data-description="Image 1 Description">
+                    <img alt="Предусматриваем текст слайда c заголовком"
+                         src="img/slide-2.jpg"
+                         data-image="img/slide-2.jpg" >
 
-                <img alt="Предусматриваем текст слайда c заголовком" src="img/service-1.jpg"
-                     data-image="img/service-1.jpg"
-                     data-description="С кратким описанием и кнопкой подробнее">
-
-                <img alt="Image 1 Title" src="img/gallery-photo-1.jpg"
-                     data-image="img/gallery-photo-1.jpg"
-                     data-description="Image 1 Description">
-
-                <img alt="Предусматриваем текст слайда c заголовком" src="img/slide-2.jpg"
-                     data-image="img/slide-2.jpg"
-                     data-description="С кратким описанием и кнопкой подробнее" >
-
-                <img alt="Image 1 Title" src="img/slide-1.jpg"
-                     data-image="img/slide-1.jpg"
-                     data-description="Image 1 Description">
+                </div>
 
             </div>
 
-        </div>
+        @endforeach
 
     </div>
 
