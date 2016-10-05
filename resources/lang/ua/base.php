@@ -39,7 +39,10 @@ return [
     'cost' => 'Вартість',
     'conveniences' => 'Зручності',
     /* End Rooms Page */
-
+	/* Services Page */
+	'servicescontenttitle' => 'Послуги',
+	'visit' => 'Відвідування',
+	/* End Services Page */
 	/* Footer*/
 	'hotelphoto' => 'Фото готелю',
 	'callback' => 'Напишіть нам',

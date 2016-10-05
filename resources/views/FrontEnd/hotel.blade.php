@@ -69,7 +69,7 @@
 
                         <section>{{ str_limit($service -> getTranslate('description'),140,'...') }}</section>
 
-                        <a href="/services">{{ trans('base.more') }}<div class="arrow-right"></div></a>
+                        <a href="/{{ App::getLocale() }}/services">{{ trans('base.more') }}<div class="arrow-right"></div></a>
 
                     </div>
 

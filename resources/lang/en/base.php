@@ -37,7 +37,11 @@ return [
 	'currency' => 'uah',
     'cost' => 'Cost',
     'conveniences' => 'Сonveniences',
-    /* End Rooms Page */
+/* End Rooms Page */
+/* Services Page */
+	'servicescontenttitle' => 'Services',
+	'visit' => 'Visit',
+/* End Services Page */
 /* Footer*/
 	'hotelphoto' => 'Hotels photo ',
 	'callback' => 'Write us',
