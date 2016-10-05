@@ -297,9 +297,10 @@ h2 {
   .booking #booking-form .for-arrival-date, .booking #booking-form .for-departure-date {
     display: block;
     float: left;
-    width: 11%;
-    padding-left: 3.5%;
-    padding-right: 2.5%;
+    width: 9%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 3.5%;
     padding-top: 5px;
     color: #8D6C38;
     font-size: 1.0625em;
@@ -347,7 +348,7 @@ h2 {
     font-family: "GeorgiaBoldItalic", sans-serif;
     line-height: 49px; }
   .content-main li {
-    width: 30%;
+    width: 29.9%;
     display: inline-block;
     margin-top: 50px;
     margin-right: 4.7%; }
