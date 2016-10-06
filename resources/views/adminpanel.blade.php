@@ -30,6 +30,9 @@
     <script src="{{ asset('/js/backend/global.js') }}"type="text/javascript"></script>
     <script src="{{ asset('/js/backend/jquery.slimscroll.min.js') }}"type="text/javascript"></script>
 
+    <script src="{{ asset('/js/backend/ckeditor/ckeditor.js') }}"></script>
+
+
     <!--page specific plugin styles-->
 
     <link href="{{ asset('/css/backend/jquery-ui-1.10.3.custom.min.css') }}" rel="stylesheet">

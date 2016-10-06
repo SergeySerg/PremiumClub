@@ -7,8 +7,8 @@ $_CONFIG = array(
     //'disabled' => (!isset($_SESSION['auth_user'])) ? false : true,
     'disabled' => false,
     'theme' => "oxygen",
-    'uploadURL' => "../../../upload",
-    'uploadDir' => "../../../upload",
+    'uploadURL' => "../../../upload/editor",
+    'uploadDir' => "../../../upload/editor",
 
     'types' => array(
 

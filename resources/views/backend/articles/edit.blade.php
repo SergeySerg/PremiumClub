@@ -143,9 +143,11 @@
                                     @if($admin_category->hasField('description'))
                                         <h4 class="header blue clearfix">Текст</h4>
                                            <div class="control-group">
-                                               <textarea name="description_{{$lang->lang}}"class="span12" id="form-field-8" placeholder="Опис номеру, події, послуги" >@if(isset($admin_article)){{ $admin_article->getTranslate('description',$lang->lang) }}@endif</textarea>
+                                               <textarea name="description_{{$lang->lang}}" id="description_{{$lang->lang}}" class="span12 ckeditor-wysiwyg"  placeholder="Опис номеру, події, послуги" >@if(isset($admin_article)){{ $admin_article->getTranslate('description',$lang->lang) }}@endif</textarea>
 
-
+                                               <SCRIPT>
+                                                   CKEDITOR.replace( 'description_{{$lang->lang}}' );
+                                               </SCRIPT>
                                             </div>
                                     @endif
 
