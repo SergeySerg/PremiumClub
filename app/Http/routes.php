@@ -18,13 +18,16 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 Route::group(['prefix'=>'admin30x5', 'middleware' => 'auth'], function(){
-	Route::get('/','Backend\AdminDashboardController@index');//Вывод списка элементов
+	Route::get('/','Backend\AdminDashboardController@index');
 	Route::get('/articles/{type}','Backend\AdminArticlesController@index');//Вывод списка элементов
 	Route::get('/articles/{type}/create','Backend\AdminArticlesController@create');//Вывод формы создания элемента
 	Route::post('/articles/{type}/create','Backend\AdminArticlesController@store');//Сохранение элемента
 	Route::get('/articles/{type}/{id}','Backend\AdminArticlesController@edit');//Вывод формы редакторирование элемента
 	Route::put('/articles/{type}/{id}','Backend\AdminArticlesController@update');//Сохранение элемента после редактирования
 	Route::delete('/articles/{type}/{id}','Backend\AdminArticlesController@destroy');//Удаление элемента
+	Route::get('/texts/{id}','Backend\AdminTextsController@edit');//Вывод формы редакторирование
+	Route::put('/texts/{id}','Backend\AdminTextsController@update');//Сохранение после редактирования
+	Route::get('/texts','Backend\AdminTextsController@index');//Вывод списка
 });
 
 Route::get('/{lang}/{type?}', 'Frontend\ArticleController@index');

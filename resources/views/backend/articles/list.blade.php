@@ -268,5 +268,14 @@
     </div><!--/.row-fluid-->
 </div>
 <div id="token" style="display: none">{{csrf_token()}}</div>
-
+<script>
+    $(function(){
+        var oTable1 = $('#sample-table-2').dataTable( {
+            "aoColumns": [
+                { "bSortable": false },
+                null, null,null, null, null,
+                { "bSortable": false }
+            ] } );
+    });
+</script>
 @stop

@@ -48,7 +48,7 @@
                         <label class="control-label" for="form-field-1">Ціна</label>
 
                         <div class="controls">
-                            <input type="number" id="form-field-1" name="price" @if(isset($admin_article)) value='{{$admin_article->price}}'@endif  />
+                            <input type="text" id="form-field-1" name="price" @if(isset($admin_article)) value='{{$admin_article->price}}'@endif  />
                         </div>
                     </div>
                 @endif
@@ -160,7 +160,7 @@
                                     frameborder="0"
                                     src="/js/backend/kcfinder/browse.php?type=images&langCode=ru&homedir=/{{$admin_article->id}}/&config=articles"
                                     style="width: 100%; height: 400px"
-                                    title="Визуальный файловый браузерр"
+                                    title="Визуальный файловый браузер"
                                     tabindex="0"
                                     allowtransparency="true"></iframe>
                                 @else
