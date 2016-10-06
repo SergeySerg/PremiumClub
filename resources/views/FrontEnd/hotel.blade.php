@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="slider">
+    {{--<div class="slider">
 
         <div id="webstudio-slider" style="display:none;">
 
@@ -20,7 +20,9 @@
 
         </div>
 
-    </div>
+    </div>--}}
+
+    <iframe src="http://www.visitor.ee/360/pc/320/flash/360_320.html" style="width: 100%; height: 470px; border: none; margin-bottom: -5px" frameborder="none"></iframe>
 
     <div class="booking clearfix">
 
@@ -28,49 +30,52 @@
 
         <div class="fast-booking">
 
-        <h2>Быстрое</h2>
-        <h2 class="second-line">Бронирование</h2>
+            <h2>{{ trans('base.fast') }}</h2>
+            <h2 class="second-line">{{ trans('base.booking') }}</h2>
 
         </div>
 
         <form id="booking-form">
 
-            <span class="for-arrival-date">Дата заезда:</span>
+            <span class="for-arrival-date">{{ trans('base.arrival') }}</span>
             <input type="text" id="from" name="from" class="arrival-date">
 
-            <span class="for-departure-date">Дата выезда:</span>
+            <span class="for-departure-date">{{ trans('base.departure') }}</span>
             <input type="text" id="to" name="to" class="departure-date">
 
-            <input name="booking-btn" id="booking-btn" class="booking-btn" value="Бронировать" type="submit">
+            <input name="booking-btn" id="booking-btn" class="booking-btn" value="{{ trans('base.booking') }}" type="submit">
 
         </form>
 
     </div>
 
+
     <div class="content-main">
 
-    <span>У нас вы найдете:</span>
+
+    <span>{{ trans('base.hotelcontenttitle') }}</span>
 
     <ul class="clearfix">
 
-        <li>
             @foreach($services as $service)
 
-                <div class="img-block" style="background: url('img/service-1.jpg') no-repeat center;"></div>
+                <li>
 
-                <div class="describe-block">
+                    <div class="img-block" style="background: url('/{{ $service -> getImages()[0] }}') no-repeat center; background-size: cover"></div>
 
-                    <h1>{{ $service -> getTranslate('title') }}</h1>
+                    <div class="describe-block">
 
-                    <section>{{ $service -> getTranslate('description') }}</section>
+                        <h1>{{ str_limit($service -> getTranslate('title'),16,'...') }}</h1>
 
-                    <a href="/services">Подробнее <div class="arrow-right"></div></a>
+                        <section>{{ str_limit($service -> getTranslate('description'),140,'...') }}</section>
 
-                </div>
+                        <a href="/{{ App::getLocale() }}/services">{{ trans('base.more') }}<div class="arrow-right"></div></a>
+
+                    </div>
+
+                </li>
 
             @endforeach
-
-        </li>
 
     </ul>
 
