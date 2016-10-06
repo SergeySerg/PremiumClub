@@ -14,7 +14,7 @@
 
         @foreach($services as $service)
 
-           <div class="services-block">
+           <div class="services-block" name="service-{{ $service -> id }}">
 
             <div class="services-title">{{ $service -> getTranslate('title') }}</div>
 

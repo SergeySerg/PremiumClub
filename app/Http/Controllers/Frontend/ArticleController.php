@@ -48,7 +48,7 @@ class ArticleController extends Controller {
 		$contacts = null;
 
 		view()->share('hotel', $hotel);
-		view()->share('room', $rooms);
+		view()->share('rooms', $rooms);
 		view()->share('services', $services);
 
 

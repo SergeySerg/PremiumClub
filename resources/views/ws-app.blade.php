@@ -182,7 +182,7 @@
 
                     @foreach($services as $service)
 
-                        <li><a href="/{{ App::getLocale() }}/services">{{ $service -> getTranslate('title') }}</a></li>
+                        <li><a href="/{{ App::getLocale() }}/services#service-{{ $service -> id }}">{{ $service -> getTranslate('title') }}</a></li>
 
                     @endforeach
 
