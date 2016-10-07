@@ -392,6 +392,11 @@ h2 {
       font-family: "RobotoItalic", sans-serif;
       font-size: 1.125em;
       line-height: 2em; }
+    .content-main .hotel-describe section ul li{
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;}
 
 /* ------------ End Page Main ------------- */
 /* -------- Page Rooms ----------- */
@@ -429,7 +434,7 @@ h2 {
         font-size: 1em;
         line-height: 1.6875em; }
         .content-rooms .rooms-block .describe-block .describe-room table {
-          margin-top: 48px; }
+          margin-top: 20px; }
           .content-rooms .rooms-block .describe-block .describe-room table td:first-child {
             padding-right: 60px;
             font-family: "RobotoBold", sans-serif;

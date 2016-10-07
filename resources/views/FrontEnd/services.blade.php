@@ -50,7 +50,7 @@
 
                     <div class="services-description">
 
-                        {{ $service -> getTranslate('description') }}
+                        {!! $service -> getTranslate('description') !!}
 
                     </div>
 

@@ -90,7 +90,7 @@
     <div class="hotel-describe">
 
     <h1>{{ $hotel -> getTranslate('title') }}</h1>
-    <section>{{ $hotel -> getTranslate('description') }}</section>
+    <section>{!!  $hotel -> getTranslate('description') !!}</section>
 
     </div>
 

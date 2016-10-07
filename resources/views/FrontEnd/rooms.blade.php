@@ -40,7 +40,7 @@
 
                         <div class="describe-room">
 
-                            {{ $room -> getTranslate('description') }}
+                            {!! $room -> getTranslate('description') !!}
 
                         </div>
 
