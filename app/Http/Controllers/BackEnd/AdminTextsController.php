@@ -108,7 +108,7 @@ class AdminTextsController extends Controller {
 		$admin_text->save();
 		return response()->json([
 			"status" => 'success',
-			"message" => 'Успішно збережено',
+			"message" => 'РЈСЃРїС–С€РЅРѕ Р·Р±РµСЂРµР¶РµРЅРѕ',
 			"redirect" => URL::to('/admin30x5/texts')
 		]);
 	}
@@ -117,16 +117,16 @@ class AdminTextsController extends Controller {
 		$langs = Lang::all();
 		//$all['title'] = '';
 		$all['description'] = '';
-		//Удаление пробелов в начале и в конце каждого поля
+		//РЈРґР°Р»РµРЅРёРµ РїСЂРѕР±РµР»РѕРІ РІ РЅР°С‡Р°Р»Рµ Рё РІ РєРѕРЅС†Рµ РєР°Р¶РґРѕРіРѕ РїРѕР»СЏ
 		foreach($all as $key => $value){
 			$all[$key] = trim($value);
 		}
-		//Формирование массива типа (ua|ru|en)
+		//Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РјР°СЃСЃРёРІР° С‚РёРїР° (ua|ru|en)
 		foreach($langs as $lang){
 			//$all['title'] .= $all["title_{$lang['lang']}"] .'|';
 			$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '') .'|';
 
-			//Удаление переменных типа title_ua,title_ru,title_en и т. д.
+			//РЈРґР°Р»РµРЅРёРµ РїРµСЂРµРјРµРЅРЅС‹С… С‚РёРїР° title_ua,title_ru,title_en Рё С‚. Рґ.
 			//unset($all["title_{$lang['lang']}"]);
 			unset($all["description_{$lang['lang']}"]);
 
