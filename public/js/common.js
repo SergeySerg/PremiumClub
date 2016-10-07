@@ -2,9 +2,13 @@
 
    var pageHref = window.location.href.split('#')[1];
      //alert(pageHref);
-     $('.services-block[name = "pageHref"]').find('.services-hide').toggleClass('webstudio-active');
+     $('.services-block[name = "pageHref"]').find('.services-hide').addClass('webstudio-active');
 
 /* появление и пропадание удобств */
+   /*перша відкрита за умовчанням*/
+   $('.services-hide:first').addClass('webstudio-active');
+   $('.services-arrow:first').addClass('rotate-90');
+   /* END перша відкрита за умовчанням*/
   $('.r-tab').on('click', function(){
     $(this).parent().find('.conveniences-block').toggleClass('webstudio-active');
     $(this).find('.arrow-conveniences').toggleClass('rotate-90');
