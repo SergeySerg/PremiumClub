@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration {
 			$table->integer('category_id');
 			$table->text('title');
 			$table->text('description');
-			$table->double('price', 8, 2)->default(0);
+			$table->text('price');
 			$table->integer('quantity');
 			$table->text('imgs');
 			$table->timestamp('date');

@@ -130,12 +130,12 @@ class LangsSeeder extends Seeder {
         ]);
 
         Lang::create([
-            'lang' => 'ru',
-        ]);
-
-        Lang::create([
             'lang' => 'en',
         ]);
+
+        /*Lang::create([
+            'lang' => 'ru',
+        ]);*/
 
     }
 
