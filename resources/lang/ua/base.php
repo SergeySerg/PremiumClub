@@ -46,6 +46,10 @@ return [
 	/* Events Page */
 	'eventscontenttitle' => 'Події',
 	/* End Events Page */
+	/* Gallery Page */
+	'gallerycontenttitle' => 'Галерея',
+	/* End Gallery Page */
+
 	/* Footer*/
 	'hotelphoto' => 'Фото готелю',
 	'callback' => 'Напишіть нам',

@@ -22,7 +22,15 @@
 
     </div>--}}
 
-    <iframe src="http://www.visitor.ee/360/pc/320/flash/360_320.html" style="width: 100%; height: 470px; border: none; margin-bottom: -5px" frameborder="none"></iframe>
+    <div id="3d-tour">
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            $(function(){
+                $('#3d-tour').html('<iframe src="http://www.visitor.ee/360/pc/html5/main.html" style="width: 100%; height: 470px; border: none; margin-bottom: -5px" frameborder="none"></iframe>');
+            });
+        });
+    </script>
 
     <div class="booking clearfix">
 
@@ -35,7 +43,7 @@
 
         </div>
 
-        <form id="booking-form">
+        <form id="booking-form" action="/{{ App::getLocale() }}/booking" method="get">
 
             <span class="for-arrival-date">{{ trans('base.arrival') }}</span>
             <input type="text" id="from" name="from" class="arrival-date">

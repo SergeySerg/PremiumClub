@@ -45,6 +45,9 @@ return [
 /* Events Page */
 	'eventscontenttitle' => 'Events',
 /* End Events Page */
+/* Gallery Page */
+	'gallerycontenttitle' => 'Gallery',
+/* End Gallery Page */
 /* Footer*/
 	'hotelphoto' => 'Hotels photo ',
 	'callback' => 'Write us',

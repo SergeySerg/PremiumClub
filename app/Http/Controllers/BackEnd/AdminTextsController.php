@@ -28,7 +28,10 @@ class AdminTextsController extends Controller {
 	public function index()
 	{
 		App::setLocale('ua');
-		$admin_texts = Text::all();
+
+		$admin_texts = Text::all()
+			->sortByDesc("priority");
+
 		return view('backend.texts.list',[
 			'admin_texts' => $admin_texts
 			]);
@@ -130,7 +133,11 @@ class AdminTextsController extends Controller {
 
 	private function prepareTextData($all){
 		$langs = Lang::all();
-		//$all['title'] = '';
+
+		if(isset($all['description']))
+			return $all;
+
+
 		$all['description'] = '';
 		// Удаление пробелов в начале и в конце каждого поля
 		foreach($all as $key => $value){
@@ -138,11 +145,13 @@ class AdminTextsController extends Controller {
 		}
 		// Формирование массива типа (ua|ru|en)
 		foreach($langs as $lang){
-			//$all['title'] .= $all["title_{$lang['lang']}"] .'|';
-			$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '') .'|';
 
-			//Удаление переменных типа title_ua,title_ru,title_en и т. д.
-			//unset($all["title_{$lang['lang']}"]);
+			if($all['lang_active'] == 0){
+				$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '');
+			}else{
+				$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '') .'|';
+			}
+
 			unset($all["description_{$lang['lang']}"]);
 
 		}

@@ -179,7 +179,7 @@
                 </a>
             </li>
             <li>
-                <a href="gallery.html">
+                <a href="gallery">
                     <i class="icon-picture"></i>
                     <span class="menu-text"> Галерея </span>
                 </a>

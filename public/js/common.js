@@ -155,4 +155,11 @@
     console.info(num, data);
     console.info('link>>>', $('#webstudio-slider img:nth-child('+num+')').attr('data-link'))
   });*/
+
+   $('#booking-btn').on('click', function(e){
+    if(!$('#from').val() || !$('#to').val()){
+      e.preventDefault();
+      return false;
+    }
+   });
 });

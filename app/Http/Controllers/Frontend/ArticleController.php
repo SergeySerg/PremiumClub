@@ -25,6 +25,7 @@ class ArticleController extends Controller {
 	public function index($lang, $type = 'hotel')
 	{
 		$events = null;
+		$gallery = null;
 
 		switch($type){
             case 'hotel':
@@ -38,10 +39,16 @@ class ArticleController extends Controller {
                     ->first()
                     ->articles;
 				break;
+			case 'gallery':
+                $gallery = Category::where('link','=', 'gallery')
+                    ->first()
+                    ->articles;
+				break;
 		}
 
 		return view('frontend.'.$type, [
-			'events' => $events
+			'events' => $events,
+			'gallery' => $gallery
 		]);
 	}
 

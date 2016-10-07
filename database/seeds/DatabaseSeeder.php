@@ -639,6 +639,10 @@ class LangsSeeder extends Seeder {
             'lang' => 'en',
         ]);
 
+        /*Lang::create([
+            'lang' => 'ru',
+        ]);*/
+
     }
 
 }

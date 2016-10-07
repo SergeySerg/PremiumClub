@@ -31,6 +31,7 @@
                 <table id="sample-table-2" class="table table-striped table-bordered table-hover">
                     <thead>
                     <tr>
+
                         <th class="center">
                             ID
                         </th>
@@ -42,6 +43,9 @@
                         </th>
                         <th class="hidden-phone center">
                             Тип поля
+                        </th>
+                        <th class="center">
+                            Пр-т
                         </th>
                         <th></th>
                     </tr>
@@ -56,8 +60,9 @@
                             </label>
                         </td>
                         <td><a href="/admin30x5/texts/{{$admin_text->id}}">{{ $admin_text->getTranslate('title') }}</a></td>
-                        <td>{{ $admin_text->getTranslate('description') }}</td>
+                        <td>{{ str_limit($admin_text->getTranslate('description'), 80, '...') }}</td>
                         <td>{{ $admin_text->type }}</td>
+                        <td class="center">{{ $admin_text->priority }}</td>
                         <td class="td-actions">
                             <div class="visible-phone visible-desktop action-buttons">
                                 <a class="green" href="/admin30x5/texts/{{$admin_text->id}}">
@@ -69,6 +74,7 @@
                             </div>
 
                         </td>
+
                     </tr>
                 @endforeach
                     </tbody>
@@ -82,10 +88,12 @@
 <script>
     $(function(){
         var oTable1 = $('#sample-table-2').dataTable( {
+            "aaSorting": [[4,'desc']],
             "aoColumns": [
-                { "bSortable": false,  "sWidth": "30px" },
+                { "bSortable": true,  "sWidth": "30px" },
                 null, null,
                 { "bSortable": false,  "sWidth": "90px" },
+                { "bSortable": true,  "sWidth": "60px" },
                 { "bSortable": false,  "sWidth": "60px" }
             ] } );
     });

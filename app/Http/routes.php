@@ -11,11 +11,12 @@
 |
 */
 
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('/', 'Frontend\HomeController@index');
 
 Route::group(['prefix'=>'admin30x5', 'middleware' => 'auth'], function(){
 	Route::get('/','Backend\AdminDashboardController@index');
@@ -37,7 +38,7 @@ Route::group(['prefix'=>'admin30x5', 'middleware' => 'auth'], function(){
 });
 
 Route::group(['middleware' => 'frontend.init'], function(){
-	Route::get('/', 'Frontend\HomeController@index');
+	Route::get('/{lang}/booking', 'Frontend\BookingController@index');
 	Route::get('/{lang}/{type?}', 'Frontend\ArticleController@index');
 });
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ App::getLocale() }}">
 <head>
 	<meta charset="utf-8">
 	<title>Premium Club</title>
@@ -40,7 +40,7 @@
 
 				<div class="top-line_booking"></div>
 
-				<a href="#">{{ trans('base.booking') }}</a>
+				<a href="/{{ App::getLocale() }}/booking">{{ trans('base.booking') }}</a>
 
 			</div>
 
@@ -81,11 +81,12 @@
 
 			<nav>
 
-				<a href="/{{ App::getLocale() }}/hotel">{{ trans('base.hotel') }}</a>
+				<a href="/">{{ trans('base.hotel') }}</a>
 				<a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a>
 				<a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a>
 				<a href="/{{ App::getLocale() }}/events">{{ trans('base.events') }}</a>
 				<a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a>
+				{{--<a href="#" onclick="alert('На стадії наповнення');">{{ trans('base.gallery') }}</a>--}}
 				<a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a>
 
 			</nav>
