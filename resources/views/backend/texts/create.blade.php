@@ -40,7 +40,12 @@
                     <label class="control-label" for="type">Тип блоку</label>
 
                     <div class="controls">
-                        <input type="text" name="type" value='input' />
+                        <select name="type">
+                            <option>
+                            </option><option value="input" selected="selected">Звичайне поле
+                            </option><option value="textarea">Текстве поле
+                            </option><option value="settings">Налаштування
+                            </option></select>
                     </div>
                 </div>
 
@@ -57,6 +62,18 @@
 
                     <div class="controls">
                         <input type="text" name="priority" value='' placeholder="Пріоритет" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="lang_active">Багатомовність</label>
+
+                    <div class="controls">
+                        <select name="lang_active">
+                            <option>
+                            </option><option value="1" selected>На декількох мовах
+                            </option><option value="0">Одне значення на всі мови
+                            </option></select>
                     </div>
                 </div>
 

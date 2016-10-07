@@ -20,6 +20,7 @@ class CreateTextsTable extends Migration {
 			$table->string('title', 255);
 			$table->text('description');
 			$table->integer('priority')->default(0);
+			$table->integer('lang_active')->default(1);
 			$table->timestamp('created_at');
 			$table->timestamp('updated_at');
 		});
