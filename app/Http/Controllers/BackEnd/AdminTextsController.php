@@ -41,7 +41,11 @@ class AdminTextsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$langs = Lang::all();
+		return view('backend.texts.create', [
+			'langs'=>$langs,
+			'action_method' => 'post'
+		]);
 	}
 
 	/**
@@ -49,9 +53,23 @@ class AdminTextsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$langs = Lang::all();
+		foreach($langs as $lang){
+			$this->validate($request, [
+				'title' => 'required|max:255',
+			]);
+		}
+		$all = $request->all();
+		$all = $this->prepareTextData($all);
+
+		Text::create($all);
+		return response()->json([
+			"status" => 'success',
+			"message" => 'Успішно збережено',
+			"redirect" => URL::to('/admin30x5/texts')
+		]);
 	}
 
 	/**
@@ -98,13 +116,10 @@ class AdminTextsController extends Controller {
 			]);
 		}*/
 		$admin_text = Text::where('id', '=', $id)->first();
-		//dd($admin_text);
 		$all = $request->all();
 		$all = $this->prepareTextData($all);
 		//dd($all);
 		$admin_text->update($all);
-		//$admin_text->description = $all('description');
-		//$admin_text->attributes["description"] = $all('description');
 		$admin_text->save();
 		return response()->json([
 			"status" => 'success',
@@ -117,11 +132,11 @@ class AdminTextsController extends Controller {
 		$langs = Lang::all();
 		//$all['title'] = '';
 		$all['description'] = '';
-		//Удаление пробелов в начале и в конце каждого поля
+		// Удаление пробелов в начале и в конце каждого поля
 		foreach($all as $key => $value){
 			$all[$key] = trim($value);
 		}
-		//Формирование массива типа (ua|ru|en)
+		// Формирование массива типа (ua|ru|en)
 		foreach($langs as $lang){
 			//$all['title'] .= $all["title_{$lang['lang']}"] .'|';
 			$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '') .'|';
@@ -142,7 +157,21 @@ class AdminTextsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$text = Text::where('id', '=', $id)->first();
+		if($text AND $text->delete()){
+			return response()->json([
+				"status" => 'success',
+				"message" => 'Успешно удален'
+			]);
+		}
+		else{
+			return response()->json([
+				"status" => 'error',
+				"message" => 'Произошла ошибка при удалении'
+			]);
+		}
+
+
 	}
 
 }

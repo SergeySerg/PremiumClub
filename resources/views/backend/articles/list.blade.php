@@ -34,7 +34,7 @@
         <td>{{ $admin_article->created_at }} </td>
         <td>{{ $admin_article->updated_at }}</td>
         <td><a href = "/admin30x5/articles/{{$type}}/{{$admin_article->id}}">Редагувати</a></td>
-        <td><a href='/admin30x5/articles/{{$type}}/{{$admin_article->id}}' data-id='{admin_article->id}' class='article-delete'>Удалить</a></td>
+        <td><a href='/admin30x5/articles/{{$type}}/{{$admin_article->id}}' data-id='{admin_article->id}' class='resource-delete'>Удалить</a></td>
     </tr>
     @endforeach
 </table>-->
@@ -110,7 +110,7 @@
                                             <i class="icon-pencil bigger-130"></i>
                                         </a>
 
-                                        <a href='/admin30x5/articles/{{$type}}/{{$admin_article->id}}' data-id='{admin_article->id}' class='article-delete'">
+                                        <a href='/admin30x5/articles/{{$type}}/{{$admin_article->id}}' data-id='{{$admin_article->id}}' class='resource-delete'">
                                             <i class="icon-trash bigger-130"></i>
                                         </a>
                                     </div>
