@@ -58,7 +58,7 @@
 
 				<ul class="phones">
 
-					<li><span class="phone-part">+38067</span> 3433400 <span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
+					<li><span class="phone-part">+38067</span> 3433400<span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
 
 				</ul>
 
