@@ -8,21 +8,17 @@
             <i class="icon-angle-right arrow-icon"></i>
         </span>
 </li>
-@if(isset($type))
+
 <li>
-    <a href="#">{{$type}}</a>
+    <a href="/admin30x5/texts">Текстові блоки</a>
 
         <span class="divider">
             <i class="icon-angle-right arrow-icon"></i>
         </span>
 </li>
-@endif
 
-@if(isset($admin_text))
 <li class="active">{{$admin_text->id}}</li>
-@else
-<li class="active">Додати нову</li>
-@endif
+
 @stop
 
 @section('content')
@@ -30,11 +26,7 @@
 <div class="page-content">
     <div class="page-header position-relative">
         <h1>
-            @if (isset($admin_text))
             Редагувати
-            @else
-            Додати
-            @endif
         </h1>
     </div><!--/.page-header-->
 
@@ -42,9 +34,56 @@
         <div class="span12">
             <!--PAGE CONTENT BEGINS-->
 
-            <form class="form-horizontal" id="article-form" method="POST" action="" />
+            <form class="form-horizontal" id="resource-form" method="POST" action="" />
 
+                <div class="hr hr-18 dotted hr-double"></div>
 
+                <h4 class="pink">
+                    <i class="icon-hand-right icon-animated-hand-pointer blue"></i>
+                    <a href="#modal-table" role="button" class="green" data-toggle="modal"> Відкрити детальну форму редагування </a>
+                </h4>
+
+                <div class="hr hr-18 dotted hr-double"></div>
+
+                <div id="modal-table" class="modal hide fade" tabindex="-1">
+                    <div class="modal-header no-padding">
+                        <div class="table-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            Додаткові параметри даного блоку
+                        </div>
+                    </div>
+
+                    <div class="modal-body no-padding">
+                        <div class="row-fluid">
+                            <div class="space-12"></div>
+                            <div class="control-group">
+                                <label class="control-label" for="type">Тип блоку</label>
+
+                                <div class="controls">
+                                    <input type="text" name="type" value='{{$admin_text->type}}' />
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="title">Назва блоку</label>
+
+                                <div class="controls">
+                                    <input type="text" name="title" value='{{$admin_text->title}}' placeholder="Назва блоку" />
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="priority">Пріоритет</label>
+
+                                <div class="controls">
+                                    <input type="text" name="priority" value='{{$admin_text->priority}}' placeholder="Пріоритет" />
+                                </div>
+                            </div>
+                            <div class="space-12"></div>
+                        </div>
+                    </div>
+
+                </div>
 
 
                 <div class="space-12"></div>
@@ -69,13 +108,13 @@
                                     <label class="control-label" for="form-field-3">{{$admin_text->title}}</label>
 
                                     <div class="controls">
-                                        <input type="text" name="title_{{$lang->lang}}" value='@if(isset($admin_text)) {{ $admin_text->getTranslate('title', $lang->lang) }} @endif' id="form-field-3" placeholder="Текст" />
+                                        <input type="text" name="description_{{$lang->lang}}" value='@if(isset($admin_text)){{ $admin_text->getTranslate('description', $lang->lang) }}@endif' id="form-field-3" placeholder="Текст" />
                                     </div>
                                 </div>
-                                @elseif ($admin_text->type == 'text' )
+                                @elseif ($admin_text->type == 'textarea' )
                                     <h4 class="header blue clearfix">{{$admin_text->title}}</h4>
                                     <div class="control-group">
-                                        <textarea name="description_{{$lang->lang}}"class="span12" id="form-field-8" placeholder="Опис" >@if(isset($admin_text)){{ $admin_text->getTranslate('description',$lang->lang) }}@endif</textarea>
+                                        <textarea name="description_{{$lang->lang}}" class="span12" id="description_{{$lang->lang}}" placeholder="Опис" >@if(isset($admin_text)){{ $admin_text->getTranslate('description',$lang->lang) }}@endif</textarea>
     
     
                                     </div>
@@ -91,11 +130,11 @@
                 <input type="hidden" name="_method" value='{{$action_method}}'/>
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <div class="form-actions">
-                    <button class="btn btn-info article-save" type="button">
+                    <button class="btn btn-info resource-save" type="button">
                         <i class="icon-ok bigger-110"></i>
                         Сохранить
                     </button>
-                </div><!--<input type="button" class='article-save' value="Сохранить">-->
+                </div>
                 </form>
                 <!--PAGE CONTENT ENDS-->
             </div><!--/.span-->
@@ -103,44 +142,3 @@
     </div><!--/.page-content-->
     <div id="token" style="display: none">{{csrf_token()}}</div>
     @stop
-    <!--<h2>Редагування</h2>
-    <div class="edit">
-            <form id="article-form" method="POST" action="">
-                <div class="list-items"> Ціна
-                    <input type="number" name="price" @if(isset($admin_text)) value='{{$admin_text->price}}'@endif/>
-                </div><br>
-                <div class="list-items"> Кількість
-                    <input type="number" name="quantity" @if(isset($admin_text)) value='{{$admin_text->quantity}}' @endif/>
-                </div><br>
-                <div class="list-items"> Виберіть зображення
-                    <input type="file" name="img" @if(isset($admin_text)) value='{{$admin_text->img}}' @endif/>
-                </div><br>
-                @foreach($langs as $lang)
-                    <h3>Мова {{$lang->lang}}</h3>
-                    <div class="list-items">Назва
-                        <input type="text" name="title_{{$lang->lang}}" value='@if(isset($admin_text)) {{ $admin_text->getTranslate('title', $lang->lang) }} @endif'/>
-                    </div><br>
-                    <div class="list-items">Опис
-                        <textarea name="description_{{$lang->lang}}" rows='5' cols='40'>@if(isset($admin_text)){{ $admin_text->getTranslate('description',$lang->lang) }}@endif</textarea>
-                    </div><br>
-
-                    <div class="list-items">Мета-заголовок
-                        <input type="text" name="meta_title_{{$lang->lang}}" value="@if(isset($admin_text)){{ $admin_text->getTranslate('meta_title',$lang->lang) }} @endif"/>
-                    </div><br>
-                    <div class="list-items">Мета-опис
-                        <input type="text" name="meta_description_{{$lang->lang}}" value="@if(isset($admin_text)){{ $admin_text->getTranslate('meta_description',$lang->lang)}} @endif"/>
-                    </div><br>
-                    <div class="list-items">Мета ключові слова
-                        <input type="text" name="meta_keywords_{{$lang->lang}}" value="@if(isset($admin_text)){{ $admin_text->getTranslate('meta_keywords',$lang->lang)}} @endif"/>
-                    </div><br>
-                @endforeach
-                <div class="list-items">Активувати?
-                    <input name='active' type='hidden' value='0'>
-                    <input name='active'type='checkbox' value=1 @if(isset($admin_text) AND $admin_text->active) checked="checked" @endif  />
-
-                </div><br>
-                <input type="hidden" name="_method" value='{{$action_method}}'/>
-                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                <input type="button" class='article-save' value="Сохранить">
-            </form>
-    </div>-->

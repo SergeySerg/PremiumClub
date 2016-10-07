@@ -21,6 +21,12 @@
 
                 <div class="table-header">
                     Список записів в тестових полях
+                    <a href="/admin30x5/texts/create">
+                        <button class="btn btn-warning">
+                            <i class="icon-plus"></i>
+                            Додати елемент
+                        </button>
+                    </a>
                 </div>
                 <table id="sample-table-2" class="table table-striped table-bordered table-hover">
                     <thead>
@@ -28,73 +34,42 @@
                         <th class="center">
                             ID
                         </th>
-                        <th class="center">Тип</th>
                         <th class="hidden-phone center">
-                            Назва
+                            Поле
                         </th>
                         <th class="hidden-phone center">
-                            Зміст
+                            Значення
+                        </th>
+                        <th class="hidden-phone center">
+                            Тип поля
                         </th>
                         <th></th>
                     </tr>
                     </thead>
 
                     <tbody>
-                @foreach($admin_texts as $admin_text){
+                @foreach($admin_texts as $admin_text)
                     <tr>
                         <td class="center">
                             <label>
                                 <span class="lbl">{{ $admin_text->id }}</span>
                             </label>
                         </td>
-                        <td>
-                            {{ $admin_text->getTranslate('type') }}
-                        </td>
                         <td><a href="/admin30x5/texts/{{$admin_text->id}}">{{ $admin_text->getTranslate('title') }}</a></td>
                         <td>{{ $admin_text->getTranslate('description') }}</td>
+                        <td>{{ $admin_text->type }}</td>
                         <td class="td-actions">
-                            <div class="hidden-phone visible-desktop action-buttons">
+                            <div class="visible-phone visible-desktop action-buttons">
                                 <a class="green" href="/admin30x5/texts/{{$admin_text->id}}">
                                     <i class="icon-pencil bigger-130"></i>
                                 </a>
+                                <a href='/admin30x5/texts/{{$admin_text->id}}' data-id='{{$admin_text->id}}' class='resource-delete'>
+                                <i class="icon-trash bigger-130"></i>
+                                </a>
                             </div>
 
-                            <div class="hidden-desktop visible-phone">
-                                <div class="inline position-relative">
-                                    <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown">
-                                        <i class="icon-caret-down icon-only bigger-120"></i>
-                                    </button>
-
-                                    <ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close">
-                                        <li>
-                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                                                                                <span class="blue">
-                                                                                    <i class="icon-zoom-in bigger-120"></i>
-                                                                                </span>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-                                                                                <span class="green">
-                                                                                    <i class="icon-edit bigger-120"></i>
-                                                                                </span>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-                                                                                <span class="red">
-                                                                                    <i class="icon-trash bigger-120"></i>
-                                                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                         </td>
                     </tr>
-                }
                 @endforeach
                     </tbody>
                 </table>
@@ -108,9 +83,10 @@
     $(function(){
         var oTable1 = $('#sample-table-2').dataTable( {
             "aoColumns": [
-                { "bSortable": false },
-                null, null, null,
-                { "bSortable": false }
+                { "bSortable": false,  "sWidth": "30px" },
+                null, null,
+                { "bSortable": false,  "sWidth": "90px" },
+                { "bSortable": false,  "sWidth": "60px" }
             ] } );
     });
 </script>

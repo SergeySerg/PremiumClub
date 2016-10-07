@@ -22,71 +22,26 @@ class ArticleController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($lang, $type = 'hotel')//$lang, $type)
+	public function index($lang, $type = 'hotel')
 	{
-		$currentLang = Lang::where('lang',"=", $lang)->first();
-		//dd($currentLang);
-		if (!$currentLang){
-			abort('404');//страница 404 в файлі .ENV ставим false и робим шаблон 404 стор
-		}
-
-		App::setLocale($lang);
-
-		$category_hotel = Category::where('link','=', 'hotel')
-			->first();
-
-		$hotel = $category_hotel->articles->first();
-
-		$langs = Lang::all();
-		$rooms = Category::where('link','=', 'rooms')
-			->first()
-			->articles;
-		$services = Category::where('link','=', 'services')
-			->first()
-			->articles;
 		$events = null;
-		$contacts = null;
-
-		view()->share('hotel', $hotel);
-		view()->share('rooms', $rooms);
-		view()->share('services', $services);
-
 
 		switch($type){
             case 'hotel':
-                $services = Category::where('link','=', 'services')
-                    ->first()
-                    ->articles;
                 break;
 			case 'rooms':
-				$rooms = Category::where('link','=', 'rooms')
-					->first()
-                    ->articles;
 				break;
 			case 'services':
-                $services = Category::where('link','=', 'services')
-                    ->first()
-                    ->articles;
 				break;
 			case 'events':
                 $events = Category::where('link','=', 'events')
                     ->first()
                     ->articles;
 				break;
-			case 'contacts':
-                $contacts = Category::where('link','=', 'contacts')
-                    ->first()
-                    ->articles;
-				break;
 		}
 
 		return view('frontend.'.$type, [
-			'hotel' => $hotel,
-			'services' => $services,
-			'events' => $events,
-			'rooms' => $rooms,
-			'contacts' => $contacts,
-            'langs' => $langs,
+			'events' => $events
 		]);
 	}
 

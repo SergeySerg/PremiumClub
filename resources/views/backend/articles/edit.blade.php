@@ -42,7 +42,7 @@
         <div class="span12">
             <!--PAGE CONTENT BEGINS-->
 
-            <form class="form-horizontal" id="article-form" method="POST" action="" />
+            <form class="form-horizontal" id="resource-form" method="POST" action="" />
                 @if($admin_category->hasField('price'))
                     <div class="control-group">
                         <label class="control-label" for="form-field-1">Ціна</label>
@@ -87,7 +87,7 @@
                                                                             <i class="icon-calendar"></i>
                                                                        </span>
                         </div>
-                    </div
+                    </div>
                 @endif
                 <div class="space-12"></div>
                 <div class="row-fluid">
@@ -111,18 +111,18 @@
                                             <label class="control-label" for="form-field-3">Назва</label>
 
                                             <div class="controls">
-                                                <input type="text" name="title_{{$lang->lang}}" value='@if(isset($admin_article)) {{ $admin_article->getTranslate('title', $lang->lang) }} @endif' id="form-field-3" placeholder="Назва номеру,події,послуги" />
+                                                <input type="text" name="title_{{$lang->lang}}" value='@if(isset($admin_article)){{ $admin_article->getTranslate('title', $lang->lang) }}@endif' id="form-field-3" placeholder="Назва номеру,події,послуги" />
                                             </div>
                                         </div>
                                     @endif
-                                        <!--<h4 class="header blue clearfix">SEO</h4>
+                                        {{--<h4 class="header blue clearfix">SEO</h4>
 
 
                                         <div class="control-group">
                                             <label class="control-label" for="form-field-4">META Title</label>
 
                                             <div class="controls">
-                                                <input type="text" id="form-field-4" name="meta_title_{{$lang->lang}}" value="@if(isset($admin_article)){{ $admin_article->getTranslate('meta_title',$lang->lang) }} @endif"/>
+                                                <input type="text" id="form-field-4" name="meta_title_{{$lang->lang}}" value="@if(isset($admin_article)){{ $admin_article->getTranslate('meta_title',$lang->lang) }}@endif"/>
 
                                             </div>
                                         </div>
@@ -130,20 +130,20 @@
                                             <label class="control-label" for="form-field-5">META Description</label>
 
                                             <div class="controls">
-                                                <input type="text" id="form-field-5" name="meta_description_{{$lang->lang}}" value="@if(isset($admin_article)){{ $admin_article->getTranslate('meta_description',$lang->lang)}} @endif"/>
+                                                <input type="text" id="form-field-5" name="meta_description_{{$lang->lang}}" value="@if(isset($admin_article)){{ $admin_article->getTranslate('meta_description',$lang->lang)}}@endif"/>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="form-field-tags">META Keywords</label>
 
                                             <div class="controls">
-                                                <input type="text" name="meta_keywords_{{$lang->lang}}" class="form-field-tags" value="@if(isset($admin_article)){{ $admin_article->getTranslate('meta_keywords',$lang->lang)}} @endif" placeholder="Введіть ключові слова ..." />
+                                                <input type="text" name="meta_keywords_{{$lang->lang}}" class="form-field-tags" value="@if(isset($admin_article)){{ $admin_article->getTranslate('meta_keywords',$lang->lang)}}@endif" placeholder="Введіть ключові слова ..." />
                                             </div>
-                                        </div>-->
+                                        </div>--}}
                                     @if($admin_category->hasField('description'))
                                         <h4 class="header blue clearfix">Текст</h4>
                                            <div class="control-group">
-                                               <textarea name="description_{{$lang->lang}}"class="span12" id="form-field-8" placeholder="Опис номеру, події, послуги" >@if(isset($admin_article)){{ $admin_article->getTranslate('description',$lang->lang) }}@endif</textarea>
+                                               <textarea name="description_{{$lang->lang}}"class="span12" id="form-field-8" placeholder="Опис номеру, події, послуги">@if(isset($admin_article)){{ $admin_article->getTranslate('description',$lang->lang) }}@endif</textarea>
 
 
                                             </div>
@@ -183,7 +183,7 @@
                 <input type="hidden" name="_method" value='{{$action_method}}'/>
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <div class="form-actions">
-                    <button class="btn btn-info article-save" type="button">
+                    <button class="btn btn-info resource-save" type="button">
                         <i class="icon-ok bigger-110"></i>
                         Сохранить
                     </button>
@@ -195,7 +195,7 @@
 </div><!--/.page-content-->
 <div id="token" style="display: none">{{csrf_token()}}</div>
 @stop
-    <!--<h2>Редагування</h2>
+    {{--<h2>Редагування</h2>
     <div class="edit">
             <form id="article-form" method="POST" action="">
                 <div class="list-items"> Ціна
@@ -235,4 +235,4 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 <input type="button" class='article-save' value="Сохранить">
             </form>
-    </div>-->
+    </div>--}}

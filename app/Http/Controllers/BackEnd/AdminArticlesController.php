@@ -43,7 +43,6 @@ class AdminArticlesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	//Action - форма создание элемента сущности
 	public function create($type)
 	{
 		$langs = Lang::all();
@@ -165,7 +164,7 @@ class AdminArticlesController extends Controller {
 		$all['meta_title'] = '';
 		$all['meta_description'] = '';
 		$all['meta_keywords'] ='';
-		//Удаление пробелов в начале и в конце каждого поля
+		// Удаление пробелов в начале и в конце каждого поля
 		foreach($all as $key => $value){
 			$all[$key] = trim($value);
 		}
