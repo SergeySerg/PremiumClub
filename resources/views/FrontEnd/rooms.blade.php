@@ -50,7 +50,7 @@
 
                         <span>{{ trans('base.cost') }}:<span class="price">{{ $room -> price }} {{ trans('base.currency') }}</span></span>
 
-                        <a class="booking-btn-in-rooms" href="#">{{ trans('base.booking') }}</a>
+                        <a class="booking-btn-in-rooms" href="/{{ App::getLocale() }}/booking">{{ trans('base.booking') }}</a>
 
                     </div>
 

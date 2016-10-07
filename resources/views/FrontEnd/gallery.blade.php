@@ -1,4 +1,4 @@
-@extends('app')
+@extends('ws-app')
 
 @section('content')
 

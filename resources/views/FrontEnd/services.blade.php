@@ -39,12 +39,12 @@
 
 							</span>
 
-                        <br>
+                        {{--<br>
 
 							<span class="services-price-name">
 							{{ trans('base.visit') }}:
 								<span class="services-price-value">Круглосуточно</span>
-							</span>
+							</span>--}}
 
                     </div>
 
