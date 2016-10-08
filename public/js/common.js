@@ -2,7 +2,7 @@
 
    var pageHref = window.location.href.split('#')[1];
      //alert(pageHref);
-     $('.services-block[name = "pageHref"]').find('.services-hide').addClass('webstudio-active');
+     $('#' & pageHref).find('.services-hide').addClass('webstudio-active');
 
 /* появление и пропадание удобств */
    /*перша відкрита за умовчанням*/
