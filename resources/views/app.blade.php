@@ -2,23 +2,67 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<title>PremiumClub | Панель керування</title>
 
+	<link rel="shortcut icon" href="{{ asset('/img/favicon/favicon.ico') }}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{{ asset('/img/favicon/apple-touch-icon.png') }}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/favicon/apple-touch-icon-72x72.png') }}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('/img/favicon/apple-touch-icon-114x114.png') }}">
+
+	<!--basic styles-->
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/backend/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/backend/bootstrap-responsive.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/backend/font-awesome.min.css') }}" rel="stylesheet">
+	<!--Тестовый css-->
+	<link href="{{ asset('/css/backend/backend.css') }}" rel="stylesheet">
 
-	<!-- Fonts -->
+	<!--[if IE 7]>
+	<link href="{{ asset('/css/backend/font-awesome-ie7.min.css') }}" rel="stylesheet">
+	<![endif]-->
+	<!--js-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript" ></script>
+	<!--<script src="{{ asset('/js/backend/articles.js') }}"type="text/javascript"></script>
+	<script src="{{ asset('/js/backend/jquery.ui.touch-punch.min.js') }}"type="text/javascript"></script>
+	<script src="{{ asset('/js/backend/jquery-ui-1.10.3.custom.min.js') }}"type="text/javascript"></script>
+	<script src="{{ asset('/js/backend/global.js') }}"type="text/javascript"></script>
+	<script src="{{ asset('/js/backend/jquery.slimscroll.min.js') }}"type="text/javascript"></script>-->
+
+	<!--page specific plugin styles-->
+
+	<!--<link href="{{ asset('/css/backend/jquery-ui-1.10.3.custom.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/backend/chosen.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/backend/datepicker.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/backend/bootstrap-timepicker.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/backend/daterangepicker.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/backend/colorpicker.css') }}" rel="stylesheet">-->
+
+
+	<!--fonts-->
+
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" type='text/css' />
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+	<!--ace styles-->
+	<link href="{{ asset('/css/backend/ace.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/backend/ace-responsive.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/backend/ace-skins.min.css') }}" rel="stylesheet">
+
+	<!--[if lte IE 8]>
+	<link rel="stylesheet" href="{{ asset('/css/backend/ace-ie.min.css') }} >
+    <![endif]-->
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
 	<![endif]-->
 </head>
-<body>
+<!--<body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -28,7 +72,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
+
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -53,10 +97,190 @@
 		</div>
 	</nav>
 
-	@yield('content')
+	@yield('content')-->
+<body class="login-layout">
+<div class="main-container container-fluid">
+	<div class="main-content">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="login-container">
+					<div class="row-fluid">
+						<div class="center">
+							<h1>
+								<span class="red">Premium</span>
+								<span class="white">Club</span>
+							</h1>
+						</div>
+					</div>
 
+					<div class="space-6"></div>
+
+					<div class="row-fluid">
+						<div class="position-relative">
+							@yield('content')
+
+							<!--<div id="forgot-box" class="forgot-box widget-box no-border">
+								<div class="widget-body">
+									<div class="widget-main">
+										<h4 class="header red lighter bigger">
+											<i class="icon-key"></i>
+											Retrieve Password
+										</h4>
+
+										<div class="space-6"></div>
+										<p>
+											Enter your email and to receive instructions
+										</p>
+
+										<form />
+										<fieldset>
+											<label>
+															<span class="block input-icon input-icon-right">
+																<input type="email" class="span12" placeholder="Email" />
+																<i class="icon-envelope"></i>
+															</span>
+											</label>
+
+											<div class="clearfix">
+												<button onclick="return false;" class="width-35 pull-right btn btn-small btn-danger">
+													<i class="icon-lightbulb"></i>
+													Send Me!
+												</button>
+											</div>
+										</fieldset>
+										</form>
+									</div><!--/widget-main-->
+
+									<!--<div class="toolbar center">
+										<a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
+											Back to login
+											<i class="icon-arrow-right"></i>
+										</a>
+									</div>
+								</div><!--/widget-body-->
+							</div><!--/forgot-box-->
+
+							<div id="signup-box" class="signup-box widget-box no-border">
+								<div class="widget-body">
+									<div class="widget-main">
+										<h4 class="header green lighter bigger">
+											<i class="icon-group blue"></i>
+											New User Registration
+										</h4>
+
+										<div class="space-6"></div>
+										<p> Enter your details to begin: </p>
+
+										<form />
+										<fieldset>
+											<label>
+															<span class="block input-icon input-icon-right">
+																<input type="email" class="span12" placeholder="Email" />
+																<i class="icon-envelope"></i>
+															</span>
+											</label>
+
+											<label>
+															<span class="block input-icon input-icon-right">
+																<input type="text" class="span12" placeholder="Username" />
+																<i class="icon-user"></i>
+															</span>
+											</label>
+
+											<label>
+															<span class="block input-icon input-icon-right">
+																<input type="password" class="span12" placeholder="Password" />
+																<i class="icon-lock"></i>
+															</span>
+											</label>
+
+											<label>
+															<span class="block input-icon input-icon-right">
+																<input type="password" class="span12" placeholder="Repeat password" />
+																<i class="icon-retweet"></i>
+															</span>
+											</label>
+
+											<label>
+												<input type="checkbox" />
+															<span class="lbl">
+																I accept the
+																<a href="#">User Agreement</a>
+															</span>
+											</label>
+
+											<div class="space-24"></div>
+
+											<div class="clearfix">
+												<button type="reset" class="width-30 pull-left btn btn-small">
+													<i class="icon-refresh"></i>
+													Reset
+												</button>
+
+												<button onclick="return false;" class="width-65 pull-right btn btn-small btn-success">
+													Register
+													<i class="icon-arrow-right icon-on-right"></i>
+												</button>
+											</div>
+										</fieldset>
+										</form>
+									</div>
+
+									<div class="toolbar center">
+										<a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
+											<i class="icon-arrow-left"></i>
+											Back to login
+										</a>
+									</div>
+								</div><!--/widget-body-->
+							</div><!--/signup-box-->
+						</div><!--/position-relative-->
+					</div>
+				</div>
+			</div><!--/.span-->
+		</div><!--/.row-fluid-->
+	</div>
+</div><!--/.main-container-->
+
+<!--basic scripts-->
+
+<!--[if !IE]>-->
+
+<script src="{{ asset('/js/backend/bootstrap.min.js') }}"></script>
+
+<!--page specific plugin scripts-->
+
+<!--<script src="{{ asset('/js/backend/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('/js/backend/jquery.dataTables.bootstrap.js') }}"></script>-->
+
+<!--Для страницы form elements-->
+
+<!--<script src="{{ asset('/js/backend/chosen.jquery.min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/fuelux.spinner.min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/bootstrap-datepicker.min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/bootstrap-timepicker.min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/moment.min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/daterangepicker.min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/bootstrap-colorpicker.min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/jquery.knob.min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/jquery.autosize-min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/jquery.inputlimiter.1.3.1.min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/jquery.maskedinput.min.js') }}"type="text/javascript"></script>
+<script src="{{ asset('/js/backend/bootstrap-tag.min.js') }}"type="text/javascript"></script>-->
+<!--ace scripts-->
+
+<script src="{{ asset('/js/backend/ace-elements.min.js') }}"></script>
+<script src="{{ asset('/js/backend/ace.min.js') }}"></script>
+
+<!--inline scripts related to this page-->
+<script type="text/javascript">
+	function show_box(id) {
+		$('.widget-box.visible').removeClass('visible');
+		$('#'+id).addClass('visible');
+	}
+</script>
+</body>
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
