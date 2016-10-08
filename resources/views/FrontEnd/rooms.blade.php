@@ -13,7 +13,7 @@
         </div>
         @foreach($rooms as $room)
 
-            <div class="rooms-block clearfix">
+            <div id="room-{{ $room -> id }}" class="rooms-block clearfix">
 
                 <div class="clearfix">
 

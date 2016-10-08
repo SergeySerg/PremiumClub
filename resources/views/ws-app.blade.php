@@ -172,7 +172,7 @@
 
                     @foreach($rooms as $room)
 
-                        <li><a href="/{{ App::getLocale() }}/rooms">{{ $room -> getTranslate('title') }}</a></li>
+                        <li><a href="/{{ App::getLocale() }}/rooms/#room-{{ $room -> id }}">{{ $room -> getTranslate('title') }}</a></li>
 
                     @endforeach
 
@@ -183,7 +183,7 @@
 
                     @foreach($services as $service)
 
-                        <li><a href="/{{ App::getLocale() }}/services#service-{{ $service -> id }}">{{ $service -> getTranslate('title') }}</a></li>
+                        <li><a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">{{ $service -> getTranslate('title') }}</a></li>
 
                     @endforeach
 
