@@ -118,7 +118,6 @@
 					<div class="row-fluid">
 						<div class="position-relative">
 							@yield('content')
-
 							<!--<div id="forgot-box" class="forgot-box widget-box no-border">
 								<div class="widget-body">
 									<div class="widget-main">
@@ -157,10 +156,10 @@
 											<i class="icon-arrow-right"></i>
 										</a>
 									</div>
-								</div><!--/widget-body-->
-							</div><!--/forgot-box-->
+								</div>
+							</div>--><!--/forgot-box-->
 
-							<div id="signup-box" class="signup-box widget-box no-border">
+							<!--<div id="signup-box" class="signup-box widget-box no-border">
 								<div class="widget-body">
 									<div class="widget-main">
 										<h4 class="header green lighter bigger">
@@ -232,7 +231,7 @@
 											Back to login
 										</a>
 									</div>
-								</div><!--/widget-body-->
+								</div>
 							</div><!--/signup-box-->
 						</div><!--/position-relative-->
 					</div>
