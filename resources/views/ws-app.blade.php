@@ -129,7 +129,7 @@
 				<div class="letter"></div>
 				<h1>{{ trans('base.callback') }}</h1>
 
-				<form id="contactform">
+				<!--<form id="contactform">
 
 					<input id="name" name="name" placeholder="{{ trans('base.name') }}" required type="text">
 
@@ -140,7 +140,47 @@
 
 					<input name="submit" id="submit" tabindex="5" value="{{ trans('base.send') }}" type="submit">
 
+				</form>-->
+				<form  id="frm" action="{{ url('/contact') }}" method="post">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					<label class="h6">Имя / Фамилия</label>
+					<input type="text" name="name" required="required" class="form-control">
+					<label class="h6">E-mail</label>
+					<input type="email" name="email" required="required" class="form-control">
+					<label class="h6">Сообщение</label>
+					<textarea rows="7" name="message" required="required" class="form-control"></textarea><br />
+
+					кнопка <button type="submit" class="btn btn-primary" ><span class="fui-mail"></span></button>
 				</form>
+				<script>
+
+					$("document").ready(function(){
+						$("#frm").submit(function(e){
+							e.preventDefault();
+							var name = $("input[name=name]").val();
+							var email = $("input[name=email]").val();
+							var message = $("textarea[name=message]").val();
+							var dataString = 'name='+name+'&email='+email+'&message'+message;
+							$.ajax({
+								type: "POST",
+								url : "http://laravel.loc/contact",
+								data : dataString,
+								dataType : "json",
+								success : function(msg){
+
+									if (msg ['msg'] == true){
+										sweetAlert("Ваша заявка отправлена!", "success");
+									}else {
+										sweetAlert("Вы ввели не всю информацию, вернитесь и заполните все поля!", "error");
+									}
+
+								}
+
+							},"json");
+
+						});
+					});
+				</script>
 
 			</div>
 
