@@ -11,6 +11,10 @@
 |
 */
 
+
+
+Route::get('home', 'HomeController@index');//Для відображення результата після логування
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
