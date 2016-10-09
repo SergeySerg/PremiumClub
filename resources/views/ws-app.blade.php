@@ -63,7 +63,7 @@
 
 				<ul class="lang clearfix">
 				@foreach($langs as $lang)
-					<li><a href="/{{$lang -> lang}}">{{$lang -> lang}}</a></li>
+					<li><a href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a></li>
 				@endforeach
 				</ul>
 
@@ -80,7 +80,6 @@
 				<a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a>
 				<a href="/{{ App::getLocale() }}/events">{{ trans('base.events') }}</a>
 				<a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a>
-				{{--<a href="#" onclick="alert('На стадії наповнення');">{{ trans('base.gallery') }}</a>--}}
 				<a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a>
 
 			</nav>
