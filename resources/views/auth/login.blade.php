@@ -60,22 +60,21 @@
 
 		</div><!--/widget-main-->
 
-		<!--<div class="toolbar clearfix">
+		<div class="toolbar clearfix">
 			<div>
-                <a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
+                <a href="{{ url('/password/email') }}"  class="forgot-password-link">
                     <i class="icon-arrow-left"></i>
-                    I forgot my password
+                    Забули пароль?
                 </a>
             </div>
 
-			<div>
-				<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">
-					I want to register
+			<!--<div>
+				<a href="{{ url('/auth/register') }}"  class="user-signup-link">
+					Зараєструватися
 					<i class="icon-arrow-right"></i>
 				</a>
-			</div>
-
-		</div>-->
+			</div>-->
+		</div>
 	</div><!--/widget-body-->
 </div><!--/login-box-->
 <!--<div class="container-fluid">

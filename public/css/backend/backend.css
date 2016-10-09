@@ -45,3 +45,7 @@ button.btn.btn-warning{
 div.datapicker.datapicker-dropdown.dropdown-menu{
     z-index: 12;
 }
+.forgot-box.no-border, .signup-box.no-border{
+    padding: 6px;
+    background-color: #394557;
+}
