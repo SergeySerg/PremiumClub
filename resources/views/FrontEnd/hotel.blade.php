@@ -75,9 +75,9 @@
 
                         <h1>{{ str_limit($service -> getTranslate('title'),16,'...') }}</h1>
 
-                        <section>{{ str_limit($service -> getTranslate('description'),140,'...') }}</section>
+                        <section>{{ str_limit($service -> getTranslate('description'),135,'...') }}</section>
 
-                        <a href="/{{ App::getLocale() }}/services">{{ trans('base.more') }}<div class="arrow-right"></div></a>
+                        <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">{{ trans('base.more') }}<div class="arrow-right"></div></a>
 
                     </div>
 

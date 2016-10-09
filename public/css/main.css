@@ -645,6 +645,8 @@ h2 {
         border-bottom: 1px solid #e9d0a5;
         line-height: 1.625em;
         overflow: hidden; }
+    .content .contact-block .contact-item li .location {
+      padding-right: 50%; }
     .content .contact-block .contact-item .map-label-contact {
       background-image: url(../img/sprites/sprite.png);
       background-position: -54px -75px;
