@@ -20,12 +20,6 @@
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-	<SCRIPT>
-		var I18n = {
-			'details': 'Подробнее'
-		};
-	</SCRIPT>
-
 </head>
 
 <body>
@@ -48,7 +42,7 @@
 
 				<div class="top-line_address"></div>
 
-				<div class="address">{{ trans('base.address') }}</div>
+				<div class="address">{{ $texts[6] }}</div>
 
 			</div>
 
@@ -58,7 +52,7 @@
 
 				<ul class="phones">
 
-					<li><span class="phone-part">+38067</span> 3433400<span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
+					<li>{!! $texts[5] !!}<span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
 
 				</ul>
 
@@ -215,7 +209,7 @@
 
 				<ul class="phones">
 
-                    <li><span class="phone-part">+38067</span> 3433400 <span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
+                    <li>{!! $texts[5] !!}<span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
 
 				</ul>
 
@@ -225,7 +219,7 @@
 
 				<div class="top-line_address"></div>
 
-                <div class="address">{{ trans('base.address') }}</div>
+                <div class="address">{{ $texts[6] }}</div>
 
 			</div>
 
