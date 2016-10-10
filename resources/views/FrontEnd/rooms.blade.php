@@ -17,20 +17,28 @@
 
                 <div class="clearfix">
 
-                    <div class="img-block">
+                    @if(count($room -> getImages()) > 0)
 
-                        <div id="webstudio-gallery-id-{{ $room -> id }}" class="webstudio-gallery-rooms" style="display:none;">
+                        <div class="img-block">
 
-                            @foreach($room -> getImages() as $imgSrc)
+                            <div id="webstudio-gallery-id-{{ $room -> id }}" class="webstudio-gallery-rooms" style="display:none;">
 
-                                <img alt="Image 2 Title" src="/{{ $imgSrc }}"
-                                 data-image="/{{ $imgSrc }}">
+                                @foreach($room -> getImages() as $imgSrc)
 
-                            @endforeach
+                                    <img alt="Image 2 Title" src="/{{ $imgSrc }}"
+                                     data-image="/{{ $imgSrc }}">
+
+                                @endforeach
+
+                            </div>
 
                         </div>
 
-                    </div>
+                    @else
+
+                        <div class="img-block" style="border: 1px solid #E5AF51; background-image: url({{ asset('/img/no-img.png') }}); background-repeat: no-repeat; background-position: center;"></div>
+
+                    @endif
 
                     <div class="describe-block">
 
@@ -64,40 +72,7 @@
 
                 </div>
 
-                <div class="conveniences-block clearfix">
-
-                    <ul>
-                        <li>42” LCD-телевизор и DVD-проигрыватель</li>
-                        <li>Музыкальная док-станция</li>
-                        <li>Планшет Samsung Galaxy Tab – электронная гостевая директория</li>
-                        <li>Рабочий стол с канцелярскими принадлежностями</li>
-                        <li>3 многоканальных телефона с голосовой почтой</li>
-                        <li>Чайник и наборы для чая и кофе</li>
-                        <li>Мини-бар</li>
-                        <li>Большой шкаф</li>
-                        <li>Горизонтальный сейф в номере</li>
-                        <li>Рожок</li>
-                    </ul>
-
-                    <ul>
-                        <li>42” LCD-телевизор и DVD-проигрыватель</li>
-                        <li>Музыкальная док-станция</li>
-                        <li>Планшет Samsung Galaxy Tab – электронная гостевая директория</li>
-                        <li>Рабочий стол с канцелярскими принадлежностями</li>
-                        <li>3 многоканальных телефона с голосовой почтой</li>
-                    </ul>
-
-                    <ul>
-                        <li>Рабочий стол с канцелярскими принадлежностями</li>
-                        <li>3 многоканальных телефона с голосовой почтой</li>
-                        <li>Чайник и наборы для чая и кофе</li>
-                        <li>Мини-бар</li>
-                        <li>Большой шкаф</li>
-                        <li>Горизонтальный сейф в номере</li>
-                        <li>Рожок</li>
-                    </ul>
-
-                </div>
+                <div class="conveniences-block clearfix"></div>
 
             </div>
 

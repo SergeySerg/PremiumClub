@@ -4,6 +4,12 @@ if(pageHash.indexOf("service") + 1){
 }
 
 $(function(){
+    /* парсим списки и таблицу в описании номера */
+    $('.rooms-block').each(function () {
+        $(this).find('ul').appendTo($(this).find('.conveniences-block'));
+    });
+    /* END парсим списки и таблицу в описании номера */
+
     /* появление и пропадание удобств */
     /*перша відкрита за умовчанням*/
     if(!pageHash) {
@@ -94,6 +100,7 @@ $(function(){
             strippanel_padding_left:0,
             slider_enable_zoom_panel: false,
             slider_control_zoom: false,
+            slider_loader_type: 7,
         });
     });
     /* END просмотр фото номеров */
