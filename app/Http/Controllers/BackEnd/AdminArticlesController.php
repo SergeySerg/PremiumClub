@@ -15,6 +15,7 @@ use App;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\MessageBag;
 use Storage;
+use Image;
 
 
 class AdminArticlesController extends Controller {
@@ -108,7 +109,8 @@ class AdminArticlesController extends Controller {
 		//$directories = Storage::directories('/public/upload/articles/');
 		//dd($directories);
 		//Создание папки соответсвующие id
-		 Storage::makeDirectory('upload/articles/' . $id, '0777', true, true);
+		Storage::makeDirectory('upload/articles/' . $id, '0777', true, true);
+		Storage::makeDirectory('upload/articles/' . $id . '/min', '0777', true, true);
 
 		$langs = Lang::all();
 		$admin_article = Article::where("id","=","$id")->first();
@@ -143,8 +145,23 @@ class AdminArticlesController extends Controller {
 		}
 		$article = Article::where('id', '=', $id)->first();
 		$all = $request->all();
-		//Вытягивание картиноr с папки и представление в формате jsone
+		//Вытягивание картинок с папки и представление в формате json
 		$files = Storage::Files('upload/articles/'.$id.'/images/');
+		foreach($files as $key => $file){
+			$savePath = str_replace('/'.$id.'/images/', '/'.$id.'/min/', $file);
+
+			$image = Image::make($file)
+				->resize(1200, null, function ($constraint) { $constraint->aspectRatio();})
+				->save($file, 90)
+				->resize(320, null, function ($constraint) { $constraint->aspectRatio(); })
+				->save($savePath, 70);
+
+			$files[$key] = [
+				'full' => $file,
+				'min' => $savePath
+			];
+		}
+
 		$all['imgs'] = json_encode($files);
 		//Очистка масссива от title_ua,ru,en и т д
 		$all = $this->prepareArticleData($all);
