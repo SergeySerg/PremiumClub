@@ -111,7 +111,7 @@ h2 {
     background-color: #E5AF51; }
     .content-title .content-title-line .flower-right {
       background-image: url(../img/sprites/sprite.png);
-      background-position: -123px -75px;
+      background-position: -175px -40px;
       width: 20px;
       height: 20px;
       position: absolute;
@@ -137,17 +137,17 @@ h2 {
     float: left;
     width: 28%;
     color: #FFF; }
-    .top-line .sub-block-booking {
-        width: 23%; }
-    .top-line .sub-block-3dtour {
-        width: 15%; }
-    .top-line .sub-block-phones {
-        width: 20%; }
-    .top-line .sub-block-lang {
-        width: 14%; }
+  .top-line .sub-block-booking {
+    width: 20%; }
+  .top-line .sub-block-3dtour {
+    width: 10%; }
+  .top-line .sub-block-phones {
+    width: 30%; }
+  .top-line .sub-block-lang {
+    width: 14%; }
   .top-line_booking {
     background-image: url(../img/sprites/sprite.png);
-    background-position: -35px -40px;
+    background-position: 0px -40px;
     width: 32px;
     height: 35px;
     float: left;
@@ -306,9 +306,10 @@ h2 {
   .booking #booking-form .for-arrival-date, .booking #booking-form .for-departure-date {
     display: block;
     float: left;
-    width: 11%;
-    padding-left: 3.5%;
-    padding-right: 2.5%;
+    width: 9%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 3.4%;
     padding-top: 5px;
     color: #8D6C38;
     font-size: 1.0625em;
@@ -370,16 +371,14 @@ h2 {
       padding: 25px 25px 30px;
       border: 1px solid #e5af51; }
       .content-main li .describe-block h1 {
-        max-height: 29px;
-        overflow: hidden; }
+        max-height: 29px; }
       .content-main li .describe-block section {
         height: 100px;
         margin-top: 20px;
         margin-bottom: 20px;
         font-family: "RobotoItalic", sans-serif;
         font-size: 1em;
-        line-height: 1.875em;
-        overflow: hidden; }
+        line-height: 1.875em; }
       .content-main li .describe-block a {
         position: relative;
         color: #ae7719;
@@ -387,12 +386,12 @@ h2 {
         font-family: "GeorgiaBoldItalic", sans-serif;
         line-height: 1.625em; }
         .content-main li .describe-block a .arrow-right {
-          background-image: url(../img/sprites/sprite.png);
-          background-position: -190px -75px;
-          width: 7px;
-          height: 13px;
           display: inline-block;
-          margin-left: 5px; }
+          margin-left: 5px;
+          background-image: url(../img/sprites/sprite.png);
+          background-position: -157px -75px;
+          width: 7px;
+          height: 13px;  }
         .content-main li .describe-block a:hover {
           text-decoration: underline; }
   .content-main .hotel-describe {
@@ -402,6 +401,11 @@ h2 {
       font-family: "RobotoItalic", sans-serif;
       font-size: 1.125em;
       line-height: 2em; }
+    .content-main .hotel-describe section ul li{
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;}
 
 /* ------------ End Page Main ------------- */
 /* -------- Page Rooms ----------- */
@@ -439,7 +443,7 @@ h2 {
         font-size: 1em;
         line-height: 1.6875em; }
         .content-rooms .rooms-block .describe-block .describe-room table {
-          margin-top: 48px; }
+          margin-top: 20px; }
           .content-rooms .rooms-block .describe-block .describe-room table td:first-child {
             padding-right: 60px;
             font-family: "RobotoBold", sans-serif;
@@ -494,7 +498,7 @@ h2 {
         line-height: 21px; }
       .content-rooms .rooms-block .conveniences-line .arrow-conveniences {
         background-image: url(../img/sprites/sprite.png);
-        background-position: -182px -75px;
+        background-position: -149px -75px;
         width: 8px;
         height: 18px;
         float: right; }
@@ -512,7 +516,7 @@ h2 {
         line-height: 2em; }
         .content-rooms .rooms-block .conveniences-block ul li {
           padding-left: 10px;
-          background: url("../img/list-style.png") no-repeat left 14px; }
+          background: url("../img/list-style.png") no-repeat left 12px; }
 
 /* -------- End Page Rooms ----------- */
 /* -------- Page Services ----------- */
@@ -550,7 +554,7 @@ h2 {
       background-color: #FFF9EF; }
       .content .services-block .services-arrow-wrap .services-arrow {
         background-image: url(../img/sprites/sprite.png);
-        background-position: -189px -40px;
+        background-position: -141px -75px;
         width: 8px;
         height: 18px;
         background-color: #FFF9EF;
@@ -591,7 +595,7 @@ h2 {
     line-height: 2.25em; }
     .content .events-block .date-wrap .calendar {
       background-image: url(../img/sprites/sprite.png);
-      background-position: -102px -75px;
+      background-position: -154px -40px;
       width: 21px;
       height: 21px;
       position: relative;
@@ -650,6 +654,8 @@ h2 {
         border-bottom: 1px solid #e9d0a5;
         line-height: 1.625em;
         overflow: hidden; }
+    .content .contact-block .contact-item li .location {
+      padding-right: 50%; }
     .content .contact-block .contact-item .map-label-contact {
       background-image: url(../img/sprites/sprite.png);
       background-position: -54px -75px;
@@ -659,21 +665,21 @@ h2 {
       margin-right: 15px; }
     .content .contact-block .contact-item .letter-contact {
       background-image: url(../img/sprites/sprite.png);
-      background-position: -160px -40px;
+      background-position: -125px -40px;
       width: 29px;
       height: 22px;
       float: left;
       margin-right: 15px; }
     .content .contact-block .contact-item .phone-contact {
       background-image: url(../img/sprites/sprite.png);
-      background-position: -99px -40px;
+      background-position: -64px -40px;
       width: 29px;
       height: 31px;
       float: left;
       margin-right: 15px; }
     .content .contact-block .contact-item .location-contact {
       background-image: url(../img/sprites/sprite.png);
-      background-position: -67px -40px;
+      background-position: -32px -40px;
       width: 32px;
       height: 32px;
       float: left;
@@ -706,7 +712,7 @@ h2 {
     padding-left: 4%; }
     .grey-block .callback-form .letter {
       background-image: url(../img/sprites/sprite.png);
-      background-position: -128px -40px;
+      background-position: -93px -40px;
       width: 32px;
       height: 24px;
       float: left;
@@ -756,8 +762,8 @@ footer .top-line_sub-block {
     text-transform: uppercase; }
   .footer-mnu-block ul {
     float: left;
-    margin-right: 60px;
-    margin-top: -20px; }
+    margin-right: 50px;
+      margin-top: -20px;}
     .footer-mnu-block ul li a {
       color: #bf9258;
       line-height: 2em; }
@@ -778,7 +784,7 @@ footer .top-line_sub-block {
     background-color: #392420; }
     .footer-mnu-block .ft-line .flower-right-dark {
       background-image: url(../img/sprites/sprite.png);
-      background-position: -163px -75px;
+      background-position: -122px -75px;
       width: 19px;
       height: 19px;
       position: absolute;

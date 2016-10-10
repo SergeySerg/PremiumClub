@@ -20,6 +20,7 @@ return [
 	'gallery' => 'Gallery',
 	'contacts' => 'Contacts',
 	'booking' => 'Booking',
+	'tour' => '3D-tour',
 	'address' => '78500, Yaremche, 50 Dovbush str, Ivano-Frankivsk region',
 	/* End Header */
 /* Booking */

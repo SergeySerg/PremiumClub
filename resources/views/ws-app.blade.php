@@ -30,11 +30,19 @@
 
 		<div class="top-line clearfix">
 
-			<div class="top-line_sub-block">
+			<div class="top-line_sub-block sub-block-booking">
 
 				<div class="top-line_booking"></div>
 
 				<a href="/{{ App::getLocale() }}/booking">{{ trans('base.booking') }}</a>
+
+			</div>
+
+			<div class="top-line_sub-block sub-block-3dtour">
+
+				<div class="top-line_3dtour"></div>
+
+				<a href="/{{ App::getLocale() }}/3dtour">{{ trans('base.tour') }}</a>
 
 			</div>
 
@@ -52,7 +60,8 @@
 
 				<ul class="phones">
 
-					<li>{!! $texts[5] !!}<span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
+					<li>{!! $texts[5] !!}</li>
+					<li><span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
 
 				</ul>
 
@@ -222,7 +231,15 @@
 
 			</div>
 
-			<div class="top-line_sub-block">
+            <div class="top-line_sub-block sub-block-3dtour">
+
+                <div class="top-line_3dtour"></div>
+
+                <a href="/{{ App::getLocale() }}/3dtour">{{ trans('base.tour') }}</a>
+
+            </div>
+
+			<div class="top-line_sub-block sub-block-booking">
 
 				<div class="top-line_booking"></div>
 
