@@ -178,13 +178,18 @@
                     <span class="menu-text"> Події </span>
                 </a>
             </li>
-            <li>
-                <a href="gallery">
+            <li @if(Request::is('admin30x5/articles/gallery'))class="active"@endif>
+                <a href="/admin30x5/articles/gallery">
                     <i class="icon-picture"></i>
                     <span class="menu-text"> Галерея </span>
                 </a>
             </li>
-
+            <li @if(Request::is('admin30x5/articles/slider'))class="active"@endif>
+            <a href="/admin30x5/articles/slider">
+                <i class="icon-picture"></i>
+                <span class="menu-text"> Слайдер </span>
+            </a>
+            </li>
             <li>
                 <a href="typography.html">
                     <i class="icon-wrench"></i>

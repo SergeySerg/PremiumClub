@@ -2,25 +2,30 @@
 
 @section('content')
 
-    {{--<div class="slider">
+
+
+
+
+    <div class="slider">
+
 
         <div id="webstudio-slider" style="display:none;">
+            @foreach($slides as $slide)
 
-            <img alt="Предусматриваем текст слайда c заголовком" src="{{ asset('/img/slide-2.jpg') }}"
-            data-image="img/slide-2.jpg"
-            id="sdsd"
-            data-description="С кратким описанием и кнопкой подробнее"
-            data-link="jhjhjhj111">
+                @if(count($slide->getImages()) > 0)
 
-            <img alt="Image 1 Title" src="{{ asset('/img/slide-1.jpg') }}"
-            id="kkk"
-            data-image="img/slide-1.jpg"
-            data-description="Image 1 Description"
-            data-link="jhjhjhj222">
+                        <img alt="{{$slide->getTranslate('title')}}" src="/{{$slide->getImages()[0]}}"
+                        data-image="/{{$slide->getImages()[0]}}"
+                        id="img-{{$slide->id}}"
+                        data-description=" {{$slide->getTranslate('description')}}"
+                        data-link="jhjhjhj111">
 
+                @endif
+            
+            @endforeach
         </div>
 
-    </div>--}}
+    </div>
 
     <div id="3d-tour">
     </div>

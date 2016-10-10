@@ -585,9 +585,9 @@ class CategoriesSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('Categories')->delete();
+       DB::table('Categories')->delete();
 
-        Category::create([
+       Category::create([
             'id' => "1",
             'name' => 'Готелі',
             'link' => 'hotel',
@@ -619,6 +619,13 @@ class CategoriesSeeder extends Seeder {
             'id' => "5",
             'name' => 'Галерея',
             'link' => 'gallery',
+            'fields' => '["title","description","meta_title","meta_description","gallery","date","active"]',
+        ]);
+
+        Category::create([
+            'id' => "6",
+            'name' => 'Слайдер',
+            'link' => 'slider',
             'fields' => '["title","description","meta_title","meta_description","gallery","date","active"]',
         ]);
     }

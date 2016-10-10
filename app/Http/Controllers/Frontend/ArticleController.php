@@ -26,10 +26,13 @@ class ArticleController extends Controller {
 	{
 		$events = null;
 		$gallery = null;
-
+		$slides = null;
 		switch($type){
             case 'hotel':
-                break;
+				$slides = Category::where('link','=', 'slider')
+					->first()
+					->articles;
+				break;
 			case 'rooms':
 				break;
 			case 'services':
@@ -48,7 +51,8 @@ class ArticleController extends Controller {
 
 		return view('frontend.'.$type, [
 			'events' => $events,
-			'gallery' => $gallery
+			'gallery' => $gallery,
+			'slides' => $slides
 		]);
 	}
 
