@@ -17,20 +17,28 @@
 
                 <div class="clearfix">
 
-                    <div class="img-block">
+                    @if(count($room -> getImages()) > 0)
 
-                        <div id="webstudio-gallery-id-{{ $room -> id }}" class="webstudio-gallery-rooms" style="display:none;">
+                        <div class="img-block">
 
-                            @foreach($room -> getImages() as $imgSrc)
+                            <div id="webstudio-gallery-id-{{ $room -> id }}" class="webstudio-gallery-rooms" style="display:none;">
 
-                                <img alt="Image 2 Title" src="/{{ $imgSrc }}"
-                                 data-image="/{{ $imgSrc }}">
+                                @foreach($room -> getImages() as $imgSrc)
 
-                            @endforeach
+                                    <img alt="Image 2 Title" src="/{{ $imgSrc }}"
+                                     data-image="/{{ $imgSrc }}">
+
+                                @endforeach
+
+                            </div>
 
                         </div>
 
-                    </div>
+                    @else
+
+                        <div class="img-block" style="border: 1px solid #E5AF51; background-image: url({{ asset('/img/no-img.png') }}); background-repeat: no-repeat; background-position: center;"></div>
+
+                    @endif
 
                     <div class="describe-block">
 

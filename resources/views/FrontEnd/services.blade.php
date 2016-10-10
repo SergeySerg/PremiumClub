@@ -55,17 +55,20 @@
                     </div>
 
                 </div>
+                @if(count($service -> getImages()) > 0)
 
-                <div id="services-photo-id-{{ $service -> id }}" class="webstudio-gallery" style="display:none;">
+                    <div id="services-photo-id-{{ $service -> id }}" class="webstudio-gallery" style="display:none;">
 
-                    @foreach($service -> getImages() as $imgSrc)
+                        @foreach($service -> getImages() as $imgSrc)
 
-                        <img alt="Image 2 Title" src="/{{ $imgSrc }}"
-                             data-image="/{{ $imgSrc }}">
+                            <img alt="Image 2 Title" src="/{{ $imgSrc }}"
+                                 data-image="/{{ $imgSrc }}">
 
-                    @endforeach
+                        @endforeach
 
-                </div>
+                    </div>
+
+                @endif
 
             </div>
 

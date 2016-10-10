@@ -16,7 +16,7 @@
 
                 <h2>{{ $gall -> getTranslate('title') }}</h2>
 
-                <div id="events-photo-id-{{$gall -> id}}" class="webstudio-gallery" style="display:none;">
+                <div id="gallery-photo-id-{{$gall -> id}}" class="webstudio-gallery" style="display:none;">
 
                     @foreach($gall -> getImages() as $imgSrc)
 

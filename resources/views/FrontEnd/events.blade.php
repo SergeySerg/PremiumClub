@@ -30,16 +30,21 @@
                     {{$event -> getTranslate('description')}}
                 </div>
 
-                <div id="events-photo-id-{{$event -> id}}" class="webstudio-gallery" style="display:none;">
+                @if(count($event -> getImages()) > 0)
 
-                    @foreach($event -> getImages() as $imgSrc)
+                    <div id="events-photo-id-{{$event -> id}}" class="webstudio-gallery" style="display:none;">
 
-                        <img alt="Image 2 Title" src="/{{ $imgSrc }}"
-                             data-image="/{{ $imgSrc }}">
+                        @foreach($event -> getImages() as $imgSrc)
 
-                    @endforeach
+                            <img alt="Image 2 Title" src="/{{ $imgSrc }}"
+                                 data-image="/{{ $imgSrc }}">
 
-                </div>
+                        @endforeach
+
+                    </div>
+
+                @endif
+
 
             </div>
 
