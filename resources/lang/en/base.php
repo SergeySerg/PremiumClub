@@ -36,7 +36,7 @@ return [
 	'quantity' => 'Quantity',
 	'currency' => 'uah',
     'cost' => 'Cost',
-    'conveniences' => 'Сonveniences',
+    'conveniences' => 'Amenities',
 /* End Rooms Page */
 /* Services Page */
 	'servicescontenttitle' => 'Services',

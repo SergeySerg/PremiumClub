@@ -4,6 +4,12 @@ if(pageHash.indexOf("service") + 1){
 }
 
 $(function(){
+    /* парсим списки и таблицу в описании номера */
+    $('.describe-room').each(function () {
+        $(this).find('ul').appendTo('.conveniences-block');
+    });
+    /* END парсим списки и таблицу в описании номера */
+
     /* появление и пропадание удобств */
     /*перша відкрита за умовчанням*/
     if(!pageHash) {
