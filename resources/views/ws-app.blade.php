@@ -254,7 +254,6 @@
 </div>
 
 <script src="{{ asset('/libs/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('/libs/bxslider/webstudio-bxslider.js') }}"></script>
 <script src="{{ asset('/js/common.js') }}"></script>
 
 <script src="{{ asset('/libs/unitegallery/dist/themes/default/ug-theme-default.js') }}"></script>
@@ -262,7 +261,7 @@
 <script src="{{ asset('/libs/unitegallery/dist/themes/tiles/ug-theme-tiles.js') }}"></script>
 <script src="{{ asset('/libs/unitegallery/dist/themes/tilesgrid/ug-theme-tilesgrid.js') }}"></script>
 <script src="{{ asset('/libs/unitegallery/dist/themes/compact/ug-theme-compact.js') }}"></script>
-<script src="{{ asset('/libs/unitegallery/dist/js/unitegallery.js') }}"></script>
+<script src="{{ asset('/libs/unitegallery/dist/js/unitegallery.min.js') }}"></script>
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
