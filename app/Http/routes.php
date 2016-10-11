@@ -45,7 +45,7 @@ Route::group(['middleware' => 'frontend.init'], function(){
 	Route::get('/{lang}/booking', 'Frontend\BookingController@index');
 	Route::get('/{lang}/{type?}', 'Frontend\ArticleController@index');
 });
-Route::post('/contact', function(){
+/*Route::post('/contact', function(){
 	if (Request::ajax()){
 		$user = array(
 			'email' => Input::get('email')
@@ -73,8 +73,37 @@ Route::post('/contact', function(){
 		});
 		return Response::json(array('msg' => 'ok'));
 	}
+});*/
+//Route::post('/contact','Frontend\ArticleController@sendEmailReminder');
+Route::post('/contact', function(){
+	if (Request::ajax()){
+		$user = array(
+			'email' => Input::get('email')
+		);
+		$data = array(
+			'name' => Input::get('name'),
+			'email' => Input::get('email'),
+			'message_body' => Input::get('message')
+		);
+		dd($data);
+		$rules = array(
+			'name'  => 'required|max:50',
+			'email' => 'required|email',
+			'message_body' => 'required|min:6',
+		);
+		$validation = Validator::make($data, $rules);
+
+		if ($validation->fails())
+		{
+			return Redirect::to('/')->withErrors($validation)->withInput();
+		}
+
+
+		Mail::send('emails.letter', $data, function($message) use ($user) {
+			$message->to('webtestingstudio@gmail.com', 'RS Staff')->subject('Новое сообщение ');
+		});
+		return Response::json(array('msg' => 'ok'));
+	}
 });
-
-
 
 

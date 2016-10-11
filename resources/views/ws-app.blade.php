@@ -62,9 +62,9 @@
 
 
 				<ul class="lang clearfix">
-				@foreach($langs as $lang)
-					<li><a href="/{{$lang -> lang}}">{{$lang -> lang}}</a></li>
-				@endforeach
+					@foreach($langs as $lang)
+						<li><a href="/{{$lang -> lang}}">{{$lang -> lang}}</a></li>
+					@endforeach
 				</ul>
 
 			</div>
@@ -141,8 +141,8 @@
 					<input name="submit" id="submit" tabindex="5" value="{{ trans('base.send') }}" type="submit">
 
 				</form>-->
-				<form  id="frm" action="{{ url('/contact') }}" method="post">
-					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<form  id="frm"  method="post">
+					<input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 					<label class="h6">Имя / Фамилия</label>
 					<input type="text" name="name" required="required" class="form-control">
 					<label class="h6">E-mail</label>
@@ -151,20 +151,29 @@
 					<textarea rows="7" name="message" required="required" class="form-control"></textarea><br />
 
 					кнопка <button type="submit" class="btn btn-primary" ><span class="fui-mail"></span></button>
-				</form>
+					<div id="token" style="display: none">{{csrf_token()}}</div>
+				</form>-
+
 				<script>
 
-					$("document").ready(function(){
+					document.addEventListener("DOMContentLoaded", function(){
 						$("#frm").submit(function(e){
 							e.preventDefault();
 							var name = $("input[name=name]").val();
 							var email = $("input[name=email]").val();
 							var message = $("textarea[name=message]").val();
-							var dataString = 'name='+name+'&email='+email+'&message'+message;
+							var token = $("#token").text();
+							//var dataString = 'name='+name+'&email='+email+'&message'+message+'&_token='+token;
+							var data = {
+								name: name,
+								email: email,
+								message: message,
+								token: token
+							}
 							$.ajax({
 								type: "POST",
 								url : "http://laravel.loc/contact",
-								data : dataString,
+								data : data,
 								dataType : "json",
 								success : function(msg){
 
@@ -277,6 +286,8 @@
 
 </div>
 
+
+
 <script src="{{ asset('/libs/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('/libs/bxslider/webstudio-bxslider.js') }}"></script>
 <script src="{{ asset('/js/common.js') }}"></script>
@@ -290,4 +301,4 @@
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
-</html>
+</html>-->

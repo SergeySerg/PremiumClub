@@ -12,6 +12,8 @@ use App\Models\Category;
 use App\Models\Lang;
 use App;
 use Illuminate\Support\Facades\Response;
+use Mail;
+//use App\User;
 
 //use Illuminate\Contracts\View\View;
 
@@ -115,5 +117,17 @@ class ArticleController extends Controller {
 	{
 		//
 	}
+	public function sendEmailReminder(Request $request)
+	{
+		$data = $request->all();
+		//dd($data['name']);
+		//$user = User::findOrFail($id);
 
+
+		Mail::send('emails.letter',['name' => $data['name'],'email' => $data['email'], 'message' => $data['message']], function ($message) {
+			$message->from('webtestingstudio@gmail.com', 'Premium Club');
+
+			$message->to('webtestingstudio@gmail.com')->cc('bar@example.com');
+		});
+	}
 }
