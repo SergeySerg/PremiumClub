@@ -36,8 +36,8 @@
 
                         @foreach($event -> getImages() as $imgSrc)
 
-                            <img alt="Image 2 Title" src="/{{ $imgSrc }}"
-                                 data-image="/{{ $imgSrc }}">
+                            <img alt="" src="/{{ $imgSrc['min'] }}"
+                                 data-image="/{{ $imgSrc['full'] }}">
 
                         @endforeach
 

@@ -8,6 +8,11 @@ ini_set('session.use_only_cookies', '0');
 @session_start();
 */
 
+if(!isset($_SESSION)){
+    $_SESSION = [];
+    $_SESSION['type'] = '';
+}
+
 if(isset($_GET['config']))
 {
     $_SESSION['type'] = $_GET['config'];
