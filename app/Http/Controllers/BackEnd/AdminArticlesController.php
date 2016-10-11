@@ -140,7 +140,7 @@ class AdminArticlesController extends Controller {
 		foreach($langs as $lang){
 			$this->validate($request, [
 				'title_'.$lang['lang'] => 'required|max:255',
-				'description_'.$lang['lang'] => 'required',
+				//'description_'.$lang['lang'] => 'required',
 			]);
 		}
 		$article = Article::where('id', '=', $id)->first();

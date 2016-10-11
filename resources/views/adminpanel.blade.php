@@ -153,7 +153,7 @@
 
             <li @if(Request::is('admin30x5/articles/hotels'))class="active"@endif>
             <a href="/admin30x5/articles/hotel">
-                <i class="icon-wrench"></i>
+                <i class="icon-text-width"></i>
                 <span class="menu-text"> Готель інфо </span>
             </a>
             </li>
@@ -167,7 +167,7 @@
 
             <li @if(Request::is('admin30x5/articles/services'))class="active"@endif>
                 <a href="/admin30x5/articles/services">
-                    <i class="icon-wrench"></i>
+                    <i class="icon-list"></i>
                     <span class="menu-text"> Послуги </span>
                 </a>
             </li>
@@ -189,11 +189,11 @@
                 <i class="icon-picture"></i>
                 <span class="menu-text"> Слайдер </span>
             </a>
-            </li>
+            </li @if(Request::is('admin30x5/articles/seo'))class="active"@endif>
             <li>
-                <a href="typography.html">
-                    <i class="icon-wrench"></i>
-                    <span class="menu-text"> Контакти </span>
+                <a href="/admin30x5/articles/seo">
+                    <i class="icon-file-alt"></i>
+                    <span class="menu-text"> SEO </span>
                 </a>
             </li>
             <li @if(Request::is('admin30x5/texts'))class="active"@endif>
