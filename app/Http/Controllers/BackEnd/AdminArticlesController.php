@@ -110,7 +110,6 @@ class AdminArticlesController extends Controller {
 		//dd($directories);
 		//Создание папки соответсвующие id
 		Storage::makeDirectory('upload/articles/' . $id, '0777', true, true);
-		Storage::makeDirectory('upload/articles/' . $id . '/min', '0777', true, true);
 
 		$langs = Lang::all();
 		$admin_article = Article::where("id","=","$id")->first();
@@ -140,26 +139,41 @@ class AdminArticlesController extends Controller {
 		foreach($langs as $lang){
 			$this->validate($request, [
 				'title_'.$lang['lang'] => 'required|max:255',
-				'description_'.$lang['lang'] => 'required',
+				//'description_'.$lang['lang'] => 'required',
 			]);
 		}
 		$article = Article::where('id', '=', $id)->first();
 		$all = $request->all();
 		//Вытягивание картинок с папки и представление в формате json
 		$files = Storage::Files('upload/articles/'.$id.'/images/');
+
+		Storage::deleteDirectory('upload/articles/' . $id . '/min');
+		Storage::deleteDirectory('upload/articles/' . $id . '/full');
+
+		Storage::makeDirectory('upload/articles/' . $id . '/min', '0777', true, true);
+		Storage::makeDirectory('upload/articles/' . $id . '/full', '0777', true, true);
+
 		foreach($files as $key => $file){
-			$savePath = str_replace('/'.$id.'/images/', '/'.$id.'/min/', $file);
+			$savePathMin = str_replace('/'.$id.'/images/', '/'.$id.'/min/', $file);
+			$savePathFull = str_replace('/'.$id.'/images/', '/'.$id.'/full/', $file);
+			try{
+				$image = Image::make($file)
+					->resize(1200, null, function ($constraint) { $constraint->aspectRatio();})
+					->save($savePathFull, 80)
+					->resize(320, null, function ($constraint) { $constraint->aspectRatio(); })
+					->save($savePathMin, 80);
 
-			$image = Image::make($file)
-				->resize(1200, null, function ($constraint) { $constraint->aspectRatio();})
-				->save($file, 90)
-				->resize(320, null, function ($constraint) { $constraint->aspectRatio(); })
-				->save($savePath, 70);
+				$files[$key] = [
+					'full' => $savePathFull,
+					'min' => $savePathMin
+				];
+			}catch(\Exception $e){
+				$files[$key] = [
+					'full' => $file,
+					'min' => $file
+				];
+			}
 
-			$files[$key] = [
-				'full' => $file,
-				'min' => $savePath
-			];
 		}
 
 		$all['imgs'] = json_encode($files);
@@ -213,6 +227,8 @@ class AdminArticlesController extends Controller {
 	{
 		$article = Article::where('id', '=', $id)->first();
 		if($article AND $article->delete()){
+			Storage::deleteDirectory('upload/articles/' . $id);
+
 			return response()->json([
 				"status" => 'success',
 				"message" => 'Успешно удален'

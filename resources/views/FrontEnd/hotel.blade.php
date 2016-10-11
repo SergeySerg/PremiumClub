@@ -14,8 +14,8 @@
 
                 @if(count($slide->getImages()) > 0)
 
-                        <img alt="{{$slide->getTranslate('title')}}" src="/{{$slide->getImages()[0]}}"
-                        data-image="/{{$slide->getImages()[0]}}"
+                        <img alt="{{$slide->getTranslate('title')}}" src="/{{$slide->getImages()[0]['full']}}"
+                        data-image="/{{$slide->getImages()[0]['full']}}"
                         id="img-{{$slide->id}}"
                         data-description=" {{$slide->getTranslate('description')}}"
                         data-link="jhjhjhj111">
@@ -73,9 +73,11 @@
             @foreach($services as $service)
 
                 <li>
-
-                    <div class="img-block" style="background: url('/{{ $service -> getImages()[0] }}') no-repeat center; background-size: cover"></div>
-
+                    @if(count($service->getImages()) > 0)
+                    <div class="img-block" style="background: url('/{{ $service->getImages()[0]['min'] }}') no-repeat center; background-size: cover"></div>
+                    @else
+                    <div class="img-block"></div>
+                    @endif
                     <div class="describe-block">
 
                         <h1>{{ str_limit($service -> getTranslate('title'),16,'...') }}</h1>

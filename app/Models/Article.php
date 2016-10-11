@@ -10,7 +10,17 @@ class Article extends Translate {
     }
     public function getImages(){
         if (isset($this->imgs)){
-            $imgs = json_decode($this->imgs);
+            $imgs = json_decode($this->imgs, true);
+            if(is_array($imgs)){
+                foreach($imgs as $key => $img){
+                    if(!is_array($img)){
+                        $imgs[$key] = [
+                            'min' => $img,
+                            'full' => $img
+                        ];
+                    }
+                }
+            }
             return $imgs ?: [];
         }
         else{

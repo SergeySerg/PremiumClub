@@ -19,7 +19,6 @@ class FrontendInit {
 	 */
 	public function handle($request, Closure $next)
 	{
-
 		// Get current lang object from db
 		$currentLang = Lang::where('lang',"=", $request->lang)
 			->first();
