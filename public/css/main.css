@@ -306,9 +306,10 @@ h2 {
   .booking #booking-form .for-arrival-date, .booking #booking-form .for-departure-date {
     display: block;
     float: left;
-    width: 11%;
-    padding-left: 3.5%;
-    padding-right: 2.5%;
+    width: 9%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 3.4%;
     padding-top: 5px;
     color: #8D6C38;
     font-size: 1.0625em;
@@ -370,16 +371,14 @@ h2 {
       padding: 25px 25px 30px;
       border: 1px solid #e5af51; }
       .content-main li .describe-block h1 {
-        max-height: 29px;
-        overflow: hidden; }
+        max-height: 29px;}
       .content-main li .describe-block section {
         height: 100px;
         margin-top: 20px;
         margin-bottom: 20px;
         font-family: "RobotoItalic", sans-serif;
         font-size: 1em;
-        line-height: 1.875em;
-        overflow: hidden; }
+        line-height: 1.875em;}
       .content-main li .describe-block a {
         position: relative;
         color: #ae7719;
@@ -402,6 +401,11 @@ h2 {
       font-family: "RobotoItalic", sans-serif;
       font-size: 1.125em;
       line-height: 2em; }
+    .content-main .hotel-describe section ul li{
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;}
 
 /* ------------ End Page Main ------------- */
 /* -------- Page Rooms ----------- */
@@ -512,7 +516,7 @@ h2 {
         line-height: 2em; }
         .content-rooms .rooms-block .conveniences-block ul li {
           padding-left: 10px;
-          background: url("../img/list-style.png") no-repeat left 14px; }
+          background: url("../img/list-style.png") no-repeat left 12px; }
 
 /* -------- End Page Rooms ----------- */
 /* -------- Page Services ----------- */
