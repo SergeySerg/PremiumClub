@@ -13,7 +13,7 @@ return [
 	|
 	*/
 /* Header */
-	'hotel' => 'Main',
+	'hotel' => 'Home',
 	'rooms' => 'Rooms',
 	'services' => 'Services',
 	'events' => 'Events',

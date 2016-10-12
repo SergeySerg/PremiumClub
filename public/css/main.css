@@ -176,7 +176,7 @@ h2 {
     float: left;
     margin: 0 20px 0 25px; }
   .top-line .address {
-    margin-top: -5px; }
+      line-height: 19px; }
   .top-line_phones {
     background-image: url(../img/sprites/sprite.png);
     background-position: 0px -75px;
@@ -185,10 +185,9 @@ h2 {
     float: left;
     margin: 0 20px 0 25px; }
   .top-line .phones {
-    margin-top: -5px;
     font-size: 1.25em; }
     .top-line .phones li {
-      line-height: 23px; }
+      line-height: 19px; }
       .top-line .phones li .phone-part {
         color: #f4bc71; }
       .top-line .phones li .phone-desc {
@@ -654,6 +653,8 @@ h2 {
         border-bottom: 1px solid #e9d0a5;
         line-height: 1.625em;
         overflow: hidden; }
+      .content .contact-block .contact-item li .location {
+        padding-right: 50%; }
     .content .contact-block .contact-item .map-label-contact {
       background-image: url(../img/sprites/sprite.png);
       background-position: -54px -75px;
