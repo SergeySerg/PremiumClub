@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Text;
 use App\Models\Lang;
+use League\Flysystem\Config;
 
 class FrontendInit {
 
@@ -48,6 +49,7 @@ class FrontendInit {
 			$texts[$text->id] = $text->getTranslate('description');
 		}
 
+		$version = config('app.version');
 
 		// Share to views global template variables
 		view()->share('langs', Lang::all());
@@ -55,6 +57,7 @@ class FrontendInit {
 		view()->share('rooms', $rooms);
 		view()->share('services', $services);
 		view()->share('texts', $texts);
+		view()->share('version', $version);
 
 		return $next($request);
 	}

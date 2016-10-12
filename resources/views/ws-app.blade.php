@@ -14,7 +14,7 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/favicon/apple-touch-icon-72x72.png') }}">
 	<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('/img/favicon/apple-touch-icon-114x114.png') }}">
 
-	<link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/main.css') }}?ver={{ $version }}" rel="stylesheet">
 	<link href="{{ asset('/css/fonts.css') }}" rel="stylesheet">
 	<link href="{{ asset('/libs/unitegallery/dist/css/unite-gallery.css') }}" rel="stylesheet">
 
@@ -254,7 +254,7 @@
 </div>
 
 <script src="{{ asset('/libs/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('/js/common.js') }}"></script>
+<script src="{{ asset('/js/common.js') }}?ver={{ $version }}"></script>
 
 <script src="{{ asset('/libs/unitegallery/dist/themes/default/ug-theme-default.js') }}"></script>
 <script src="{{ asset('/libs/unitegallery/dist/themes/slider/ug-theme-slider.js') }}"></script>
