@@ -40,6 +40,40 @@ class AdminArticlesController extends Controller {
 	}
 
 	/**
+	 * Minimize uploaded files.
+	 *
+	 * @return Response
+	 */
+	//Action Вывода списка сущностей
+	public function fileoptimize()
+	{
+		App::setLocale('ua');
+		//$admin_category = Category::where("link","=","$type")->first();
+		//$admin_articles = $admin_category->articles;
+
+		$articles = Article::all();
+
+
+		foreach($articles as $article){
+			$files = Storage::Files('upload/articles/'.$article->id.'/images/');
+
+			foreach($files as $key => $file){
+				try{
+					Image::make($file)
+						->resize(1200, null, function ($constraint) { $constraint->aspectRatio();})
+						->save($file, 90);
+
+					echo $file . ' > resized <br />';
+				}catch(\Exeption $e){
+					echo '<span style="color:red">'. $file . ' > error ' . $e->getMessage() . ' </span><br />';
+				}
+
+			}
+		}
+		exit;
+	}
+
+	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
