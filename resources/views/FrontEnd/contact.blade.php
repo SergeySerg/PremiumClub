@@ -21,14 +21,14 @@
                     <li class="clearfix">
 
                         <div class="map-label-contact"></div>
-                        <div class="data">{{ $texts[6] }}</div>
+                        <div class="data">{{ $texts[6] }} </div>
 
                     </li>
 
                     <li class="clearfix">
 
                         <div class="phone-contact"></div>
-                        <div class="data">{!! $texts[5] !!}</div>
+                        <div class="data">{!! $texts[5] !!} </div>{!! $texts['header.tel'] !!}
 
                     </li>
 

@@ -50,7 +50,7 @@ class ArticleController extends Controller {
 				break;
 		}
 
-		 $meta = view()->share('meta', Article::where('type', '=', 'meta.'.$type)->first());
+		 $meta = view()->share('meta', Article::where('name', '=', 'meta.'.$type)->first());
 
 
 		return view('frontend.'.$type, [

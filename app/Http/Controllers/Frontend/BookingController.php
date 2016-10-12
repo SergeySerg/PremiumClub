@@ -15,7 +15,7 @@ class BookingController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-	$meta = view()->share('meta', Article::where('type', '=', 'meta.booking')->first());
+	$meta = view()->share('meta', Article::where('name', '=', 'meta.booking')->first());
 
 		return view('frontend.booking', [
 			'from'  => $request->input('from'),
