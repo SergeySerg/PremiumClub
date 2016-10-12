@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="events-description">
-                    {{$event -> getTranslate('description')}}
+                    {!!  $event -> getTranslate('description')!!}
                 </div>
 
                 @if(count($event -> getImages()) > 0)
