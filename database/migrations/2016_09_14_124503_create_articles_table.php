@@ -16,6 +16,7 @@ class CreateArticlesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('category_id');
+			$table->text('type');
 			$table->text('title');
 			$table->text('description');
 			$table->text('price');

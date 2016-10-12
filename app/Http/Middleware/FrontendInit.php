@@ -46,8 +46,11 @@ class FrontendInit {
 		$texts = [];
 
 		foreach($textsArray as $text){
-			$texts[$text->id] = $text->getTranslate('description');
+			$desription = $text->getTranslate('description');
+			$texts[$text->id] = $desription;
+			//$texts[$text->type] = $desription;
 		}
+		//MEta
 
 		$version = config('app.version');
 

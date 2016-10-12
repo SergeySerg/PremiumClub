@@ -27,6 +27,7 @@ class ArticleController extends Controller {
 		$events = null;
 		$gallery = null;
 		$slides = null;
+
 		switch($type){
             case 'hotel':
 				$slides = Category::where('link','=', 'slider')
@@ -49,10 +50,14 @@ class ArticleController extends Controller {
 				break;
 		}
 
+		 $meta = view()->share('meta', Article::where('type', '=', 'meta.'.$type)->first());
+
+
 		return view('frontend.'.$type, [
 			'events' => $events,
 			'gallery' => $gallery,
-			'slides' => $slides
+			'slides' => $slides,
+
 		]);
 	}
 
