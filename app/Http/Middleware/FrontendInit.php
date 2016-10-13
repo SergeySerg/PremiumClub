@@ -43,11 +43,10 @@ class FrontendInit {
 			->articles;
 
 		$textsArray = Text::all();
-
 		$texts = [];
 		foreach($textsArray as $text){
 			$desription = $text->getTranslate('description');
-			//$texts[$text->id] = $desription;
+			$texts[$text->id] = $desription;
 			$texts[$text->name] = $desription;
 		}
 		//dd($texts);

@@ -183,5 +183,4 @@ class AdminTextsController extends Controller {
 
 	}
 
-
 }
