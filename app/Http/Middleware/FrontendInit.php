@@ -54,6 +54,16 @@ class FrontendInit {
 
 		$version = config('app.version');
 
+       // switch ($type){
+        //    case 'hotel':
+        //       $meta_id = 55;
+        //        break;
+        //    case 'rooms':
+        //        $meta_id = 56;
+        //}
+
+        //$meta = Article::find($meta_id);
+
 		// Share to views global template variables
 		view()->share('langs', Lang::all());
 		view()->share('hotel', $hotel);
@@ -61,6 +71,7 @@ class FrontendInit {
 		view()->share('services', $services);
 		view()->share('texts', $texts);
 		view()->share('version', $version);
+        //view()->share('meta', $meta);
 
 		return $next($request);
 	}
