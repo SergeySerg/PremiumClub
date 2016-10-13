@@ -1,7 +1,6 @@
 @extends('ws-app')
 
 @section('content')
-
     <div class="content-rooms">
 
         <div class="content-title">

@@ -21,7 +21,7 @@
                     <li class="clearfix">
 
                         <div class="map-label-contact"></div>
-                        <div class="data">{{ $texts[6] }} </div>
+                        <div class="data"> </div>
 
                     </li>
 
