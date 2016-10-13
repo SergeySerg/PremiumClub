@@ -46,7 +46,7 @@ class FrontendInit {
 		$texts = [];
 		foreach($textsArray as $text){
 			$desription = $text->getTranslate('description');
-			$texts[$text->id] = $desription;
+			//$texts[$text->id] = $desription;
 			$texts[$text->name] = $desription;
 		}
 		//dd($texts);
@@ -54,15 +54,6 @@ class FrontendInit {
 
 		$version = config('app.version');
 
-       // switch ($type){
-        //    case 'hotel':
-        //       $meta_id = 55;
-        //        break;
-        //    case 'rooms':
-        //        $meta_id = 56;
-        //}
-
-        //$meta = Article::find($meta_id);
 
 		// Share to views global template variables
 		view()->share('langs', Lang::all());
