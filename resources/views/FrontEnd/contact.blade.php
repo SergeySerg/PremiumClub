@@ -28,7 +28,7 @@
                     <li class="clearfix">
 
                         <div class="phone-contact"></div>
-                        <div class="data">{!! $texts[5] !!} </div>{!! $texts['header.tel'] !!}
+                        <div class="data">{!! $texts[5] !!} </div>
 
                     </li>
 
