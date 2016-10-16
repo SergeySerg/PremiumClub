@@ -185,3 +185,40 @@ $(function(){
     });
 
 });
+//Скрипт формы обратной связи
+
+document.addEventListener("DOMContentLoaded", function(){
+    $("#contactform").submit(function(e){
+        e.preventDefault();
+        var name = $("input[name=name]").val();
+        var email = $("input[name=email]").val();
+        var message = $("textarea[name=message]").val();
+        var token = $("#token").text();
+        //var dataString = 'name='+name+'&email='+email+'&message'+message+'&_token='+token;
+        var data = {
+            name: name,
+            email: email,
+            message: message,
+            '_token': token
+        }
+        $.ajax({
+            method: "POST",
+            url : "/contact",
+            data : data,
+            dataType : "json",
+
+            success: function(data){
+                console.info('Server response: ', data);
+                if(data.status == 'success'){
+                    swal("Ваше повідомлення успішно відправлено!"," ","success");
+                    jQuery("#contactform").trigger("reset");
+                }
+            },
+            error:function(data){
+                swal ("Сталася помилка при відправці повідомлення!");
+                jQuery("#contactform").trigger("reset");
+            }
+        },"json");
+
+    });
+});

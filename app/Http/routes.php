@@ -31,18 +31,22 @@ Route::post('/contact', function(){
 
 		if ($validation->fails())
 		{
-			return Redirect::to('/')->withErrors($validation)->withInput();
+			//return Redirect::to('/')->withErrors($validation)->withInput();
+			return response()->json([
+				"status" => 'error'
+			]);
 		}
 
 
 		Mail::send('emails.letter', $data, function($message) use ($user) {
-			$message->to('webtestingstudio@gmail.com', 'RS Staff')->subject('Нове повідомлення з сайту Premium Club ');
+			$message->to('webtestingstudio@gmail.com', 'Premium Club')->subject('Повідомлення з сайту Premium Club ');
 		});
 		return response()->json([
-			"status" => 'success',
-			"message" => 'Повідомлення успішно відправлено'
+			"status" => 'success'
 		]);
 	}
+
+
 });
 
 
