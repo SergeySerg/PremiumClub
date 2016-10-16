@@ -137,18 +137,62 @@
 				<div class="letter"></div>
 				<h1>{{ trans('base.callback') }}</h1>
 
-				<form id="contactform">
+				<form id="contactform" method="post">
 
 					<input id="name" name="name" placeholder="{{ trans('base.name') }}" required type="text">
 
-					<textarea name="comment" id="comment" placeholder="{{ trans('base.message') }}"></textarea> <br>
-
-
+					<textarea name="message" id="comment" placeholder="{{ trans('base.message') }}"></textarea> <br>
 					<input id="email" name="email" placeholder="{{ trans('base.email') }}" required type="email"> <br>
 
 					<input name="submit" id="submit" tabindex="5" value="{{ trans('base.send') }}" type="submit">
-
+					<div id="token" style="display: none">{{csrf_token()}}</div>
 				</form>
+				<!--<form  id="frm"  method="post">
+
+					<label class="h6">Имя / Фамилия</label>
+					<input type="text" name="name" required="required" class="form-control">
+					<label class="h6">E-mail</label>
+					<input type="email" name="email" required="required" class="form-control">
+					<label class="h6">Сообщение</label>
+					<textarea rows="7" name="message" required="required" class="form-control"></textarea><br />
+
+					кнопка <button type="submit" class="btn btn-primary" ><span class="fui-mail"></span></button>
+					<div id="token" style="display: none">{{csrf_token()}}</div>
+				</form>-->
+				<script>
+					document.addEventListener("DOMContentLoaded", function(){
+						$("#contactform").submit(function(e){
+							e.preventDefault();
+							var name = $("input[name=name]").val();
+							var email = $("input[name=email]").val();
+							var message = $("textarea[name=message]").val();
+							var token = $("#token").text();
+							//var dataString = 'name='+name+'&email='+email+'&message'+message+'&_token='+token;
+							var data = {
+								name: name,
+								email: email,
+								message: message,
+								'_token': token
+							}
+							$.ajax({
+								method: "POST",
+								url : "/contact",
+								data : data,
+								dataType : "json",
+
+								success: function(data){
+									console.info('Server response: ', data);
+									if(data.status == 'success'){
+										alert(data.message);
+									}
+									else{
+										alert('Помилка з відправленням повідомлення');
+									}
+								}
+							},"json");
+						});
+					});
+				</script>
 
 			</div>
 
