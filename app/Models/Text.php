@@ -8,6 +8,7 @@ class Text extends Translate {
 
     protected $fillable = [
         'page_id',
+        'name',
         'title',
         'type',
         'priority',
