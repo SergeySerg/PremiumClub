@@ -21,6 +21,9 @@
 	<link href="{{ asset('/libs/unitegallery/dist/css/unite-gallery.css') }}" rel="stylesheet">
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="{{ asset('/css/plugins/sweetalert.css') }}" rel="stylesheet">
+
+
 
 </head>
 
@@ -137,19 +140,28 @@
 				<div class="letter"></div>
 				<h1>{{ trans('base.callback') }}</h1>
 
-				<form id="contactform">
+				<form id="contactform" method="post">
 
 					<input id="name" name="name" placeholder="{{ trans('base.name') }}" required type="text">
 
-					<textarea name="comment" id="comment" placeholder="{{ trans('base.message') }}"></textarea> <br>
-
-
+					<textarea name="message" id="comment"  required type="text" placeholder="{{ trans('base.message') }}"></textarea> <br>
 					<input id="email" name="email" placeholder="{{ trans('base.email') }}" required type="email"> <br>
 
 					<input name="submit" id="submit" tabindex="5" value="{{ trans('base.send') }}" type="submit">
-
+					<div id="token" style="display: none">{{csrf_token()}}</div>
 				</form>
+				<!--<form  id="frm"  method="post">
 
+					<label class="h6">Имя / Фамилия</label>
+					<input type="text" name="name" required="required" class="form-control">
+					<label class="h6">E-mail</label>
+					<input type="email" name="email" required="required" class="form-control">
+					<label class="h6">Сообщение</label>
+					<textarea rows="7" name="message" required="required" class="form-control"></textarea><br />
+
+					кнопка <button type="submit" class="btn btn-primary" ><span class="fui-mail"></span></button>
+					<div id="token" style="display: none">{{csrf_token()}}</div>
+				</form>-->
 			</div>
 
 		</div>
@@ -262,6 +274,7 @@
 <script src="{{ asset('/libs/unitegallery/dist/themes/tilesgrid/ug-theme-tilesgrid.js') }}"></script>
 <script src="{{ asset('/libs/unitegallery/dist/themes/compact/ug-theme-compact.js') }}"></script>
 <script src="{{ asset('/libs/unitegallery/dist/js/unitegallery.min.js') }}"></script>
+<script src="{{ asset('/js/plugins/sweetalert.min.js') }}"></script>
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
