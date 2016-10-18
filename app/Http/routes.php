@@ -47,7 +47,7 @@ Route::post('/contact', function(){
 	}
 
 
-});
+});//Отправки формы на email
 
 
 Route::get('home', 'HomeController@index');//Для відображення результата після логування
