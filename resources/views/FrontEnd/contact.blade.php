@@ -29,7 +29,7 @@
                     <li class="clearfix">
 
                         <div class="phone-contact"></div>
-                        <div class="data"> {!!$texts->get('header.tel')!!} </div>
+                        <div class="data"> {!!$texts->get('header.tel')!!}  </div>
 
                     </li>
 
