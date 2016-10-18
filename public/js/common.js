@@ -184,6 +184,17 @@ $(function(){
         }
     });
 
+    $('#menu-name').on('click', function () {
+        $('#menu').animate({right:0}, 1500);
+        $(this).animate({opacity:0}, 1500);
+        $('#menu-close').animate({opacity:1}, 1500);
+    })
+    $('#menu-close').on('click', function () {
+        $('#menu').animate({right:-330}, 1500);
+        $(this).animate({opacity:0}, 1500);
+        $('#menu-name').animate({opacity:1}, 1500);
+    })
+
 });
 //Скрипт формы обратной связи
 
