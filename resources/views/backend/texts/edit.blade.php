@@ -80,6 +80,14 @@
                             </div>
 
                             <div class="control-group">
+                                <label class="control-label" for="title">Альтернативна назва блоку</label>
+
+                                <div class="controls">
+                                    <input type="text" name="name" value='{{$admin_text->name}}' placeholder="Альтернативна назва блоку" />
+                                </div>
+                            </div>
+
+                            <div class="control-group">
                                 <label class="control-label" for="priority">Пріоритет</label>
 
                                 <div class="controls">

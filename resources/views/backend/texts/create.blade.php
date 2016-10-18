@@ -57,6 +57,14 @@
                     </div>
                 </div>
 
+            <div class="control-group">
+                <label class="control-label" for="title">Альтернативна назва блоку</label>
+
+                <div class="controls">
+                    <input type="text" name="name" value='' placeholder="Назва типу header.{назва}" />
+                </div>
+            </div>
+
                 <div class="control-group">
                     <label class="control-label" for="priority">Пріоритет</label>
 

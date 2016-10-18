@@ -44,6 +44,9 @@
                         <th class="hidden-phone center">
                             Тип поля
                         </th>
+                        <th class="hidden-phone center">
+                            Альтерн. назва
+                        </th>
                         <th class="center">
                             Пр-т
                         </th>
@@ -62,6 +65,7 @@
                         <td><a href="/admin30x5/texts/{{$admin_text->id}}">{{ $admin_text->getTranslate('title') }}</a></td>
                         <td>{{ str_limit($admin_text->getTranslate('description'), 80, '...') }}</td>
                         <td>{{ $admin_text->type }}</td>
+                        <td>{{ $admin_text->name }}</td>
                         <td class="center">{{ $admin_text->priority }}</td>
                         <td class="td-actions">
                             <div class="visible-phone visible-desktop action-buttons">
@@ -93,6 +97,7 @@
                 { "bSortable": true,  "sWidth": "30px" },
                 null, null,
                 { "bSortable": false,  "sWidth": "90px" },
+                { "bSortable": true,  "sWidth": "60px" },
                 { "bSortable": true,  "sWidth": "60px" },
                 { "bSortable": false,  "sWidth": "60px" }
             ] } );

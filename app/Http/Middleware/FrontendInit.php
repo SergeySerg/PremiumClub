@@ -42,34 +42,29 @@ class FrontendInit {
 			->first()
 			->articles;
 
-		$textsArray = Text::all();
-		$texts = [];
+		$texts = new Text();
+
+		/*$textsArray = Text::all();
+		//$texts = [];
 		foreach($textsArray as $text){
 			$desription = $text->getTranslate('description');
 			$texts[$text->id] = $desription;
 			$texts[$text->name] = $desription;
-		}
-		//dd($texts);
+
+		}*/
+
+
 		//MEta
 
 		$version = config('app.version');
 
-       // switch ($type){
-        //    case 'hotel':
-        //       $meta_id = 55;
-        //        break;
-        //    case 'rooms':
-        //        $meta_id = 56;
-        //}
-
-        //$meta = Article::find($meta_id);
 
 		// Share to views global template variables
 		view()->share('langs', Lang::all());
 		view()->share('hotel', $hotel);
 		view()->share('rooms', $rooms);
 		view()->share('services', $services);
-		view()->share('texts', $texts);
+		view()->share('texts', $texts->init());
 		view()->share('version', $version);
         //view()->share('meta', $meta);
 

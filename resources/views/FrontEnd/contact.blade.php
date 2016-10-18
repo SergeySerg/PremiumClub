@@ -21,14 +21,15 @@
                     <li class="clearfix">
 
                         <div class="map-label-contact"></div>
-                        <div class="data">{{ $texts[6] }} </div>
+                        <div class="data"> {{ $texts->get('header.address') }} </div>
+
 
                     </li>
 
                     <li class="clearfix">
 
                         <div class="phone-contact"></div>
-                        <div class="data">{!! $texts[5] !!} </div>
+                        <div class="data"> {!!$texts->get('header.tel')!!}  </div>
 
                     </li>
 
@@ -43,14 +44,14 @@
                     <li class="clearfix">
 
                         <div class="letter-contact"></div>
-                        <div class="data">{{ $texts[7] }}</div>
+                        <div class="data">{{ $texts->get('header.mail') }}</div>
 
                     </li>
 
                     <li class="clearfix">
 
                         <div class="location-contact"></div>
-                        <div class="data location">{{ $texts[9] }}</div>
+                        <div class="data location">{{ $texts->get('header.coordinates') }} </div>
 
                     </li>
 
@@ -65,7 +66,7 @@
 
     <div class="map-contact">
 
-        {!!  $texts[8] !!}
+        {!!$texts->get('header.map')!!}
 
     </div>
 
