@@ -8,7 +8,7 @@
 	<meta name="keywords" content="{{ $meta ->getTranslate('meta_keywords') }}">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:image" content="path/to/image.jpg">
 
 	<link rel="shortcut icon" href="{{ asset('/img/favicon/favicon.ico') }}" type="image/x-icon">
@@ -30,6 +30,7 @@
 <body>
 
 <div class="wrapper">
+
 
 		<div class="top-line clearfix">
 
@@ -84,6 +85,25 @@
 		</div>
 
 		<div class="mnu-block">
+
+			<div id="menu">
+
+				<div id="menu-name">{{ trans('base.menu') }}</div>
+				<div id="menu-close"></div>
+
+				<ul id="menu-list">
+					<li><a href="/">{{ trans('base.hotel') }}</a></li>
+					<li><a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a></li>
+					<li><a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a></li>
+					<li><a href="/{{ App::getLocale() }}/events">{{ trans('base.events') }}</a></li>
+					<li><a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a></li>
+					<li><a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a></li>
+					<li><a href="/{{ App::getLocale() }}/3dtour">{{ trans('base.tour') }}</a></li>
+					<li><a href="/{{ App::getLocale() }}/booking">{{ trans('base.booking') }}</a></li>
+				</ul>
+
+			</div>
+
 
 			<nav>
 
