@@ -61,6 +61,15 @@
                         </div>
                     </div>
                 @endif
+                @if($admin_category->hasField('priority'))
+                <div class="control-group">
+                    <label class="control-label" for="form-field-2">Пріоритет</label>
+
+                    <div class="controls">
+                        <input type="number" id="form-field-2" name="priority" @if(isset($admin_article)) value='{{$admin_article->priority}}' @endif  />
+                    </div>
+                </div>
+                @endif
                 @if($admin_category->hasField('active'))
                     <div class="control-group">
                         <label class="control-label">Статус</label>
@@ -210,6 +219,7 @@
                 <div class="list-items"> Кількість
                     <input type="number" name="quantity" @if(isset($admin_article)) value='{{$admin_article->quantity}}' @endif/>
                 </div><br>
+
                 <div class="list-items"> Виберіть зображення
                     <input type="file" name="img" @if(isset($admin_article)) value='{{$admin_article->img}}' @endif/>
                 </div><br>
