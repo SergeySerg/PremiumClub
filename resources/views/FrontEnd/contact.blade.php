@@ -21,7 +21,7 @@
                     <li class="clearfix">
 
                         <div class="map-label-contact"></div>
-                        <div class="data"> @if (isset($texts['header.address'])){{ $texts['header.address'] }} @endif  </div>
+                        <div class="data"> {{ $texts->get('header.address') }} </div>
 
 
                     </li>
@@ -29,7 +29,7 @@
                     <li class="clearfix">
 
                         <div class="phone-contact"></div>
-                        <div class="data">@if (isset($texts['header.tel'])){!! $texts['header.tel'] !!}  @endif </div>
+                        <div class="data"> {!!$texts->get('header.tel')!!} </div>
 
                     </li>
 
@@ -44,14 +44,14 @@
                     <li class="clearfix">
 
                         <div class="letter-contact"></div>
-                        <div class="data">@if (isset($texts['header.mail'])){{ $texts['header.mail'] }} @endif</div>
+                        <div class="data">{{ $texts->get('header.mail') }}</div>
 
                     </li>
 
                     <li class="clearfix">
 
                         <div class="location-contact"></div>
-                        <div class="data location">@if (isset($texts['header.coordinates'])){{ $texts['header.coordinates'] }} @endif</div>
+                        <div class="data location">{{ $texts->get('header.coordinates') }} </div>
 
                     </li>
 
@@ -66,7 +66,7 @@
 
     <div class="map-contact">
 
-        @if (isset($texts['header.map'])){!!  $texts['header.map'] !!} @endif
+        {!!$texts->get('header.map')!!}
 
     </div>
 

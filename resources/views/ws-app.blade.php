@@ -50,7 +50,7 @@
 
 				<div class="top-line_address"></div>
 
-				<div class="address">{{ $texts[6] }}</div>
+				<div class="address">{{ $texts->get('header.address') }}</div>
 
 			</div>
 
@@ -60,7 +60,7 @@
 
 				<ul class="phones">
 
-					<li>{!! $texts[5] !!}</li>
+					<li>{!!$texts->get('header.tel')!!}</li>
 					<li><span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
 
 				</ul>
@@ -217,7 +217,7 @@
 
 				<ul class="phones">
 
-                    <li>{!! $texts[5] !!}<span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
+                    <li>{!!$texts->get('header.tel')!!}<span class="phone-desc">( {{ trans('base.booking') }} )</span></li>
 
 				</ul>
 
@@ -227,7 +227,7 @@
 
 				<div class="top-line_address"></div>
 
-                <div class="address">{{ $texts[6] }}</div>
+                <div class="address">{{ $texts->get('header.address') }}</div>
 
 			</div>
 

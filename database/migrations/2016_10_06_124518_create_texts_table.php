@@ -16,6 +16,7 @@ class CreateTextsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('page_id')->default(0);
+			$table->text('name');
 			$table->string('type', 55);
 			$table->string('title', 255);
 			$table->text('description');

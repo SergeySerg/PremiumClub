@@ -42,14 +42,16 @@ class FrontendInit {
 			->first()
 			->articles;
 
-		$textsArray = Text::all();
+		$texts = new Text();
+
+		/*$textsArray = Text::all();
 		//$texts = [];
 		foreach($textsArray as $text){
 			$desription = $text->getTranslate('description');
 			$texts[$text->id] = $desription;
 			$texts[$text->name] = $desription;
 
-		}
+		}*/
 
 
 		//MEta
@@ -62,7 +64,7 @@ class FrontendInit {
 		view()->share('hotel', $hotel);
 		view()->share('rooms', $rooms);
 		view()->share('services', $services);
-		view()->share('texts', $texts);
+		view()->share('texts', $texts->init());
 		view()->share('version', $version);
         //view()->share('meta', $meta);
 
