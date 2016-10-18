@@ -88,7 +88,7 @@
 
 			<div id="menu">
 
-				<div id="menu-name">Меню</div>
+				<div id="menu-name">{{ trans('base.menu') }}</div>
 				<div id="menu-close"></div>
 
 				<ul id="menu-list">
