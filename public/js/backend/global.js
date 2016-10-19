@@ -24,6 +24,7 @@ $(function(){
     });
     $('.resource-save').on('click', function(event){
         //alert('tut');
+        get_wysiwyg();
         var data = $('form#resource-form').serialize();
         // var $thisEl = $(this);
         $.ajax({
@@ -63,7 +64,7 @@ $(function(){
         event.preventDefault();
 
     });
-    
+
     init_wysiwyg();
 });
 
@@ -81,6 +82,8 @@ function get_wysiwyg(){
     var editors = $('textarea');
     editors.each(function(i, editor){
         id = $(editor).attr('id')
-        $('#'+id).val(CKEDITOR.instances[id].getData());
+        if(id && CKEDITOR.instances[id]) {
+            $('#' + id).val(CKEDITOR.instances[id].getData());
+        }
     });
 }
