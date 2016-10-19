@@ -1,5 +1,5 @@
 ﻿/**
- * Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+ * Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -36,18 +36,12 @@ CKEDITOR.stylesSet.add( 'default', [
 	{
 		name: 'Special Container',
 		element: 'div',
-        attributes: { 'class': 'sp_container' }
+		styles: {
+			padding: '5px 10px',
+			background: '#eee',
+			border: '1px solid #ccc'
+		}
 	},
-    {
-        name: 'H - Our point',
-        element: 'div',
-        attributes: { 'class': 'our_point_h' }
-    },
-    {
-        name: 'T - Our point',
-        element: 'div',
-        attributes: { 'class': 'our_point_t' }
-    },
 
 	/* Inline Styles */
 
@@ -62,9 +56,8 @@ CKEDITOR.stylesSet.add( 'default', [
 	{ name: 'Subscript',		element: 'sub' },
 	{ name: 'Superscript',		element: 'sup' },
 	*/
-    { name: 'Select',			element: 'span', attributes: { 'class': 'our_point_s' }},
-    { name: 'Select inline',	element: 'span', attributes: { 'class': 'our_point_s_inline' }},
-	/*{ name: 'Marker',			element: 'span', attributes: { 'class': 'marker' } },
+
+	{ name: 'Marker',			element: 'span', attributes: { 'class': 'marker' } },
 
 	{ name: 'Big',				element: 'big' },
 	{ name: 'Small',			element: 'small' },
@@ -82,7 +75,7 @@ CKEDITOR.stylesSet.add( 'default', [
 	{ name: 'Inline Quotation',	element: 'q' },
 
 	{ name: 'Language: RTL',	element: 'span', attributes: { 'dir': 'rtl' } },
-	{ name: 'Language: LTR',	element: 'span', attributes: { 'dir': 'ltr' } },*/
+	{ name: 'Language: LTR',	element: 'span', attributes: { 'dir': 'ltr' } },
 
 	/* Object Styles */
 
