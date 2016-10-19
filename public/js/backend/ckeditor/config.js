@@ -7,10 +7,10 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
-    config.filebrowserBrowseUrl = '/js/backend/kcfinder/browse.php?type=files';
-    config.filebrowserImageBrowseUrl = '/js/backend/kcfinder/browse.php?type=images';
-    config.filebrowserFlashBrowseUrl = '/js/backend/kcfinder/browse.php?type=flash';
-    config.filebrowserUploadUrl = '/js/backend/kcfinder/upload.php?type=files';
-    config.filebrowserImageUploadUrl = '/js/backend/kcfinder/upload.php?type=images';
-    config.filebrowserFlashUploadUrl = '/js/backend/kcfinder/upload.php?type=flash';
+    config.filebrowserBrowseUrl = '/js/backend/kcfinder/browse.php?type=files&config=default';
+    config.filebrowserImageBrowseUrl = '/js/backend/kcfinder/browse.php?type=images&config=default';
+    config.filebrowserFlashBrowseUrl = '/js/backend/kcfinder/browse.php?type=flash&config=default';
+    config.filebrowserUploadUrl = '/js/backend/kcfinder/upload.php?type=files&config=default';
+    config.filebrowserImageUploadUrl = '/js/backend/kcfinder/upload.php?type=images&config=default';
+    config.filebrowserFlashUploadUrl = '/js/backend/kcfinder/upload.php?type=flash&config=default';
 };

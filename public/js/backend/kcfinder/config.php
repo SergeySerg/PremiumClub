@@ -16,6 +16,8 @@ if(!isset($_SESSION)){
 if(isset($_GET['config']))
 {
     $_SESSION['type'] = $_GET['config'];
+}else{
+    //$_SESSION['type'] = 'default';
 }
 if(isset($_GET['homedir']))
 {
