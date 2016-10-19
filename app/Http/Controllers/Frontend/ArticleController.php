@@ -32,7 +32,8 @@ class ArticleController extends Controller {
             case 'hotel':
 				$slides = Category::where('link','=', 'slider')
 					->first()
-					->articles;
+					->articles
+					->sortByDesc("priority");
 				break;
 			case 'rooms':
 				break;
@@ -41,13 +42,16 @@ class ArticleController extends Controller {
 			case 'events':
                 $events = Category::where('link','=', 'events')
                     ->first()
-                    ->articles;
+                    ->articles
+					->sortByDesc("priority");
 				break;
 			case 'gallery':
                 $gallery = Category::where('link','=', 'gallery')
                     ->first()
-                    ->articles;
+                    ->articles
+					->sortByDesc("priority");
 				break;
+
 		}
 
 		 $meta = view()->share('meta', Article::where('name', '=', 'meta.'.$type)->first());
