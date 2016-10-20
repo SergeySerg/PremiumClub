@@ -92,7 +92,7 @@
 				<div id="menu-close"></div>
 
 				<ul id="menu-list">
-					<li><a href="/">{{ trans('base.hotel') }}</a></li>
+					<li><a href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a></li>
 					<li><a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a></li>
 					<li><a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a></li>
 					<li><a href="/{{ App::getLocale() }}/events">{{ trans('base.events') }}</a></li>
