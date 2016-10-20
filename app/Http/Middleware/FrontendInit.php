@@ -58,7 +58,6 @@ class FrontendInit {
 
 		//MEta
 
-		$version = config('app.version');
 
 
 		// Share to views global template variables
@@ -67,7 +66,7 @@ class FrontendInit {
 		view()->share('rooms', $rooms);
 		view()->share('services', $services);
 		view()->share('texts', $texts->init());
-		view()->share('version', $version);
+		view()->share('version', config('app.version'));
         //view()->share('meta', $meta);
 
 		return $next($request);

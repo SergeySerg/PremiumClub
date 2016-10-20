@@ -59,7 +59,7 @@ Route::controllers([
 
 Route::get('/', 'Frontend\HomeController@index');
 
-Route::group(['prefix'=>'admin30x5', 'middleware' => 'auth'], function(){
+Route::group(['prefix'=>'admin30x5', 'middleware' => ['auth', 'backend.init']], function(){
 	Route::get('/','Backend\AdminDashboardController@index');
 
 	Route::get('/articles/fileoptimize','Backend\AdminArticlesController@fileoptimize');

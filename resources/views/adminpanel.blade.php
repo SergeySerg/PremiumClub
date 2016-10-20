@@ -17,17 +17,16 @@
     <link href="{{ asset('/css/backend/bootstrap-responsive.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/backend/font-awesome.min.css') }}" rel="stylesheet">
     <!--Тестовый css-->
-    <link href="{{ asset('/css/backend/backend.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/backend/backend.css') }}?ver={{ $version }}" rel="stylesheet">
 
     <!--[if IE 7]>
     <link href="{{ asset('/css/backend/font-awesome-ie7.min.css') }}" rel="stylesheet">
     <![endif]-->
     <!--js-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript" ></script>
-    <script src="{{ asset('/js/backend/articles.js') }}"type="text/javascript"></script>
     <script src="{{ asset('/js/backend/jquery.ui.touch-punch.min.js') }}"type="text/javascript"></script>
     <script src="{{ asset('/js/backend/jquery-ui-1.10.3.custom.min.js') }}"type="text/javascript"></script>
-    <script src="{{ asset('/js/backend/global.js') }}"type="text/javascript"></script>
+    <script src="{{ asset('/js/backend/global.js') }}?ver={{ $version }}"type="text/javascript"></script>
     <script src="{{ asset('/js/backend/jquery.slimscroll.min.js') }}"type="text/javascript"></script>
 
     <script src="{{ asset('/js/backend/ckeditor/ckeditor.js') }}"></script>
