@@ -197,6 +197,12 @@
 
 				</div>
 
+				<ul class="social-block">
+					<li><a href="{!!$texts->get('social.fb')!!}" class="fb"></a></li>
+					<li><a href="{!!$texts->get('social.od')!!}" class="od"></a></li>
+					<li><a href="{!!$texts->get('social.vk')!!}" class="vk"></a></li>
+				</ul>
+
 				<ul>
 					<li><a href="/{{ App::getLocale() }}/hotel">{{ trans('base.hotel') }}</a></li>
 				</ul>

@@ -135,9 +135,9 @@ $(function(){
         slider_textpanel_always_on: true,      //true,false - text panel are always on, false - show only on mouseover
         slider_textpanel_text_valign:"bottom",
         slider_textpanel_padding_bottom:20,
-        slider_textpanel_height: 470,
+        slider_textpanel_height: null,
         slider_textpanel_bg_color:"#000000",      //textpanel background color
-        slider_textpanel_bg_opacity: 0,
+        slider_textpanel_bg_opacity: 0.5,
         slider_textpanel_title_text_align:"left",
         slider_textpanel_title_color:"#fffafa",        //textpanel title color. if null - take from css
         slider_textpanel_title_font_family:"GeorgiaBoldItalic",    //textpanel title font family. if null - take from css

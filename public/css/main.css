@@ -753,6 +753,7 @@ footer .top-line_sub-block {
 
 .footer-mnu-block {
   width: 100%;
+  position: relative;
   padding-top: 70px; }
   .footer-mnu-block .logo-wrap {
     float: left;
@@ -764,6 +765,25 @@ footer .top-line_sub-block {
     font-family: "RobotoLight", sans-serif;
     font-size: 25px;
     text-transform: uppercase; }
+  .footer-mnu-block .social-block{
+    margin:0;
+    float: none;
+    position: absolute;
+    bottom: 25px;
+    left: 50px;}
+  .footer-mnu-block .social-block li{
+    display: inline-block;
+    margin-left: 5px;}
+  .footer-mnu-block .social-block li a{
+    display: block;
+    width: 32px;
+    height: 32px;}
+  .footer-mnu-block .social-block li a.vk{
+    background: url("../img/icons.png") no-repeat -64px 0; }
+  .footer-mnu-block .social-block li a.fb{
+    background: url("../img/icons.png") no-repeat 0 0; }
+  .footer-mnu-block .social-block li a.od{
+    background: url("../img/icons.png") no-repeat -32px 0; }
   .footer-mnu-block ul {
     float: left;
     margin-right: 60px;
@@ -1070,6 +1090,14 @@ footer .top-line_sub-block {
         padding-bottom: 10px;
         border-bottom: 1px solid #392420;
     }
+    .footer-mnu-block .social-block{
+        width: 40%;
+        bottom: 90px;
+        left: 29%;
+    }
+  .footer-mnu-block ul.social-block li:first-child{
+    display: inline-block;
+  }
     .footer-mnu-block .ft-line{
         display: none;
     }
@@ -1106,55 +1134,80 @@ footer .top-line_sub-block {
     .content-rooms .rooms-block .describe-block{
         margin-top: 20px;
     }
+    .booking #booking-form .arrival-date,
+    .booking #booking-form .departure-date{
+        background-image: none;
+    }
 }
 
 @media only screen and (max-width: 480px) {
-    .ug-textpanel-title{
-        font-size: 2em !important;
+    .ug-gallery-wrapper .ug-textpanel-title {
+        font-size: 1.8em !important;
     }
-    .booking #booking-form .booking-btn{
+    .ug-gallery-wrapper .ug-textpanel-description{
+        font-size: 1.2em;
+    }
+    .booking #booking-form .booking-btn {
         width: 110px;
         font-size: 1em;
     }
-    .content-main{
+    .booking #booking-form .arrival-date,
+    .booking #booking-form .departure-date{
+        font-size: 1em;
+    }
+    .content-main {
         padding-top: 25px;
     }
-    .content-main li{
+
+    .content-main li {
         width: 100%;
         margin-right: 0;
     }
-    .content-main li .describe-block section{
+
+    .content-main li .describe-block section {
         height: 100px;
     }
-    .content-main span{
+
+    .content-main span {
         font-size: 2em;
     }
-    .content .contact-block .contact-item{
+
+    .content .contact-block .contact-item {
         width: 100%;
         margin: 0 auto;
     }
-    .content-rooms .rooms-block .describe-block h1{
+
+    .content-rooms .rooms-block .describe-block h1 {
         font-size: 1.7em;
         margin-bottom: 0;
     }
-    .content-rooms .rooms-block .describe-block .describe-room{
+
+    .content-rooms .rooms-block .describe-block .describe-room {
         line-height: 1.5em;
     }
-    .grey-block{
+
+    .grey-block {
         padding: 45px 30px 15px 50px;
     }
-    .grey-block .callback-form #contactform input{
+
+    .grey-block .callback-form #contactform input {
         width: 100%;
     }
-    .grey-block .callback-form #contactform textarea{
+
+    .grey-block .callback-form #contactform textarea {
         width: 100%;
         margin-left: 0;
     }
-    .footer-mnu-block ul{
+
+    .footer-mnu-block ul {
         display: none;
     }
-}
 
+    .footer-mnu-block .social-block {
+        display: block;
+        bottom: 75px;
+    }
+}
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px) {
 
