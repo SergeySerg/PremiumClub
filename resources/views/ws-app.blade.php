@@ -107,7 +107,7 @@
 
 			<nav>
 
-				<a href="/">{{ trans('base.hotel') }}</a>
+				<a href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a>
 				<a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a>
 				<a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a>
 				<a href="/{{ App::getLocale() }}/events">{{ trans('base.events') }}</a>
@@ -204,7 +204,7 @@
 				</ul>
 
 				<ul>
-					<li><a href="/{{ App::getLocale() }}/hotel">{{ trans('base.hotel') }}</a></li>
+					<li><a href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a></li>
 				</ul>
 
 				<ul>
@@ -281,7 +281,7 @@
 
 				<div class="top-line_booking"></div>
 
-				<a href="#">{{ trans('base.booking') }}</a>
+				<a href="/{{ App::getLocale() }}/booking">{{ trans('base.booking') }}</a>
 
 			</div>
 
