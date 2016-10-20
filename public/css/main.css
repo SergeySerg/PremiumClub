@@ -801,7 +801,7 @@ footer .top-line_sub-block {
         color: #fff5e5; }
   .footer-mnu-block .ft-line {
     position: relative;
-    width: 77.5%;
+    width: 75%;
     height: 1px;
     left: 250px;
     margin-top: -20px;
@@ -885,8 +885,15 @@ footer .top-line_sub-block {
     .content-main li .describe-block section{
         line-height: 1.5em;
     }
+    .content-rooms .rooms-block .price-block span .price{
+        margin-right: 0;
+        margin-left: 5px;
+    }
     .footer-mnu-block .logo-wrap{
         margin-right: 0;
+    }
+    .footer-mnu-block .ft-line{
+        width: 69%;
     }
     .footer-mnu-block ul{
         margin-right: 40px;
@@ -894,7 +901,7 @@ footer .top-line_sub-block {
 }
 
 
-@media only screen and (max-width: 870px) {
+@media only screen and (max-width: 880px) {
     .content-main{
         padding-top: 50px;
     }
@@ -938,6 +945,9 @@ footer .top-line_sub-block {
     }
     .content-rooms .rooms-block .conveniences-block ul{
         width: 100%;
+    }
+    .footer-mnu-block .ft-line{
+        width: 60%;
     }
     .footer-mnu-block ul{
         margin-right: 20px;
@@ -1095,9 +1105,9 @@ footer .top-line_sub-block {
         bottom: 90px;
         left: 29%;
     }
-  .footer-mnu-block ul.social-block li:first-child{
-    display: inline-block;
-  }
+    .footer-mnu-block ul.social-block li:first-child{
+        display: inline-block;
+    }
     .footer-mnu-block .ft-line{
         display: none;
     }
