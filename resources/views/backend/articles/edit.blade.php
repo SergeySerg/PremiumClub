@@ -91,10 +91,10 @@
                         <label class="control-label" for="id-date-picker-1">Дата проведення</label>
                         <div class="controls">
                             <div class="row-fluid input-append">
-                                <input class="span2 date-picker" name="date" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" />
-                                                                        <span class="add-on">
-                                                                            <i class="icon-calendar"></i>
-                                                                       </span>
+                                <input class="span2 date-picker" name="date" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" @if(isset($admin_article)) value='{{date('d-m-Y',strtotime($admin_article->date))}}' @endif/>
+                                <span class="add-on">
+                                    <i class="icon-calendar"></i>
+                               </span>
                         </div>
                     </div>
                 @endif

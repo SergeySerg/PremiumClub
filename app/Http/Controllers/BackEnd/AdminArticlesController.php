@@ -229,6 +229,7 @@ class AdminArticlesController extends Controller {
 		$all['meta_title'] = '';
 		$all['meta_description'] = '';
 		$all['meta_keywords'] ='';
+		$all['date'] = date('m-d-y H:i:s',strtotime($all['date']));
 		// Удаление пробелов в начале и в конце каждого поля
 		foreach($all as $key => $value){
 			$all[$key] = trim($value);
@@ -247,7 +248,6 @@ class AdminArticlesController extends Controller {
 			unset($all["meta_description_{$lang['lang']}"]);
 			unset($all["meta_keywords_{$lang['lang']}"]);
 		}
-
 		return $all;
 	}
 	/**
