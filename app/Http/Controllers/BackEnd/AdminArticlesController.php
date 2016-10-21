@@ -213,8 +213,11 @@ class AdminArticlesController extends Controller {
 		$all['imgs'] = json_encode($files);
 		//Очистка масссива от title_ua,ru,en и т д
 		$all = $this->prepareArticleData($all);
+
+		//dd($all);
 		$article->update($all);
 		$article->save();
+
 		return response()->json([
 			"status" => 'success',
 			"message" => 'Успішно збережено',
@@ -229,7 +232,7 @@ class AdminArticlesController extends Controller {
 		$all['meta_title'] = '';
 		$all['meta_description'] = '';
 		$all['meta_keywords'] ='';
-		$all['date'] = date('m-d-y H:i:s',strtotime($all['date']));
+		$all['date'] = date('Y-m-d H:i:s',strtotime($all['date']));
 		// Удаление пробелов в начале и в конце каждого поля
 		foreach($all as $key => $value){
 			$all[$key] = trim($value);

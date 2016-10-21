@@ -3,7 +3,21 @@
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Translate {
-    protected $fillable=['category_id','title','description','price','imgs','priority','meta_description','meta_keywords','quantity','meta_title','public','active'];
+    protected $fillable=[
+        'category_id',
+        'title',
+        'description',
+        'price',
+        'imgs',
+        'priority',
+        'meta_description',
+        'meta_keywords',
+        'quantity',
+        'meta_title',
+        'public',
+        'active',
+        'date'
+    ];
 
     public function category(){
         return $this->belongsTo('App\Models\Category');
