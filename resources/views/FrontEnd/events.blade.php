@@ -22,7 +22,7 @@
 
                     <div class="calendar"></div>
 
-                    <span class="date">{{$event -> date }}</span>
+                    <span class="date">{{ date('d-m-Y ',strtotime($event -> date)) }}</span>
 
                 </div>
 
