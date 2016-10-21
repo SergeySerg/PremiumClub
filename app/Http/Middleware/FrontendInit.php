@@ -38,10 +38,12 @@ class FrontendInit {
 		$rooms = Category::where('link','=', 'rooms')
 			->first()
 			->articles
+			//->where('active','=', '1')
 			->sortByDesc("priority");
 		$services = Category::where('link','=', 'services')
 			->first()
 			->articles
+			//->where('active','=', 1)
 			->sortByDesc("priority");
 
 		$texts = new Text();

@@ -33,6 +33,7 @@ class ArticleController extends Controller {
 				$slides = Category::where('link','=', 'slider')
 					->first()
 					->articles
+					//->where('active','=', 1)
 					->sortByDesc("priority");
 				break;
 			case 'rooms':
@@ -49,6 +50,7 @@ class ArticleController extends Controller {
                 $gallery = Category::where('link','=', 'gallery')
                     ->first()
                     ->articles
+					//->where('active','=', 1)
 					->sortByDesc("priority");
 				break;
 

@@ -232,7 +232,8 @@ class AdminArticlesController extends Controller {
 		$all['meta_title'] = '';
 		$all['meta_description'] = '';
 		$all['meta_keywords'] ='';
-		$all['date'] = date('Y-m-d H:i:s',strtotime($all['date']));
+		if (isset($all['date']))
+			$all['date'] = date('Y-m-d H:i:s',strtotime($all['date']));
 		// Удаление пробелов в начале и в конце каждого поля
 		foreach($all as $key => $value){
 			$all[$key] = trim($value);
