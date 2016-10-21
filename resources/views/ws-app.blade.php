@@ -121,7 +121,10 @@
 				<div class="logo"><img src="{{ asset('/img/logo-header.png') }}" alt="Premium Club"></div>
 
 				<div class="flower-left"></div>
-				<div class="logo-title">Luxore HOTEL</div>
+				<div class="hotel-name-wrap">
+					<div class="hotel-name">hotel premium club</div>
+					<div class="logo-title">Luxore HOTEL</div>
+				</div>
 				<div class="flower-right"></div>
 
 			</div>
