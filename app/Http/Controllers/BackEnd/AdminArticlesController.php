@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers\BackEnd;
+<?php namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\BackEnd;
+use App\Http\Controllers\Backend;
 //use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
