@@ -45,13 +45,17 @@ class AdminArticlesController extends Controller {
 	 * @return Response
 	 */
 	//Action Вывода списка сущностей
-	public function fileoptimize()
+	public function fileoptimize(Request $request, $id)
 	{
 		App::setLocale('ua');
 		//$admin_category = Category::where("link","=","$type")->first();
 		//$admin_articles = $admin_category->articles;
-
-		$articles = Article::all();
+		if (isset($id)){
+			$articles = [Article::find($id)];
+		}
+		else {
+			$articles = Article::all();
+		}
 
 
 		foreach($articles as $article){
