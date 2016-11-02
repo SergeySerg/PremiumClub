@@ -293,9 +293,11 @@ h2 {
       width: 18px;
       height: 35px;
       opacity: 0.5; }
-  .slider .ug-gallery-wrapper .ug-textpanel-description p{
-    text-indent: 0;
-  }
+  .slider .ug-gallery-wrapper .ug-textpanel-description,
+  .slider .ug-gallery-wrapper .ug-textpanel-title{
+    padding-left: 5px;  }
+    .slider .ug-gallery-wrapper .ug-textpanel-description p{
+      text-indent: 0; }
 
 .booking {
   position: relative;
