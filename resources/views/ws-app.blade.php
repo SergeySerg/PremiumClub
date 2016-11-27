@@ -22,14 +22,11 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link href="{{ asset('/css/plugins/sweetalert.css') }}" rel="stylesheet">
 
-
-
 </head>
 
 <body>
 
 <div class="wrapper">
-
 
 		<div class="top-line clearfix">
 
@@ -37,7 +34,7 @@
 
 				<div class="top-line_booking"></div>
 
-				<a href="/{{ App::getLocale() }}/booking">{{ trans('base.booking') }}</a>
+				<a @if(Request::is('*/booking'))class="active"@endif href="/{{ App::getLocale() }}/booking">{{ trans('base.booking') }}</a>
 
 			</div>
 
@@ -45,7 +42,7 @@
 
 				<div class="top-line_3dtour"></div>
 
-				<a href="/{{ App::getLocale() }}/3dtour">{{ trans('base.tour') }}</a>
+				<a @if(Request::is('*/3dtour'))class="active"@endif href="/{{ App::getLocale() }}/3dtour">{{ trans('base.tour') }}</a>
 
 			</div>
 
@@ -106,12 +103,12 @@
 
 			<nav>
 
-				<a href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a>
-				<a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a>
-				<a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a>
-				<a href="/{{ App::getLocale() }}/events">{{ trans('base.events') }}</a>
-				<a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a>
-				<a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a>
+				<a @if(Request::is(App::getLocale())) class="active"@endif href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a>
+				<a @if(Request::is('*/rooms'))class="active"@endif href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a>
+				<a @if(Request::is('*/services'))class="active"@endif href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a>
+				<a @if(Request::is('*/events'))class="active"@endif href="/{{ App::getLocale() }}/events">{{ trans('base.events') }}</a>
+				<a @if(Request::is('*/gallery'))class="active"@endif href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a>
+				<a @if(Request::is('*/contact'))class="active"@endif href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a>
 
 			</nav>
 
