@@ -114,7 +114,7 @@
 
 			<div class="logo-wrap">
 
-				<div class="logo"><img src="{{ asset('/img/logo-header.png') }}" alt="Premium Club"></div>
+				<div class="logo"><a href="/{{ App::getLocale() }}"><img src="{{ asset('/img/logo-header.png') }}" alt="Premium Club"></a></div>
 
 				<div class="flower-left"></div>
 				<div class="hotel-name-wrap">
