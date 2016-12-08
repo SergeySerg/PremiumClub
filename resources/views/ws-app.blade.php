@@ -192,15 +192,16 @@
 				<div class="logo-wrap">
 
 					<div class="logo"><img src="{{ asset('/img/logo-footer.png') }}" alt="Premium Club"></div>
+
+					<ul class="social-block">
+						<li><a href="{!!$texts->get('social.fb')!!}" class="fb"></a></li>
+						<li><a href="{!!$texts->get('social.od')!!}" class="od"></a></li>
+						<li><a href="{!!$texts->get('social.vk')!!}" class="vk"></a></li>
+					</ul>
+
 					<div class="logo-title">Luxore HOTEL</div>
 
 				</div>
-
-				<ul class="social-block">
-					<li><a href="{!!$texts->get('social.fb')!!}" class="fb"></a></li>
-					<li><a href="{!!$texts->get('social.od')!!}" class="od"></a></li>
-					<li><a href="{!!$texts->get('social.vk')!!}" class="vk"></a></li>
-				</ul>
 
 				<ul>
 					<li><a href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a></li>

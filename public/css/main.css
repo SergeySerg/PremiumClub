@@ -778,7 +778,7 @@ footer .top-line_sub-block {
     margin:0;
     float: none;
     position: absolute;
-    bottom: 25px;
+    top: 265px;
     left: 50px;}
   .footer-mnu-block .social-block li{
     display: inline-block;
@@ -812,8 +812,8 @@ footer .top-line_sub-block {
     position: relative;
     width: 75%;
     height: 1px;
+    top: 15px;
     left: 250px;
-    margin-top: -20px;
     background-color: #392420; }
     .footer-mnu-block .ft-line .flower-right-dark {
       background-image: url(../img/sprites/sprite.png);
@@ -1144,7 +1144,7 @@ footer .top-line_sub-block {
   }
   .footer-mnu-block .social-block{
       width: 40%;
-      bottom: 90px;
+      top: 230px;
       left: 29%;
   }
   .footer-mnu-block ul.social-block li:first-child{
