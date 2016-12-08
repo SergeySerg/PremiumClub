@@ -50,6 +50,8 @@
 
         @endforeach
 
+        {!! $events->render() !!}
+
     </div>
 
 @stop

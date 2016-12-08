@@ -12,6 +12,9 @@ use App\Models\Category;
 use App\Models\Lang;
 use App;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
+
 
 //use Illuminate\Contracts\View\View;
 
@@ -43,9 +46,11 @@ class ArticleController extends Controller {
 				break;
 			case 'events':
                 $events = Category::where('link','=', 'events')
-                    ->first()
-                    ->articles
-					->sortByDesc("priority");
+				->first()
+				->articles()
+				->where('active','=', '1')
+				->orderBy("priority", 'desc')
+				->paginate(5);
 				break;
 			case 'gallery':
                 $gallery = Category::where('link','=', 'gallery')
