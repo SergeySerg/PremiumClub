@@ -61,7 +61,7 @@
                     @if(count($service->getImages()) > 0)
                         <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}"><div class="img-block" style="background: url('/{{ $service->getImages()[0]['min'] }}') no-repeat center; background-size: cover"></div></a>
                     @else
-                        <div class="img-block"></div>
+                        <div class="img-block" style="border: 1px solid #E5AF51; background-image: url({{ asset('/img/no-img.png') }}); background-repeat: no-repeat; background-position: center;"></div>
                     @endif
 
                     <div class="describe-block">
