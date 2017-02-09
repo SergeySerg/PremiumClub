@@ -245,7 +245,7 @@ h2 {
     margin: 5px 40px 0 40px;
     color: #765C4D;
     font-family: "RobotoLight", sans-serif;
-    font-size: 2.3125em;
+    font-size: 2.8em;
     text-transform: uppercase; }
   .mnu-block .logo-title {
     color: #e3ad4d;
@@ -254,7 +254,7 @@ h2 {
     display: inline-block;
     position: relative;
     width: 198px;
-    bottom: 15px}
+    bottom: 0;}
   .mnu-block .flower-left {
     background-image: url(../img/sprites/sprite.png);
     background-position: 0px 0px;
@@ -947,7 +947,7 @@ footer .top-line_sub-block {
   .content-main{
       padding-top: 50px;
   }
-  .content-main li{
+  .content-main>ul>li{
       width: 48%;
       margin-right: 2%;
       margin-top: 30px;
@@ -1172,7 +1172,7 @@ footer .top-line_sub-block {
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 614px) {
-  .content-main li{
+  .content-main>ul>li{
       width: 100%;
       margin-right: 0;
   }
@@ -1214,7 +1214,7 @@ footer .top-line_sub-block {
       padding-top: 25px;
   }
 
-  .content-main li {
+  .content-main>ul>li {
       width: 100%;
       margin-right: 0;
   }

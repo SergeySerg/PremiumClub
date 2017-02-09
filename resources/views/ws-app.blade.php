@@ -119,7 +119,9 @@
 				<div class="flower-left"></div>
 				<div class="hotel-name-wrap">
 					<div class="hotel-name">hotel premium club</div>
+{{--
 					<div class="logo-title">Luxory HOTEL</div>
+--}}
 				</div>
 				<div class="flower-right"></div>
 
