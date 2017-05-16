@@ -118,10 +118,8 @@
 
 				<div class="flower-left"></div>
 				<div class="hotel-name-wrap">
-					<div class="hotel-name">hotel premium club</div>
-{{--
-					<div class="logo-title">Luxory HOTEL</div>
---}}
+					<div class="hotel-name">{!!$texts->get('top_title')!!}</div>
+					<div class="logo-title">{!!$texts->get('footer_title')!!}</div>
 				</div>
 				<div class="flower-right"></div>
 
