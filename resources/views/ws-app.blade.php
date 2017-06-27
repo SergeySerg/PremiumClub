@@ -199,7 +199,9 @@
 						<li><a href="{!!$texts->get('social.vk')!!}" class="vk"></a></li>
 					</ul>
 
+{{--
 					<div class="logo-title">LUXURY HOTEL</div>
+--}}
 
 				</div>
 
